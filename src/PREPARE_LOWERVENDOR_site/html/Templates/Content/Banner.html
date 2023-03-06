@@ -5,11 +5,11 @@
 >
 <f:render section="css" optional="1"/>
 
-<div class="mono_banner mono_container--fullsize">
-    <div class="mono_banner__image">
+<div class="PREPARE_LOWERVENDOR_banner PREPARE_LOWERVENDOR_container--fullsize">
+    <div class="PREPARE_LOWERVENDOR_banner__image">
         <f:if condition="{images.0}">
             <i:image
-                class="mono_banner__image"
+                class="PREPARE_LOWERVENDOR_banner__image"
                 addWebp="1"
                 lossless="1"
                 alt="{images.0.alternative}"
@@ -25,15 +25,15 @@
             />
         </f:if>
     </div>
-    <div class="mono_banner__header mono_container--fullsize">
-        <div class="mono_container display-1">
+    <div class="PREPARE_LOWERVENDOR_banner__header PREPARE_LOWERVENDOR_container--fullsize">
+        <div class="PREPARE_LOWERVENDOR_container display-1">
             {data.header->f:format.raw()}
         </div>
     </div>
 </div>
 </html>
 <style type="text/scss">
-    .mono_banner {
+    .PREPARE_LOWERVENDOR_banner {
         width: 100%;
         position: relative;
 

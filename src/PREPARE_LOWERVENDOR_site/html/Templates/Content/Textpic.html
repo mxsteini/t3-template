@@ -9,10 +9,10 @@
 <f:section name="Content">
 
 
-    <div class="mono_textpic mono_textpic--{data.imageorient} ce-{data.CType}" id="c{data.uid}">
-        <div class="mono_textpic__bodytext">
+    <div class="PREPARE_LOWERVENDOR_textpic PREPARE_LOWERVENDOR_textpic--{data.imageorient} ce-{data.CType}" id="c{data.uid}">
+        <div class="PREPARE_LOWERVENDOR_textpic__bodytext">
             <f:if condition="{data.subheader}">
-                <h3 class="mono_textpic__header">
+                <h3 class="PREPARE_LOWERVENDOR_textpic__header">
                     {data.subheader->f:format.raw()}
                 </h3>
             </f:if>
@@ -20,9 +20,9 @@
         </div>
 
         <f:if condition="{images.0}">
-            <div class="mono_textpic__image">
+            <div class="PREPARE_LOWERVENDOR_textpic__image">
                 <i:image
-                    class="mono_textpic__image"
+                    class="PREPARE_LOWERVENDOR_textpic__image"
                     addWebp="1"
                     lossless="1"
                     alt="{images.0.alternative}"
@@ -38,7 +38,7 @@
 <style type="text/scss">
     @import 'src/scss/Abstracts/abstract';
 
-    .mono_textpic {
+    .PREPARE_LOWERVENDOR_textpic {
         display: flex;
         flex-direction: column;
         gap: 10px;
@@ -66,7 +66,7 @@
                 width: calc(100% / 12 * 8);
             }
 
-            .mono_textpic--9 & {
+            .PREPARE_LOWERVENDOR_textpic--9 & {
                 order: 1;
                 width: 100%;
                 @media (min-width: map-get($breakpoints, 'medium')) {
@@ -75,11 +75,11 @@
 
             }
 
-            .mono_textpic--25 & {
+            .PREPARE_LOWERVENDOR_textpic--25 & {
                 order: 2;
             }
 
-            .mono_textpic--26 & {
+            .PREPARE_LOWERVENDOR_textpic--26 & {
                 order: 1;
             }
         }
@@ -100,7 +100,7 @@
                 border-radius: 100%;
             }
 
-            .mono_textpic--9 & {
+            .PREPARE_LOWERVENDOR_textpic--9 & {
                 display: flex;
                 order: 2;
                 align-self: flex-end;
@@ -113,11 +113,11 @@
                 }
             }
 
-            .mono_textpic--25 & {
+            .PREPARE_LOWERVENDOR_textpic--25 & {
                 order: 1;
             }
 
-            .mono_textpic--26 & {
+            .PREPARE_LOWERVENDOR_textpic--26 & {
                 order: 2;
             }
         }
@@ -132,8 +132,8 @@
         }
     }
 
-    .mono_container--fullsize {
-        .ce-mono_site_textpic {
+    .PREPARE_LOWERVENDOR_container--fullsize {
+        .ce-PREPARE_LOWERVENDOR_site_textpic {
             background-color: rgba(255, 255, 255, .9);
             flex-direction: column-reverse;
             padding: 0 20px;
@@ -144,7 +144,7 @@
             }
         }
 
-        .mono_textpic {
+        .PREPARE_LOWERVENDOR_textpic {
             &__image {
                 padding: 30px 0;
                 padding-bottom: 50px;
@@ -164,7 +164,7 @@
 
     }
 
-    .mono_col--33 .mono_col .ce-mono_site_textpic {
+    .PREPARE_LOWERVENDOR_col--33 .PREPARE_LOWERVENDOR_col .ce-PREPARE_LOWERVENDOR_site_textpic {
         height: 100%;
         justify-content: start;
         padding-bottom: 15px;

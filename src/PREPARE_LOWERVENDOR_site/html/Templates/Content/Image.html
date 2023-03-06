@@ -8,13 +8,13 @@
 <f:layout name="Default"/>
 
 <f:section name="Content">
-    <div class="mono_image ce-{data.CType}" id="c{data.uid}">
-        <f:link.typolink title="{data.images.link->f:format.raw()}" class="mono_image__link" parameter="{images.0.link}">
+    <div class="PREPARE_LOWERVENDOR_image ce-{data.CType}" id="c{data.uid}">
+        <f:link.typolink title="{data.images.link->f:format.raw()}" class="PREPARE_LOWERVENDOR_image__link" parameter="{images.0.link}">
             <f:if condition="{images.0}">
                 <f:switch expression="{container.0.data.CType}">
-                    <f:case value="no-mono_site_col50-50">
+                    <f:case value="no-PREPARE_LOWERVENDOR_site_col50-50">
                         <i:image
-                            class="mono_image__image"
+                            class="PREPARE_LOWERVENDOR_image__image"
                             addWebp="1"
                             lossless="1"
                             alt="{images.0.alternative}"
@@ -24,9 +24,9 @@
                             width="555"
                         />
                     </f:case>
-                    <f:case value="no-mono_site_col40-60">
+                    <f:case value="no-PREPARE_LOWERVENDOR_site_col40-60">
                         <i:image
-                            class="mono_image__image"
+                            class="PREPARE_LOWERVENDOR_image__image"
                             addWebp="1"
                             lossless="1"
                             alt="{images.0.alternative}"
@@ -38,7 +38,7 @@
                     </f:case>
                     <f:defaultCase>
                         <i:image
-                            class="mono_image__image"
+                            class="PREPARE_LOWERVENDOR_image__image"
                             addWebp="1"
                             lossless="1"
                             alt="{images.0.alternative}"
@@ -56,11 +56,11 @@
             </f:if>
         </f:link.typolink>
         <f:if condition="{data.header} || {data.subheader}">
-            <div class="mono_image__short">
-                <f:if condition="{data.header}"><span class="mono_card__name">{data.header->f:format.raw()}</span>
+            <div class="PREPARE_LOWERVENDOR_image__short">
+                <f:if condition="{data.header}"><span class="PREPARE_LOWERVENDOR_card__name">{data.header->f:format.raw()}</span>
                 </f:if>
                 <f:if condition="{data.subheader}"><span
-                    class="mono_card__name-position">{data.subheader->f:format.raw()}</span>
+                    class="PREPARE_LOWERVENDOR_card__name-position">{data.subheader->f:format.raw()}</span>
                 </f:if>
             </div>
         </f:if>
@@ -69,7 +69,7 @@
 <style type="text/scss">
     @import 'src/scss/Abstracts/abstract';
 
-    .mono_image {
+    .PREPARE_LOWERVENDOR_image {
         position: relative;
 
         img {

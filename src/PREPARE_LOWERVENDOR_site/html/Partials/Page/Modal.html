@@ -5,24 +5,24 @@
 <f:render section="css" optional="1" contentAs="extraContent"/>
 
 <div
-    x-show="$store.mono_page.modal.open"
+    x-show="$store.PREPARE_LOWERVENDOR_page.modal.open"
     x-cloak
-    x-on:keydown.escape.prevent.stop="$store.mono_page.modal.open = false"
+    x-on:keydown.escape.prevent.stop="$store.PREPARE_LOWERVENDOR_page.modal.open = false"
     role="dialog"
     aria-modal="true"
-    class="mono_modal"
+    class="PREPARE_LOWERVENDOR_modal"
 >
-    <div x-show="$store.mono_page.modal.open" x-transition
-        x-on:click="$store.mono_page.modal.open = false"
-        class="mono_modal__shield"
+    <div x-show="$store.PREPARE_LOWERVENDOR_page.modal.open" x-transition
+        x-on:click="$store.PREPARE_LOWERVENDOR_page.modal.open = false"
+        class="PREPARE_LOWERVENDOR_modal__shield"
     >
-        <div x-on:click.stop x-trap.noscroll.inert="$store.mono_page.modal.open" class="mono_modal__content">
-            <div class="mono_modal__close"
-                @click="$store.mono_page.modal.open = false">
-                <img src="/typo3conf/ext/mono_site/Resources/Public/images/icons/Window-Close_40x40.svg" />
+        <div x-on:click.stop x-trap.noscroll.inert="$store.PREPARE_LOWERVENDOR_page.modal.open" class="PREPARE_LOWERVENDOR_modal__content">
+            <div class="PREPARE_LOWERVENDOR_modal__close"
+                @click="$store.PREPARE_LOWERVENDOR_page.modal.open = false">
+                <img src="/typo3conf/ext/PREPARE_LOWERVENDOR_site/Resources/Public/images/icons/Window-Close_40x40.svg" />
             </div>
-            <div class="mono_modal__content-inner">
-                <span x-html="$store.mono_page.modal.content"></span>
+            <div class="PREPARE_LOWERVENDOR_modal__content-inner">
+                <span x-html="$store.PREPARE_LOWERVENDOR_page.modal.content"></span>
             </div>
         </div>
     </div>
@@ -30,7 +30,7 @@
 <style type="text/scss">
     @import 'src/scss/Abstracts/abstract';
 
-    .mono_modal {
+    .PREPARE_LOWERVENDOR_modal {
         position: fixed;
         top: 0;
         left: 0;
@@ -80,9 +80,9 @@
 </html>
 <f:comment>
 <div class="foobar">
-    <button @click="$store.mono_page.openModal($refs.testboxContent2)"></button>
-    <div class="mono_modal-content">
-        <div class="mono_modal-content__content"  x-ref="testboxContent2">
+    <button @click="$store.PREPARE_LOWERVENDOR_page.openModal($refs.testboxContent2)"></button>
+    <div class="PREPARE_LOWERVENDOR_modal-content">
+        <div class="PREPARE_LOWERVENDOR_modal-content__content"  x-ref="testboxContent2">
             <h3>peter</h3>
             <p>gugug</p>
         </div>

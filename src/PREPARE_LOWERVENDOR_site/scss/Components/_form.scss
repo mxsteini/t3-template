@@ -1,4 +1,4 @@
-.mono_form {
+.PREPARE_LOWERVENDOR_form {
     margin-bottom: 50px;
     background-color: rgba(255, 255, 255, .8);
     padding: 23px;
@@ -171,8 +171,8 @@
         position: relative;
         margin-bottom: 10px;
 
-        > .mono_form-control:focus ~ label,
-        > .mono_form-control:not(:placeholder-shown) ~ label {
+        > .PREPARE_LOWERVENDOR_form-control:focus ~ label,
+        > .PREPARE_LOWERVENDOR_form-control:not(:placeholder-shown) ~ label {
             transform: scale(0.7) translateY(-4px);
         }
 
@@ -183,7 +183,7 @@
             &--valid {
                 color: green;
 
-                .mono_formgroup--has-success & {
+                .PREPARE_LOWERVENDOR_formgroup--has-success & {
                     display: block;
                 }
             }
@@ -191,7 +191,7 @@
             &--error {
                 color: var(--accent);
 
-                .mono_formgroup--has-error & {
+                .PREPARE_LOWERVENDOR_formgroup--has-error & {
                     display: block;
                 }
             }
@@ -203,7 +203,7 @@
         justify-content: space-between;
         margin-bottom: 20px;
 
-        & .mono_button {
+        & .PREPARE_LOWERVENDOR_button {
             flex-shrink: 0;
 
             &__next {

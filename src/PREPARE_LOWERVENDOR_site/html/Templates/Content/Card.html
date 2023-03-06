@@ -14,16 +14,16 @@ h1, .h1 {
 
 
 <f:spaceless>
-    <div class="mono_card ce-{data.CType}"
-         :class="open ? 'mono_card--open' : 'mono_card--close'"
+    <div class="PREPARE_LOWERVENDOR_card ce-{data.CType}"
+         :class="open ? 'PREPARE_LOWERVENDOR_card--open' : 'PREPARE_LOWERVENDOR_card--close'"
          id="c{data.uid}"
          x-data="{ open: false }"
     >
         <div
-            class="mono_card__image">
+            class="PREPARE_LOWERVENDOR_card__image">
             <f:if condition="{images.0}">
                 <i:image
-                    class="mono_image__image"
+                    class="PREPARE_LOWERVENDOR_image__image"
                     addWebp="1"
                     lossless="1"
                     alt="{images.0.alternative}"
@@ -36,11 +36,11 @@ h1, .h1 {
             </f:if>
         </div>
 
-        <div class="mono_card__slide">
+        <div class="PREPARE_LOWERVENDOR_card__slide">
             <f:if condition="{data.header}">
-                <p class="mono_card__name">{data.header->f:format.raw()}</p>
+                <p class="PREPARE_LOWERVENDOR_card__name">{data.header->f:format.raw()}</p>
             </f:if>
-            <div x-show="open" x-collapse x-transition.duration.500ms x-cloak class="mono_card__description">
+            <div x-show="open" x-collapse x-transition.duration.500ms x-cloak class="PREPARE_LOWERVENDOR_card__description">
                 <f:if condition="{data.bodytext}">
                     <f:then>
                         {data.bodytext->f:format.raw()}
@@ -50,14 +50,14 @@ h1, .h1 {
                     </f:else>
                 </f:if>
             </div>
-            <div class="mono_card__handle">
-            <span class="mono_handle">
-                <span class="mono_handle__title"></span>
-                <span class="mono_handle__icon"
+            <div class="PREPARE_LOWERVENDOR_card__handle">
+            <span class="PREPARE_LOWERVENDOR_handle">
+                <span class="PREPARE_LOWERVENDOR_handle__title"></span>
+                <span class="PREPARE_LOWERVENDOR_handle__icon"
                       @click="open = !open">
-                    <span class="mono_handle__circle"></span>
-                    <span class="mono_handle__bar mono_handle__bar--v"></span>
-                    <span class="mono_handle__bar mono_handle__bar--h"></span>
+                    <span class="PREPARE_LOWERVENDOR_handle__circle"></span>
+                    <span class="PREPARE_LOWERVENDOR_handle__bar PREPARE_LOWERVENDOR_handle__bar--v"></span>
+                    <span class="PREPARE_LOWERVENDOR_handle__bar PREPARE_LOWERVENDOR_handle__bar--h"></span>
                 </span>
             </span>
             </div>
@@ -67,7 +67,7 @@ h1, .h1 {
 <style type="text/scss">
     @import 'src/scss/Abstracts/abstract';
 
-    .mono_card {
+    .PREPARE_LOWERVENDOR_card {
 
         &__handle {
             position: absolute;
@@ -76,11 +76,11 @@ h1, .h1 {
             top: 10px;
         }
 
-        &--open .mono_handle__icon {
+        &--open .PREPARE_LOWERVENDOR_handle__icon {
             transform: rotate(45deg);
         }
 
-        .mono_handle__icon {
+        .PREPARE_LOWERVENDOR_handle__icon {
             @media (min-width: map-get($breakpoints, 'large')) {
                 cursor: pointer;
             }
@@ -154,7 +154,7 @@ h1, .h1 {
 
     }
 
-    .mono_card__header {
+    .PREPARE_LOWERVENDOR_card__header {
         color: white;
     }
 </style>

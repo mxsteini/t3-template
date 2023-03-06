@@ -5,38 +5,38 @@
 <f:render section="css" optional="1"/>
 
 
-<footer class="mono_footer mono_container mono_container--fullsize mono_bgcolor--accent">
-    <div class="mono_navigation__border mono_navigation__border--left">
+<footer class="PREPARE_LOWERVENDOR_footer PREPARE_LOWERVENDOR_container PREPARE_LOWERVENDOR_container--fullsize PREPARE_LOWERVENDOR_bgcolor--accent">
+    <div class="PREPARE_LOWERVENDOR_navigation__border PREPARE_LOWERVENDOR_navigation__border--left">
         <img alt="velo groen lijntjes links"
-             src="{f:uri.image(src:'EXT:mono_site/Resources/Public/images/page/velo_lijntjes-white.svg')}"
+             src="{f:uri.image(src:'EXT:PREPARE_LOWERVENDOR_site/Resources/Public/images/page/velo_lijntjes-white.svg')}"
              height="4"/>
     </div>
-    <div class="mono_container">
-        <div class="mono_footer__copyright-wrapper">
-            <div class="mono_footer__copyright--mobil">
+    <div class="PREPARE_LOWERVENDOR_container">
+        <div class="PREPARE_LOWERVENDOR_footer__copyright-wrapper">
+            <div class="PREPARE_LOWERVENDOR_footer__copyright--mobil">
                 VELOROAD © POSSEHL SPEZIALBAU {f:format.date(format: 'Y', date: 'now')}
             </div>
         </div>
-        <div class="mono_footer__copyright--desktop">
+        <div class="PREPARE_LOWERVENDOR_footer__copyright--desktop">
             VELOROAD © POSSEHL SPEZIALBAU {f:format.date(format: 'Y', date: 'now')}
         </div>
-        <nav class="mono_footer__nav-wrapper">
-            <ul class="mono_footer__nav">
+        <nav class="PREPARE_LOWERVENDOR_footer__nav-wrapper">
+            <ul class="PREPARE_LOWERVENDOR_footer__nav">
                 <f:for each="{metaMenu}" as="item">
-                    <li class="mono_footer__nav-list{f:if(condition: '{item.active}', then: ' active')}">
-                        <a class="mono_footer__nav-link" href="{item.link}">{item.title}</a>
+                    <li class="PREPARE_LOWERVENDOR_footer__nav-list{f:if(condition: '{item.active}', then: ' active')}">
+                        <a class="PREPARE_LOWERVENDOR_footer__nav-link" href="{item.link}">{item.title}</a>
                     </li>
                 </f:for>
             </ul>
         </nav>
-        <div class="mono_footer__icon-border-wrapper">
-            <div class="mono_navigation__border mono_navigation__border--left">
+        <div class="PREPARE_LOWERVENDOR_footer__icon-border-wrapper">
+            <div class="PREPARE_LOWERVENDOR_navigation__border PREPARE_LOWERVENDOR_navigation__border--left">
                 <img alt="velo groen lijntjes links"
-                     src="{f:uri.image(src:'EXT:mono_site/Resources/Public/images/page/velo_lijntjes-white.svg')}"
+                     src="{f:uri.image(src:'EXT:PREPARE_LOWERVENDOR_site/Resources/Public/images/page/velo_lijntjes-white.svg')}"
                      height="4"/>
             </div>
-            <div class="mono_footer__icon-wrapper">
-                <f:link.typolink class="mono_footer__instagram-icon"
+            <div class="PREPARE_LOWERVENDOR_footer__icon-wrapper">
+                <f:link.typolink class="PREPARE_LOWERVENDOR_footer__instagram-icon"
                                  parameter="https://www.instagram.com">
                     <svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg"
                          xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -57,7 +57,7 @@
 	C25.6,8.2,24.8,9.1,23.8,9.1C23.8,9.1,23.8,9.1,23.8,9.1"/>
 </svg>
                 </f:link.typolink>
-                <f:link.typolink class="mono_footer__linkedin-icon"
+                <f:link.typolink class="PREPARE_LOWERVENDOR_footer__linkedin-icon"
                                  title="Veloroad by Possehl @ LinkedIn"
                                  parameter="https://www.linkedin.com/showcase/veloroad/about/">
 
@@ -75,7 +75,7 @@
 	c1.7,0,1.8,1.6,1.8,2.9v5.3h3.4V13.7z"/>
 </svg>
                 </f:link.typolink>
-                <f:link.typolink class="mono_footer__facebook-icon"
+                <f:link.typolink class="PREPARE_LOWERVENDOR_footer__facebook-icon"
                                  parameter="https://www.facebook.com">
                     <svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg"
                          xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -91,16 +91,16 @@
 </svg>
                 </f:link.typolink>
             </div>
-            <div class="mono_navigation__border mono_navigation__border--right">
+            <div class="PREPARE_LOWERVENDOR_navigation__border PREPARE_LOWERVENDOR_navigation__border--right">
                 <img alt="velo groen lijntjes rechts"
-                     src="{f:uri.image(src:'EXT:mono_site/Resources/Public/images/page/velo_lijntjes-white.svg')}"
+                     src="{f:uri.image(src:'EXT:PREPARE_LOWERVENDOR_site/Resources/Public/images/page/velo_lijntjes-white.svg')}"
                      height="4"/>
             </div>
         </div>
     </div>
-    <div class="mono_navigation__border mono_navigation__border--right">
+    <div class="PREPARE_LOWERVENDOR_navigation__border PREPARE_LOWERVENDOR_navigation__border--right">
         <img alt="velo groen lijntjes rechts"
-             src="{f:uri.image(src:'EXT:mono_site/Resources/Public/images/page/velo_lijntjes-white.svg')}"
+             src="{f:uri.image(src:'EXT:PREPARE_LOWERVENDOR_site/Resources/Public/images/page/velo_lijntjes-white.svg')}"
              height="4"/>
     </div>
 </footer>
@@ -108,14 +108,14 @@
     @import 'src/scss/Abstracts/abstract';
 
 
-    .mono_page--content footer {
+    .PREPARE_LOWERVENDOR_page--content footer {
         @media (min-width: map-get($breakpoints, 'large')) {
             bottom: 0;
             margin-top: 0;
         }
     }
 
-    .mono_footer {
+    .PREPARE_LOWERVENDOR_footer {
         background-color: transparent;
         margin-top: -158px;
         padding: 0;
@@ -138,7 +138,7 @@
             //margin-bottom: 50px;
         }
 
-        .mono_container {
+        .PREPARE_LOWERVENDOR_container {
             padding: 0;
             width: 100%;
             @media (min-width: map-get($breakpoints, 'large')) {
@@ -377,8 +377,8 @@
         }
     }
 
-    .mono_footer {
-        .mono_navigation__border {
+    .PREPARE_LOWERVENDOR_footer {
+        .PREPARE_LOWERVENDOR_navigation__border {
             display: flex;
             align-items: center;
             overflow: hidden;
@@ -388,7 +388,7 @@
                 position: static;
             }
 
-            &.mono_navigation__border--left {
+            &.PREPARE_LOWERVENDOR_navigation__border--left {
                 justify-content: flex-end;
 
                 img {
@@ -396,12 +396,12 @@
                 }
             }
 
-            &.mono_navigation__border--right img {
+            &.PREPARE_LOWERVENDOR_navigation__border--right img {
                 margin-left: 20px;
             }
         }
 
-        .mono_footer__icon-border-wrapper .mono_navigation__border {
+        .PREPARE_LOWERVENDOR_footer__icon-border-wrapper .PREPARE_LOWERVENDOR_navigation__border {
             @media (min-width: map-get($breakpoints, 'large')) {
                 display: none;
             }

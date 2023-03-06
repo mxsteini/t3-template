@@ -5,18 +5,18 @@
 <f:render section="css" optional="1" contentAs="extraContent"/>
 
 <div
-    x-show="$store.mono_page.info.open"
+    x-show="$store.PREPARE_LOWERVENDOR_page.info.open"
     x-cloak
-    x-on:keydown.escape.prevent.stop="$store.mono_page.info.open = false"
+    x-on:keydown.escape.prevent.stop="$store.PREPARE_LOWERVENDOR_page.info.open = false"
     role="dialog"
     aria-modal="true"
-    class="mono_info"
-    :class="$store.mono_page.info.orientation"
-    :style="{top: $store.mono_page.info.top + 'px', left:$store.mono_page.info.left + 'px'}"
+    class="PREPARE_LOWERVENDOR_info"
+    :class="$store.PREPARE_LOWERVENDOR_page.info.orientation"
+    :style="{top: $store.PREPARE_LOWERVENDOR_page.info.top + 'px', left:$store.PREPARE_LOWERVENDOR_page.info.left + 'px'}"
 >
-    <div x-on:click.stop class="mono_info__content">
-        <div class="mono_info__content-inner">
-            <span x-html="$store.mono_page.info.content"></span>
+    <div x-on:click.stop class="PREPARE_LOWERVENDOR_info__content">
+        <div class="PREPARE_LOWERVENDOR_info__content-inner">
+            <span x-html="$store.PREPARE_LOWERVENDOR_page.info.content"></span>
         </div>
     </div>
 </div>
@@ -24,7 +24,7 @@
 <style type="text/scss">
     @import 'src/scss/Abstracts/abstract';
 
-    .mono_info {
+    .PREPARE_LOWERVENDOR_info {
         position: absolute;
         top: 0;
         left: 0;
@@ -84,9 +84,9 @@
 </html>
 <f:comment>
     <div class="foobar">
-        <button @click="$store.mono_page.openModal($refs.testboxContent2)"></button>
-        <div class="mono_modal-content">
-            <div class="mono_modal-content__content" x-ref="testboxContent2">
+        <button @click="$store.PREPARE_LOWERVENDOR_page.openModal($refs.testboxContent2)"></button>
+        <div class="PREPARE_LOWERVENDOR_modal-content">
+            <div class="PREPARE_LOWERVENDOR_modal-content__content" x-ref="testboxContent2">
                 <h3>peter</h3>
                 <p>gugug</p>
             </div>

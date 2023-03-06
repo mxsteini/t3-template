@@ -6,30 +6,30 @@
 <f:layout name="Default"/>
 
 <f:section name="Content">
-    <div class="mono_contact ce-{data.CType}" id="c{data.uid}">
-        <div class="mono_contact__bodytext">
+    <div class="PREPARE_LOWERVENDOR_contact ce-{data.CType}" id="c{data.uid}">
+        <div class="PREPARE_LOWERVENDOR_contact__bodytext">
             {data.bodytext->f:format.html()}
         </div>
-        <div class="mono_contact__wrapper">
-            <div class="mono_contact__wrapper_left">
-                <div class="mono_contact__number">
-                    <f:link.typolink parameter="tel:{data.tx_monosite_header2->f:format.raw()}">
-                        {data.tx_monosite_header2->f:format.raw()}
+        <div class="PREPARE_LOWERVENDOR_contact__wrapper">
+            <div class="PREPARE_LOWERVENDOR_contact__wrapper_left">
+                <div class="PREPARE_LOWERVENDOR_contact__number">
+                    <f:link.typolink parameter="tel:{data.tx_PREPARE_LOWERVENDORsite_header2->f:format.raw()}">
+                        {data.tx_PREPARE_LOWERVENDORsite_header2->f:format.raw()}
                     </f:link.typolink>
                 </div>
-                <div class="mono_contact__link">
-                    <f:link.typolink parameter="">{data.tx_monosite_bodytext3->f:format.raw()}</f:link.typolink>
+                <div class="PREPARE_LOWERVENDOR_contact__link">
+                    <f:link.typolink parameter="">{data.tx_PREPARE_LOWERVENDORsite_bodytext3->f:format.raw()}</f:link.typolink>
                 </div>
             </div>
-            <div class="mono_contact__mail">
-                <f:link.email email="{data.tx_monosite_bodytext2}">
-                    <span class="mono_contact__mail-text">
-                        {data.tx_monosite_bodytext2}
+            <div class="PREPARE_LOWERVENDOR_contact__mail">
+                <f:link.email email="{data.tx_PREPARE_LOWERVENDORsite_bodytext2}">
+                    <span class="PREPARE_LOWERVENDOR_contact__mail-text">
+                        {data.tx_PREPARE_LOWERVENDORsite_bodytext2}
                     </span>
-                    <img class="mono_contact__mail-arrow"
-                         src="typo3conf/ext/mono_site/Resources/Public/images/icons/Arrow.svg">
-                    <img class="mono_contact__mail-newsletter"
-                         src="typo3conf/ext/mono_site/Resources/Public/images/icons/Mobile_Mail_50x50.svg">
+                    <img class="PREPARE_LOWERVENDOR_contact__mail-arrow"
+                         src="typo3conf/ext/PREPARE_LOWERVENDOR_site/Resources/Public/images/icons/Arrow.svg">
+                    <img class="PREPARE_LOWERVENDOR_contact__mail-newsletter"
+                         src="typo3conf/ext/PREPARE_LOWERVENDOR_site/Resources/Public/images/icons/Mobile_Mail_50x50.svg">
                 </f:link.email>
             </div>
         </div>
@@ -39,7 +39,7 @@
     @import 'src/scss/Abstracts/abstract';
 
 
-    .mono_contact {
+    .PREPARE_LOWERVENDOR_contact {
 
         &__bodytext {
             margin-bottom: 50px;
@@ -176,8 +176,8 @@
 
     }
 
-    .mono_col--80 {
-        .mono_col {
+    .PREPARE_LOWERVENDOR_col--80 {
+        .PREPARE_LOWERVENDOR_col {
             background-color: rgba(255, 255, 255, .8);
             padding: 23px;
             @media (min-width: map-get($breakpoints, 'medium')) {
@@ -191,7 +191,7 @@
         height: 400px;
 
         &:after {
-            content: url(/typo3conf/ext/mono_site/Resources/Public/images/icons/Arrow.svg);
+            content: url(/typo3conf/ext/PREPARE_LOWERVENDOR_site/Resources/Public/images/icons/Arrow.svg);
             width: 60px;
             display: flex;
             margin: 0 20px 0 20px;
@@ -200,7 +200,7 @@
 
 
     /* Nur für letztes Element da Footer mit negativ margin hochgezogen wird */
-    .ce-ContainerWrapper-24 .mono_col--80 {
+    .ce-ContainerWrapper-24 .PREPARE_LOWERVENDOR_col--80 {
         margin-bottom: 100px;
     }
 

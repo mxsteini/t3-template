@@ -5,20 +5,20 @@
 >
 <f:render section="css" optional="1" contentAs="extraContent">
     <f:asset.css identifier="identifier123">
-        .mono_hero__image {
+        .PREPARE_LOWERVENDOR_hero__image {
         background-image: url({f:uri.image(src:images.0.uid, treatIdAsReference:1, height:'800c')});
         }
     </f:asset.css>
 </f:render>
 
-<a class="anchor-scroll--top" id="start" x-intersect:enter="$store.mono_page.highlight=$el.id"></a>
-<div class="mono_hero__wrapper">
-    <div class="mono_hero">
-        <div class="mono_hero__col mono_hero__col--1">
-            <div class="mono_hero__image">
+<a class="anchor-scroll--top" id="start" x-intersect:enter="$store.PREPARE_LOWERVENDOR_page.highlight=$el.id"></a>
+<div class="PREPARE_LOWERVENDOR_hero__wrapper">
+    <div class="PREPARE_LOWERVENDOR_hero">
+        <div class="PREPARE_LOWERVENDOR_hero__col PREPARE_LOWERVENDOR_hero__col--1">
+            <div class="PREPARE_LOWERVENDOR_hero__image">
                 <f:if condition="{images.1}">
                     <i:image
-                        class="mono_text__image"
+                        class="PREPARE_LOWERVENDOR_text__image"
                         addWebp="1"
                         lossless="1"
                         alt="{images.0.alternative}"
@@ -28,46 +28,46 @@
                     />
                 </f:if>
             </div>
-            <span class="mono_hero__claim mono_hero__claim--1">velo</span>
+            <span class="PREPARE_LOWERVENDOR_hero__claim PREPARE_LOWERVENDOR_hero__claim--1">velo</span>
         </div>
-        <div class="mono_hero__col mono_hero__col--2">
-            <span class="mono_hero__claim mono_hero__claim--2">ve</span>
+        <div class="PREPARE_LOWERVENDOR_hero__col PREPARE_LOWERVENDOR_hero__col--2">
+            <span class="PREPARE_LOWERVENDOR_hero__claim PREPARE_LOWERVENDOR_hero__claim--2">ve</span>
         </div>
-        <div class="mono_hero__col mono_hero__col--4">
-            <div class="mono_hero__text">
+        <div class="PREPARE_LOWERVENDOR_hero__col PREPARE_LOWERVENDOR_hero__col--4">
+            <div class="PREPARE_LOWERVENDOR_hero__text">
                 <div>
                     <header>
-                        <p class="h2 mono_hero__header">{data.header->f:format.raw()}</p>
+                        <p class="h2 PREPARE_LOWERVENDOR_hero__header">{data.header->f:format.raw()}</p>
                     </header>
                     {data.bodytext->f:format.html()}
                 </div>
-                <p class="mono_hero__claim">
-                <span class="mono_hero__claim mono_hero__claim--shift">
-                    <span class="mono_hero__claim mono_hero__claim--1">velo</span><span
-                    class="mono_hero__claim mono_hero__claim--2">ve</span>
+                <p class="PREPARE_LOWERVENDOR_hero__claim">
+                <span class="PREPARE_LOWERVENDOR_hero__claim PREPARE_LOWERVENDOR_hero__claim--shift">
+                    <span class="PREPARE_LOWERVENDOR_hero__claim PREPARE_LOWERVENDOR_hero__claim--1">velo</span><span
+                    class="PREPARE_LOWERVENDOR_hero__claim PREPARE_LOWERVENDOR_hero__claim--2">ve</span>
                 </span>
-                    <span class="mono_hero__claim mono_hero__claim--3">sustainable<br>mobilitiy</span>
+                    <span class="PREPARE_LOWERVENDOR_hero__claim PREPARE_LOWERVENDOR_hero__claim--3">sustainable<br>mobilitiy</span>
                 </p>
-                <div class="mono_hero__scroll-down">
-                    <img src="{f:uri.image(src:'EXT:mono_site/Resources/Public/images/icons/Mouse_32x50.svg')}"
+                <div class="PREPARE_LOWERVENDOR_hero__scroll-down">
+                    <img src="{f:uri.image(src:'EXT:PREPARE_LOWERVENDOR_site/Resources/Public/images/icons/Mouse_32x50.svg')}"
                          width="32" height="50"/>
                     <span></span>
                 </div>
             </div>
         </div>
     </div>
-    <div class="mono_hero__claim--mobile mono_hero__col--3">
-        <span class="mono_hero__claim mono_hero__claim--3">sustainable<br>mobilitiy</span>
-        <div class="mono_hero__scroll-down">
-            <img src="{f:uri.image(src:'EXT:mono_site/Resources/Public/images/icons/Mobile_Smartphone_30x50.svg')}"
+    <div class="PREPARE_LOWERVENDOR_hero__claim--mobile PREPARE_LOWERVENDOR_hero__col--3">
+        <span class="PREPARE_LOWERVENDOR_hero__claim PREPARE_LOWERVENDOR_hero__claim--3">sustainable<br>mobilitiy</span>
+        <div class="PREPARE_LOWERVENDOR_hero__scroll-down">
+            <img src="{f:uri.image(src:'EXT:PREPARE_LOWERVENDOR_site/Resources/Public/images/icons/Mobile_Smartphone_30x50.svg')}"
                  width="32"
                  height="50"/>
             <span></span>
         </div>
     </div>
 </div>
-<div class="mono_container mono_hero__mobile-content">
-    <div class="mono_hero__text">
+<div class="PREPARE_LOWERVENDOR_container PREPARE_LOWERVENDOR_hero__mobile-content">
+    <div class="PREPARE_LOWERVENDOR_hero__text">
         <div>
             <header>
                 <p class="h2">{data.header->f:format.raw()}</p>
@@ -80,7 +80,7 @@
 <style type="text/scss">
     @import 'src/scss/Abstracts/abstract';
 
-    .mono_hero {
+    .PREPARE_LOWERVENDOR_hero {
         width: 100%;
         height: calc(100vh - map-get($navigationheight, 'large'));
 
@@ -127,7 +127,7 @@
                 width: 70%;
                 @media (min-width: map-get($breakpoints, 'large')) {
                     width: 50%;
-                    .mono_hero__claim {
+                    .PREPARE_LOWERVENDOR_hero__claim {
                         display: none;
                     }
                 }
@@ -192,7 +192,7 @@
                     background: var(--accent-2);
                     border-radius: 1px;
                     content: "";
-                    animation-name: mono_animation__scroll;
+                    animation-name: PREPARE_LOWERVENDOR_animation__scroll;
                     animation-duration: 1.5s;
                     animation-iteration-count: infinite;
                 }
@@ -293,14 +293,14 @@
                 margin-top: 23px;
             }
 
-            > p.mono_hero__claim {
+            > p.PREPARE_LOWERVENDOR_hero__claim {
                 display: none;
                 @media (min-width: map-get($breakpoints, 'large')) {
                     display: block;
                     margin-top: 0;
                     padding: 10px 0;
-                    .mono_hero__claim--1,
-                    .mono_hero__claim--2,
+                    .PREPARE_LOWERVENDOR_hero__claim--1,
+                    .PREPARE_LOWERVENDOR_hero__claim--2,
                     > * {
                         margin: 0;
                         padding: 0;
@@ -309,7 +309,7 @@
                         bottom: auto;
                         left: auto;
                     }
-                    .mono_hero__claim--shift {
+                    .PREPARE_LOWERVENDOR_hero__claim--shift {
                         left: -50%;
                         width: 64%;
                         text-align: center;
@@ -329,7 +329,7 @@
                             }
                         }
                     }
-                    .mono_hero__claim--2 {
+                    .PREPARE_LOWERVENDOR_hero__claim--2 {
                         padding-left: 10px;
                     }
                 }
@@ -343,7 +343,7 @@
             }
         }
 
-        @keyframes mono_animation__scroll {
+        @keyframes PREPARE_LOWERVENDOR_animation__scroll {
             0% {
                 opacity: 1;
                 transform: translate(0, -12px);

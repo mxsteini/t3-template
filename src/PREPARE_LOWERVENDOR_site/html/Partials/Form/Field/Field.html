@@ -3,20 +3,20 @@
 
 <f:form.validationResults for="{element.rootForm.identifier}.{element.identifier}">
     <div
-        class="mono_formgroup mono_formgroup__{element.properties.containerClassAttribute} mono_formgroup__{element.type->f:format.case(mode:'lower')} {f:if(condition: '{validationResults.errors.0}', then: ' mono_formgroup--has-error')}">
+        class="PREPARE_LOWERVENDOR_formgroup PREPARE_LOWERVENDOR_formgroup__{element.properties.containerClassAttribute} PREPARE_LOWERVENDOR_formgroup__{element.type->f:format.case(mode:'lower')} {f:if(condition: '{validationResults.errors.0}', then: ' PREPARE_LOWERVENDOR_formgroup--has-error')}">
         <f:format.raw>
             {elementContent}
             <f:if condition="{doNotShowLabel} != 1">
-                <label class="mono_formgroup__label" for="{element.uniqueIdentifier}">{formvh:translateElementProperty(element:
+                <label class="PREPARE_LOWERVENDOR_formgroup__label" for="{element.uniqueIdentifier}">{formvh:translateElementProperty(element:
                     element, property: 'label')}
                     <f:if condition="{element.required}">
                         <f:render partial="Field/Required"/>
                     </f:if>
                 </label>
             </f:if>
-            <div class="mono_formgroup__validation-result mono_formgroup__validation-result--valid">Thank you</div>
+            <div class="PREPARE_LOWERVENDOR_formgroup__validation-result PREPARE_LOWERVENDOR_formgroup__validation-result--valid">Thank you</div>
             <f:if condition="{validationResults.flattenedErrors}">
-                    <div class="pristine-error mono_formgroup__validation-result mono_formgroup__validation-result--error" role="alert">
+                    <div class="pristine-error PREPARE_LOWERVENDOR_formgroup__validation-result PREPARE_LOWERVENDOR_formgroup__validation-result--error" role="alert">
                         <f:for each="{validationResults.errors}" as="error">
                             <f:format.htmlspecialchars>{formvh:translateElementError(element: element, error: error)}</f:format.htmlspecialchars>
                             <br/>
@@ -25,7 +25,7 @@
             </f:if>
         </f:format.raw>
         <f:if condition="{element.properties.elementDescription}">
-            <div class="mono_formgroup__element-description">{formvh:translateElementProperty(element: element, property: 'elementDescription')}</div>
+            <div class="PREPARE_LOWERVENDOR_formgroup__element-description">{formvh:translateElementProperty(element: element, property: 'elementDescription')}</div>
         </f:if>
     </div>
 </f:form.validationResults>

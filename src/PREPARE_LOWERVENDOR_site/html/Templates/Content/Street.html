@@ -3,15 +3,15 @@
     data-namespace-typo3-fluid="true"
 >
 <f:render section="css" optional="1" contentAs="extraContent"></f:render>
-<div class="mono_container--fullsize mono_street__wrapper">
-        <div class="mono_container">
-            <div class="mono_row">
-                <div class="mono_col">
+<div class="PREPARE_LOWERVENDOR_container--fullsize PREPARE_LOWERVENDOR_street__wrapper">
+        <div class="PREPARE_LOWERVENDOR_container">
+            <div class="PREPARE_LOWERVENDOR_row">
+                <div class="PREPARE_LOWERVENDOR_col">
                     <header>
                         <f:render partial="Header/Header" arguments="{
                             header: data.header,
                             layout: data.header_layout,
-                            tx_monosite_headersize: data.tx_monosite_headersize,
+                            tx_PREPARE_LOWERVENDORsite_headersize: data.tx_PREPARE_LOWERVENDORsite_headersize,
                             positionClass: '{f:if(condition: data.header_position, then: \'ce-headline-{data.header_position}\')}',
                             link: data.header_link,
                             default: settings.defaultHeaderType}"></f:render>
@@ -20,28 +20,28 @@
             </div>
         </div>
 
-    <template x-if="$store.mono_page.isViewPort(['medium', 'large', 'wide'])">
-        <span x-intersect.once.margin.ß.0.0.-50%="$store.mono_page.street.showcontent = true"></span>
+    <template x-if="$store.PREPARE_LOWERVENDOR_page.isViewPort(['medium', 'large', 'wide'])">
+        <span x-intersect.once.margin.ß.0.0.-50%="$store.PREPARE_LOWERVENDOR_page.street.showcontent = true"></span>
     </template>
-    <div class="mono_street"
-         :class="{'mono_street--show-content' : $store.mono_page.street.showcontent}"
-         :style="{'padding-top': $store.mono_page.street['paddingTop'] + 'px', 'padding-bottom': $store.mono_page.street['paddingBottom'] + 'px'}"
-         x-init="$nextTick(() => $store.mono_page.initializeStreet($el))">
-        <div class="mono_street__image">
+    <div class="PREPARE_LOWERVENDOR_street"
+         :class="{'PREPARE_LOWERVENDOR_street--show-content' : $store.PREPARE_LOWERVENDOR_page.street.showcontent}"
+         :style="{'padding-top': $store.PREPARE_LOWERVENDOR_page.street['paddingTop'] + 'px', 'padding-bottom': $store.PREPARE_LOWERVENDOR_page.street['paddingBottom'] + 'px'}"
+         x-init="$nextTick(() => $store.PREPARE_LOWERVENDOR_page.initializeStreet($el))">
+        <div class="PREPARE_LOWERVENDOR_street__image">
             <include src="svg/street-complete.svg"/>
-            <template x-if="$store.mono_page.street.pins">
-                <div class="mono_street__content-wrapper"
-                     x-init="$store.mono_page.street.paddingBottom = $refs.heuteContent.getBoundingClientRect().height +'px'"
-                     :class="{'mono_modal-content--in-view': $store.mono_page.street.showcontent}">
+            <template x-if="$store.PREPARE_LOWERVENDOR_page.street.pins">
+                <div class="PREPARE_LOWERVENDOR_street__content-wrapper"
+                     x-init="$store.PREPARE_LOWERVENDOR_page.street.paddingBottom = $refs.heuteContent.getBoundingClientRect().height +'px'"
+                     :class="{'PREPARE_LOWERVENDOR_modal-content--in-view': $store.PREPARE_LOWERVENDOR_page.street.showcontent}">
                     <div
-                        :style="{'top': $store.mono_page.getTop('mono_page__gestern'), 'left': $store.mono_page.getLeft('mono_page__gestern')}"
-                        class="mono_street__content mono_street__content--gestern" x-ref="gesternContent"
-                        id="mono_page__gestern-content">
-                        <template x-if="$store.mono_page.isViewPort(['mobile', 'small'])">
+                        :style="{'top': $store.PREPARE_LOWERVENDOR_page.getTop('PREPARE_LOWERVENDOR_page__gestern'), 'left': $store.PREPARE_LOWERVENDOR_page.getLeft('PREPARE_LOWERVENDOR_page__gestern')}"
+                        class="PREPARE_LOWERVENDOR_street__content PREPARE_LOWERVENDOR_street__content--gestern" x-ref="gesternContent"
+                        id="PREPARE_LOWERVENDOR_page__gestern-content">
+                        <template x-if="$store.PREPARE_LOWERVENDOR_page.isViewPort(['mobile', 'small'])">
                             <span
-                                x-intersect.once.margin.ß.0.0.-30%="$el.parentNode.classList.add('mono_street--show-content')"></span>
+                                x-intersect.once.margin.ß.0.0.-30%="$el.parentNode.classList.add('PREPARE_LOWERVENDOR_street--show-content')"></span>
                         </template>
-                        <div class="mono_street__content-inner">
+                        <div class="PREPARE_LOWERVENDOR_street__content-inner">
                             <h3>{f:or(content:data.subheader, alternative:'Gestern')}</h3>
                             <p>{f:or(content:data.bodytext, alternative:'Gestern waren mir noch am Rande des
                                 Abgrundes')}</p>
@@ -49,30 +49,30 @@
                     </div>
 
                     <div
-                        :style="{'top': $store.mono_page.getTop('mono_page__heute'),'left': $store.mono_page.getLeft('mono_page__heute')}"
-                        class="mono_street__content mono_street__content--heute" x-ref="heuteContent"
-                        id="mono_page__heute-content">
-                        <template x-if="$store.mono_page.isViewPort(['mobile', 'small'])">
+                        :style="{'top': $store.PREPARE_LOWERVENDOR_page.getTop('PREPARE_LOWERVENDOR_page__heute'),'left': $store.PREPARE_LOWERVENDOR_page.getLeft('PREPARE_LOWERVENDOR_page__heute')}"
+                        class="PREPARE_LOWERVENDOR_street__content PREPARE_LOWERVENDOR_street__content--heute" x-ref="heuteContent"
+                        id="PREPARE_LOWERVENDOR_page__heute-content">
+                        <template x-if="$store.PREPARE_LOWERVENDOR_page.isViewPort(['mobile', 'small'])">
                             <span
-                                x-intersect.once.margin.ß.0.0.-30%="$el.parentNode.classList.add('mono_street--show-content')"></span>
+                                x-intersect.once.margin.ß.0.0.-30%="$el.parentNode.classList.add('PREPARE_LOWERVENDOR_street--show-content')"></span>
                         </template>
-                        <div class="mono_street__content-inner">
-                            <h3>{f:or(content:data.tx_monosite_header2, alternative:'Heute')}</h3>
-                            <p>{f:or(content:data.tx_monosite_bodytext2, alternative:'Heute sind wir schon einen Schritt
+                        <div class="PREPARE_LOWERVENDOR_street__content-inner">
+                            <h3>{f:or(content:data.tx_PREPARE_LOWERVENDORsite_header2, alternative:'Heute')}</h3>
+                            <p>{f:or(content:data.tx_PREPARE_LOWERVENDORsite_bodytext2, alternative:'Heute sind wir schon einen Schritt
                                 weiter.')}</p>
                         </div>
                     </div>
                     <div
-                        :style="{'top': $store.mono_page.getTop('mono_page__morgen'),'left': $store.mono_page.getLeft('mono_page__morgen')}"
-                        class="mono_street__content mono_street__content--morgen" x-ref="morgenContent"
-                        id="mono_page__morgen-content">
-                        <template x-if="$store.mono_page.isViewPort(['mobile', 'small'])">
+                        :style="{'top': $store.PREPARE_LOWERVENDOR_page.getTop('PREPARE_LOWERVENDOR_page__morgen'),'left': $store.PREPARE_LOWERVENDOR_page.getLeft('PREPARE_LOWERVENDOR_page__morgen')}"
+                        class="PREPARE_LOWERVENDOR_street__content PREPARE_LOWERVENDOR_street__content--morgen" x-ref="morgenContent"
+                        id="PREPARE_LOWERVENDOR_page__morgen-content">
+                        <template x-if="$store.PREPARE_LOWERVENDOR_page.isViewPort(['mobile', 'small'])">
                             <span
-                                x-intersect.once.margin.ß.0.0.-30%="$el.parentNode.classList.add('mono_street--show-content')"></span>
+                                x-intersect.once.margin.ß.0.0.-30%="$el.parentNode.classList.add('PREPARE_LOWERVENDOR_street--show-content')"></span>
                         </template>
-                        <div class="mono_street__content-inner">
-                            <h3>{f:or(content:data.tx_monosite_header3, alternative:'Morgen')}</h3>
-                            <p>{f:or(content:data.tx_monosite_bodytext3, alternative:'Ops…')}</p>
+                        <div class="PREPARE_LOWERVENDOR_street__content-inner">
+                            <h3>{f:or(content:data.tx_PREPARE_LOWERVENDORsite_header3, alternative:'Morgen')}</h3>
+                            <p>{f:or(content:data.tx_PREPARE_LOWERVENDORsite_bodytext3, alternative:'Ops…')}</p>
                         </div>
                     </div>
                 </div>
@@ -88,12 +88,12 @@
     body {
     }
 
-    .mono_clickable-pin {
+    .PREPARE_LOWERVENDOR_clickable-pin {
         cursor: pointer;
         //fill: var(--accent-2) !important;
     }
 
-    .mono_street {
+    .PREPARE_LOWERVENDOR_street {
         box-sizing: border-box;
         justify-content: center;
         width: 100%;
@@ -112,7 +112,7 @@
 
         &__image {
             max-width: 500px;
-            background-image: url("/typo3conf/ext/mono_site/Resources/Public/images/page/street-vertical.svg");
+            background-image: url("/typo3conf/ext/PREPARE_LOWERVENDOR_site/Resources/Public/images/page/street-vertical.svg");
             background-repeat: repeat-y;
             background-size: 40px auto;
             display: flex;
@@ -150,7 +150,7 @@
             &:before {
                 display: block;
                 position: absolute;
-                content: url("/typo3conf/ext/mono_site/Resources/Public/images/icons/Pin_21x29.svg");
+                content: url("/typo3conf/ext/PREPARE_LOWERVENDOR_site/Resources/Public/images/icons/Pin_21x29.svg");
                 width: 21px;
                 height: 29px;
                 transform: rotateZ(90deg);
@@ -187,7 +187,7 @@
                     transition-duration: .5s;
                 }
 
-                .mono_street--show-content & {
+                .PREPARE_LOWERVENDOR_street--show-content & {
                     transform: translateX(0) !important;
                     opacity: 1;
                 }
@@ -207,7 +207,7 @@
             }
 
             &--heute {
-                > .mono_street__content-inner {
+                > .PREPARE_LOWERVENDOR_street__content-inner {
                     transition-delay: .5s;
                 }
 
@@ -215,7 +215,7 @@
             }
 
             &--gestern {
-                > .mono_street__content-inner {
+                > .PREPARE_LOWERVENDOR_street__content-inner {
                     transition-delay: 0;
                 }
 
@@ -240,7 +240,7 @@
                     width: calc(35vw - 20px);
                 }
 
-                > .mono_street__content-inner {
+                > .PREPARE_LOWERVENDOR_street__content-inner {
                     @media (min-width: map-get($breakpoints, 'medium')) {
                         transition-delay: 1s;
                         transform: translateX(50%);

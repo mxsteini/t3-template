@@ -3,28 +3,15 @@ import * as path from 'path'
 import * as Glob from 'glob'
 import * as Fse from 'fs-extra'
 import * as fs from 'fs'
-import * as Posthtml from 'posthtml'
-import * as PosthtmlScssToFile from 'posthtml-scss-to-file'
-import * as Sass from 'sass'
 import * as child from 'child_process'
-import Bs from 'browser-sync'
-import * as Watch from 'node-watch'
-import * as Stream from 'stream'
-import * as PosthtmlInclude from 'posthtml-include'
 
 import BuildFunc from '../lib/buildFunc.js'
 
 const buildFuncs = new BuildFunc()
 const fse = Fse.default
 const glob = Glob.default
-const posthtml = Posthtml.default
-const posthtmlScssToFile = PosthtmlScssToFile.default
-const posthtmlInclude = PosthtmlInclude.default
-const sass = Sass.default
 const exec = child.exec
 const projectPath = process.env.INIT_CWD
-const watch = Watch.default
-const stream = Stream.Stream
 
 const rawdata = fs.readFileSync(path.join(projectPath, 'package.json'))
 let config = JSON.parse(rawdata)

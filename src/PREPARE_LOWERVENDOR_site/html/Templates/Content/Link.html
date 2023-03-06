@@ -4,22 +4,22 @@
 >
 <f:render section="css" optional="1"/>
 
-<div class="mono_links ce-{data.CType}" id="c{data.uid}">
-    <f:link.typolink title="{data.header->f:format.raw()}" class="mono_links__link" parameter="{data.header_link}">
-        <div class="mono_links__link-icon">
-            <img alt="Link Icon {data.subheader->f:format.raw()}" src="{f:uri.image(src:'EXT:mono_site/Resources/Public/images/icons/ico-link.svg')}"
+<div class="PREPARE_LOWERVENDOR_links ce-{data.CType}" id="c{data.uid}">
+    <f:link.typolink title="{data.header->f:format.raw()}" class="PREPARE_LOWERVENDOR_links__link" parameter="{data.header_link}">
+        <div class="PREPARE_LOWERVENDOR_links__link-icon">
+            <img alt="Link Icon {data.subheader->f:format.raw()}" src="{f:uri.image(src:'EXT:PREPARE_LOWERVENDOR_site/Resources/Public/images/icons/ico-link.svg')}"
                  height="50"
                  width="50"
             />
         </div>
-        <div class="mono_links__wrapper">
+        <div class="PREPARE_LOWERVENDOR_links__wrapper">
             <f:if condition="data.header">
-            <span class="mono_links__link-description">
+            <span class="PREPARE_LOWERVENDOR_links__link-description">
                 {data.header->f:format.html()}
             </span>
             </f:if>
             <f:if condition="data.subheader">
-            <span class="mono_links__link-text">
+            <span class="PREPARE_LOWERVENDOR_links__link-text">
                 {data.subheader->f:format.html()}
             </span>
             </f:if>
@@ -30,10 +30,10 @@
 <style type="text/scss">
     @import 'src/scss/Abstracts/abstract';
 
-    .mono_links {
+    .PREPARE_LOWERVENDOR_links {
         display: flex;
         margin-top: 25px;
-        .mono_col40-40 & {
+        .PREPARE_LOWERVENDOR_col40-40 & {
             margin-top: 0;
         }
 

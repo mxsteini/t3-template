@@ -4,8 +4,8 @@
 ><f:layout name="Content/Default"/>
 
 <f:section name="Content">
-    <div class="mono_row ce-container-col40-40">
-        <div class="mono_col40-40">
+    <div class="PREPARE_LOWERVENDOR_row ce-container-col40-40">
+        <div class="PREPARE_LOWERVENDOR_col40-40">
             <f:for each="{col_0}" as="record">
                 <f:format.raw>
                     {record.renderedContent}
@@ -18,7 +18,7 @@
 <style type="text/scss">
     @import 'src/scss/Abstracts/abstract';
 
-    .mono_col40-40 {
+    .PREPARE_LOWERVENDOR_col40-40 {
 
         display: flex;
         flex-wrap: wrap;
@@ -33,7 +33,7 @@
             grid-template-columns: 1fr 1fr;
         }
 
-        .mono_container--grey-padding & {
+        .PREPARE_LOWERVENDOR_container--grey-padding & {
             display: grid;
             grid-template-columns: 1fr;
             background-color: var(--grey_light-2);
@@ -45,7 +45,7 @@
             }
         }
 
-        .mono_container--green {
+        .PREPARE_LOWERVENDOR_container--green {
             display: grid;
             grid-template-columns: 1fr;
             border: 20px solid var(--grey_light-2);
@@ -70,7 +70,7 @@
             }
         }
     }
-    .mono_container--green  h2 {
+    .PREPARE_LOWERVENDOR_container--green  h2 {
         color: var(--white) !important;
     }
 </style>

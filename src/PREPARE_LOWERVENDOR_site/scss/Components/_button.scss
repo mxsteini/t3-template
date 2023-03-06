@@ -50,8 +50,8 @@ button {
 }
 
 
-.ce-mono_site_textpic {
-    .mono_textpic__bodytext p {
+.ce-PREPARE_LOWERVENDOR_site_textpic {
+    .PREPARE_LOWERVENDOR_textpic__bodytext p {
         display: flex;
         justify-content: end;
     }
@@ -95,7 +95,7 @@ button {
         }
 
         &::after {
-            content: url(/typo3conf/ext/mono_site/Resources/Public/images/icons/Mobile_Mail_50x50.svg);
+            content: url(/typo3conf/ext/PREPARE_LOWERVENDOR_site/Resources/Public/images/icons/Mobile_Mail_50x50.svg);
             width: 60px;
             height: 60px;
             margin-left: 10px;

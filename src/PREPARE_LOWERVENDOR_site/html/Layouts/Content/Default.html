@@ -4,20 +4,20 @@
     data-namespace-typo3-fluid="true"
 >
 
-<f:variable name="layout" value="mono_container"/>
+<f:variable name="layout" value="PREPARE_LOWERVENDOR_container"/>
 
 <f:switch expression="{data.layout}">
     <f:case value="1">
-        <f:variable name="layout" value="mono_container--fullsize"/>
+        <f:variable name="layout" value="PREPARE_LOWERVENDOR_container--fullsize"/>
     </f:case>
     <f:case value="2">
-        <f:variable name="layout" value="mono_container mono_container--grey-padding"/>
+        <f:variable name="layout" value="PREPARE_LOWERVENDOR_container PREPARE_LOWERVENDOR_container--grey-padding"/>
     </f:case>
     <f:case value="3">
-        <f:variable name="layout" value="mono_container mono_container--green"/>
+        <f:variable name="layout" value="PREPARE_LOWERVENDOR_container PREPARE_LOWERVENDOR_container--green"/>
     </f:case>
     <f:defaultCase>
-        <f:variable name="layout" value="mono_default"/>
+        <f:variable name="layout" value="PREPARE_LOWERVENDOR_default"/>
     </f:defaultCase>
 </f:switch>
 
@@ -26,7 +26,7 @@
 
 <f:if condition="{data.tx_container_parent} == 0 && {settings.inForm} != 1" >
     <f:then>
-        <f:if condition="{data.CType} == 'mono_site_col33-33-33' || {data.CType} == 'mono_site_col40-40' || {data.CType} == 'mono_site_col40-60' || {data.CType} == 'mono_site_col50-50' || {data.CType} == 'mono_site_col80' ">
+        <f:if condition="{data.CType} == 'PREPARE_LOWERVENDOR_site_col33-33-33' || {data.CType} == 'PREPARE_LOWERVENDOR_site_col40-40' || {data.CType} == 'PREPARE_LOWERVENDOR_site_col40-60' || {data.CType} == 'PREPARE_LOWERVENDOR_site_col50-50' || {data.CType} == 'PREPARE_LOWERVENDOR_site_col80' ">
             <f:if condition="{images.0}">
                 <f:variable name="containerWrapperID" value="ce-ContainerWrapper-{data.uid}"/>
                 <f:variable name="img_src_converted" value="{images.0}"/>
@@ -49,9 +49,9 @@
         <div
             class="{layout} {frameClass} {containerWrapperID} {f:if(condition: '{data.space_before_class}', then: ' {data.space_before_class} ')}{f:if(condition: '{data.space_after_class}', then: ' {data.space_after_class}')}">
             <f:render section="css" optional="1"/>
-            <div class="mono_container">
-                <div class="mono_row">
-                    <div class="mono_col">
+            <div class="PREPARE_LOWERVENDOR_container">
+                <div class="PREPARE_LOWERVENDOR_row">
+                    <div class="PREPARE_LOWERVENDOR_col">
                         <f:render partial="Header/All" arguments="{_all}"/>
                         <f:render section="Content" arguments="{_all}" optional="true"/>
                         <f:render section="Main" arguments="{_all}" optional="true"/>
@@ -63,7 +63,7 @@
     <f:else>
         <f:render section="css" optional="1"/>
         <div
-            class="mono_col{f:if(condition: '{data.space_before_class}', then: ' {data.space_before_class} ')}{f:if(condition: '{data.space_after_class}', then: ' {data.space_after_class}')}">
+            class="PREPARE_LOWERVENDOR_col{f:if(condition: '{data.space_before_class}', then: ' {data.space_before_class} ')}{f:if(condition: '{data.space_after_class}', then: ' {data.space_after_class}')}">
             <f:render partial="Header/All" arguments="{_all}"/>
             <f:render section="Content" arguments="{_all}" optional="true"/>
             <f:render section="Main" arguments="{_all}" optional="true"/>

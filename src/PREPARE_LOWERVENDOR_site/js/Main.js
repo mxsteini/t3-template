@@ -7,14 +7,14 @@ import collapse from '@alpinejs/collapse'
 window.Alpine = Alpine
 
 
-document.querySelectorAll('mono_js_pristine').forEach((form) => {
+document.querySelectorAll('PREPARE_LOWERVENDOR_js_pristine').forEach((form) => {
     var pristine = new Pristine(form, {
-        classTo: 'mono_formgroup',
-        errorClass: 'mono_formgroup--has-error',
-        successClass: 'mono_formgroup--has-success',
-        errorTextParent: 'mono_formgroup',
+        classTo: 'PREPARE_LOWERVENDOR_formgroup',
+        errorClass: 'PREPARE_LOWERVENDOR_formgroup--has-error',
+        successClass: 'PREPARE_LOWERVENDOR_formgroup--has-success',
+        errorTextParent: 'PREPARE_LOWERVENDOR_formgroup',
         errorTextTag: 'div',
-        errorTextClass: 'mono_formgroup__validation-result mono_formgroup__validation-result--error'
+        errorTextClass: 'PREPARE_LOWERVENDOR_formgroup__validation-result PREPARE_LOWERVENDOR_formgroup__validation-result--error'
     })
 
     form.addEventListener('submit', function (e) {
@@ -31,14 +31,14 @@ Alpine.plugin(collapse)
 
 
 
-Alpine.store('mono_page', {
+Alpine.store('PREPARE_LOWERVENDOR_page', {
     scrolled: true,
     menuOpen: false,
     langOpen: false,
     highlight: '',
     viewport: {
         size: 'mobile',
-        class: 'mono_page__viewport--mobile',
+        class: 'PREPARE_LOWERVENDOR_page__viewport--mobile',
         width: 0,
         height: 0
     },
@@ -66,7 +66,7 @@ Alpine.store('mono_page', {
 
     getTop(element) {
         switch (element) {
-            case 'mono_page__gestern':
+            case 'PREPARE_LOWERVENDOR_page__gestern':
                 if (this.street.pins[element]) {
                     return (this.street.pins[element].top - 28) + 'px'
                 }
@@ -87,8 +87,8 @@ Alpine.store('mono_page', {
     },
 
     computeInfoPositions(street) {
-        const subs = ['mono_page__gestern', 'mono_page__heute', 'mono_page__morgen']
-        const streetBox = street.querySelector('.mono_street__image').getBoundingClientRect()
+        const subs = ['PREPARE_LOWERVENDOR_page__gestern', 'PREPARE_LOWERVENDOR_page__heute', 'PREPARE_LOWERVENDOR_page__morgen']
+        const streetBox = street.querySelector('.PREPARE_LOWERVENDOR_street__image').getBoundingClientRect()
         subs.forEach(id => {
             this.street.pins[id] = {}
             if (this.isViewPort(['medium', 'large', 'wide'])) {
@@ -104,13 +104,13 @@ Alpine.store('mono_page', {
                 if (content) {
                     let contentBox = content.getBoundingClientRect()
                     switch (id) {
-                        case 'mono_page__gestern':
+                        case 'PREPARE_LOWERVENDOR_page__gestern':
                             this.street.paddingTop = (contentBox.height > this.street.pins[id].top ? contentBox.height - this.street.pins[id].top : 0)
                             break
-                        case 'mono_page__heute':
+                        case 'PREPARE_LOWERVENDOR_page__heute':
                             this.street.paddingBottom = contentBox.height - (streetBox.height - this.street.pins[id].top) + 30
                             break
-                        case 'mono_page__morgen':
+                        case 'PREPARE_LOWERVENDOR_page__morgen':
                             let morgenPadding = contentBox.height - (streetBox.height - this.street.pins[id].top) + 30
                             if (morgenPadding > this.street.paddingBottom) {
                                 this.street.paddingBottom = morgenPadding
@@ -144,13 +144,13 @@ Alpine.store('mono_page', {
         } else {
             switch (element.id) {
                 case 'gestern':
-                    this.info.orientation = 'mono_info--top-right'
+                    this.info.orientation = 'PREPARE_LOWERVENDOR_info--top-right'
                     break
                 case 'heute':
-                    this.info.orientation = 'mono_info--bottom-right'
+                    this.info.orientation = 'PREPARE_LOWERVENDOR_info--bottom-right'
                     break
                 case 'morgen':
-                    this.info.orientation = 'mono_info--bottom-left'
+                    this.info.orientation = 'PREPARE_LOWERVENDOR_info--bottom-left'
                     break
             }
             this.info.open = false
@@ -190,15 +190,15 @@ Alpine.store('mono_page', {
             viewportSize = 'large'
         }
         this.viewport.size = viewportSize
-        this.viewport.class = 'mono_page__viewport--' + viewportSize
+        this.viewport.class = 'PREPARE_LOWERVENDOR_page__viewport--' + viewportSize
 
     }
 })
 
 Alpine.start()
-Alpine.store('mono_page').checkViewport()
+Alpine.store('PREPARE_LOWERVENDOR_page').checkViewport()
 
 window.addEventListener('resize', (e) => {
-    Alpine.store('mono_page').checkViewport(e)
+    Alpine.store('PREPARE_LOWERVENDOR_page').checkViewport(e)
 })
 

@@ -16,7 +16,7 @@
         <f:else>
             <f:if condition="{element.properties.contentElementUid}">
                 <div
-                    class="mono_formgroup mono_formgroup__{element.properties.containerClassAttribute} mono_formgroup__{element.type->f:format.case(mode:'lower')}{f:if(condition: element.properties.elementClassAttribute, then: ' {element.properties.elementClassAttribute}')}">
+                    class="PREPARE_LOWERVENDOR_formgroup PREPARE_LOWERVENDOR_formgroup__{element.properties.containerClassAttribute} PREPARE_LOWERVENDOR_formgroup__{element.type->f:format.case(mode:'lower')}{f:if(condition: element.properties.elementClassAttribute, then: ' {element.properties.elementClassAttribute}')}">
                     <f:cObject typoscriptObjectPath="lib.tx_form.contentElementRendering">{element.properties.contentElementUid}</f:cObject>
                 </div>
             </f:if>

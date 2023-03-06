@@ -28,7 +28,7 @@ html {
     }
 }
 
-.mono_page--content h1 {
+.PREPARE_LOWERVENDOR_page--content h1 {
     color: var(--accent);
 }
 
@@ -95,7 +95,7 @@ html {
 
 }
 
-.mono_typo {
+.PREPARE_LOWERVENDOR_typo {
     &--two-columns {
         @media (min-width: map-get($breakpoints, 'large')) {
             column-count: 2;
