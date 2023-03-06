@@ -42,11 +42,11 @@ fi
 insertVariables ./config/sites/${PREPARE[projectname]}/config.yaml
 
 if [ -d ./packages/PREPARE_LOWERVENDOR_site ]; then
-    mv ./packages/PREPARE_LOWERVENDOR_site ./packages/${PREPARE[PREPARE_LOWERVENDOR]}_site
+    mv ./packages/PREPARE_LOWERVENDOR_site ./packages/${PREPARE[LOWERVENDOR]}_site
 fi
 
 if [ -d ./src/PREPARE_LOWERVENDOR_site ]; then
-    mv ./src/PREPARE_LOWERVENDOR_site ./src/${PREPARE[PREPARE_LOWERVENDOR]}_site
+    mv ./src/PREPARE_LOWERVENDOR_site ./src/${PREPARE[LOWERVENDOR]}_site
 fi
 
 if [[ ! -x ./.env ]]; then
