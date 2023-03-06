@@ -8,12 +8,12 @@ else
 fi
 
 GITLAB_URL="https://gitlab.monobloc.de"
-# https://gitlab.monobloc.de/hkg/huk/PREPARE_projectname/-/settings/access_tokens
+# https://gitlab.monobloc.de/hkg/huk/t3-template/-/settings/access_tokens
 GITLAB_ACCESS_TOKEN="PREPARE_accesstoken"
-# https://gitlab.monobloc.de/hkg/huk/PREPARE_projectname/-/settings/ci_cd -> Pipeline triggers
+# https://gitlab.monobloc.de/hkg/huk/t3-template/-/settings/ci_cd -> Pipeline triggers
 GITLAB_PIPELINE_TOKEN="PREPARE_pipelinetoken"
 
-project="PREPARE_projectname"
+project="t3-template"
 project_id=PREPARE_projectid
 branch="dump"
 job="dump-data"

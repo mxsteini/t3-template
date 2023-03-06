@@ -21,6 +21,12 @@ dotenv.config({
     path: path.join(projectPath, '.env')
 })
 
+console.log('processing watch js')
+buildFuncs.jsProcessor()
+
+console.log('processing sass')
+buildFuncs.sassProcessor()
+process.exit()
 
 let htmlRoot = 'src/html'
 const htmlPath = path.join(path.resolve('src/html'), '/**/*.html')
@@ -32,8 +38,6 @@ fse.copySync(
     path.resolve('packages/mono_site/Resources/Public/')
 )
 
-console.log('processing sass')
-buildFuncs.sassProcessor(config.posthtml.plugins['posthtml-scss-to-file'])
 
 console.log('processing html')
 files.forEach((file) => {
