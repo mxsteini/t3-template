@@ -8,11 +8,7 @@
 	"scripts": {
 		"start": "node ./bin/watch.js",
 		"build": "node ./bin/build.js",
-		"serve:typo3": "npx gulp serve:typo3",
-		"start-old": "npx gulp serve:typo3",
-		"build-old": "npx gulp build:dist",
-		"build:typo3:dist": "npx gulp build:typo3:dist",
-		"build:typo3:dev": "npx gulp build:typo3:dev"
+		"build:production": "node ./bin/build.js production"
 	},
 	"devDependencies": {
 		"autoprefixer": "10.4.5",
@@ -29,7 +25,8 @@
 		"@alpinejs/persist": "^3.11.1",
 		"alpinejs": "^3.11.1",
 		"dotenv": "^16.0.1",
-		"esbuild": "^0.17.5"
+		"esbuild": "^0.17.5",
+		"fs-extra": "^11.1.0"
 	},
 	"type": "module",
 	"build": {
