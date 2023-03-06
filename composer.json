@@ -28,7 +28,7 @@
 		"ichhabrecht/content-defender": "^3.2",
 		"lochmueller/language-detection": "*",
 		"lochmueller/staticfilecache": "*",
-		"mono/mono-site": "dev-main",
+		"PREPARE_LOWERVENDOR/PREPARE_LOWERVENDOR-site": "dev-main",
 		"opfaff/om-cookie-manager": "*",
 		"t3/min": "*",
 		"typo3/cms-backend": "*",
@@ -58,8 +58,6 @@
 		"typo3/cms-sys-note": "*",
 		"typo3/cms-t3editor": "*",
 		"typo3/cms-tstemplate": "*",
-		"typo3/cms-viewpage": "*",
-		"t3/scroll": "^1.0",
-		"wapplersystems/zabbix_client": "*"
+		"typo3/cms-viewpage": "*"
 	}
 }
