@@ -44,10 +44,16 @@ insertVariables ./config/sites/${PREPARE[projectname]}/config.yaml
 if [ -d ./packages/PREPARE_LOWERVENDOR_site ]; then
     mv ./packages/PREPARE_LOWERVENDOR_site ./packages/${PREPARE[LOWERVENDOR]}_site
 fi
+for f in $(find ./packages/${PREPARE[LOWERVENDOR]}_site -type f); do
+    insertVariables $f
+done
 
 if [ -d ./src/PREPARE_LOWERVENDOR_site ]; then
     mv ./src/PREPARE_LOWERVENDOR_site ./src/${PREPARE[LOWERVENDOR]}_site
 fi
+for f in $(find ./src/${PREPARE[LOWERVENDOR]}_site -type f); do
+    insertVariables $f
+done
 
 if [[ ! -x ./.env ]]; then
     cp .env.dist .env
