@@ -6,10 +6,7 @@
 
 /var/*
 /vendor
-/packages/mono_site/Resources/Public
-/packages/mono_site/Resources/Private/*
-!/packages/mono_site/Resources/Private/Language
-
+/packages/*/Resources/*
 
 /public/*
 !/public/.htaccess*
@@ -32,14 +29,3 @@ node_modules/
 /dump
 /*.zip
 /*.zip.httpheaders
-
-#vdiff
-fetest/vdiff
-
-
-/01_SCRIPTS
-
-/01_SCRIPTS/grunt/local.json
-/01_SCRIPTS/grunt/io/*
-/01_SCRIPTS/grunt/.htpasswd
-
