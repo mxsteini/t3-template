@@ -1,0 +1,12 @@
+
+<html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/Fluid/ViewHelpers">
+  <f:form.validationResults for="{object}.{property}">
+    <f:if condition="{validationResults.flattenedErrors}">
+      <ul class="errors">
+        <f:for each="{validationResults.errors}" as="error">
+          <li>{error}</li>
+        </f:for>
+      </ul>
+    </f:if>
+  </f:form.validationResults>
+</html>

@@ -1,0 +1,359 @@
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:i="http://typo3.org/ns/B13/Picture/ViewHelpers"
+    data-namespace-typo3-fluid="true"
+>
+<f:render section="css" optional="1" contentAs="extraContent">
+    <f:asset.css identifier="identifier123">
+        .mono_hero__image {
+        background-image: url({f:uri.image(src:images.0.uid, treatIdAsReference:1, height:'800c')});
+        }
+    </f:asset.css>
+</f:render>
+
+<a class="anchor-scroll--top" id="start" x-intersect:enter="$store.mono_page.highlight=$el.id"></a>
+<div class="mono_hero__wrapper">
+    <div class="mono_hero">
+        <div class="mono_hero__col mono_hero__col--1">
+            <div class="mono_hero__image">
+                <f:if condition="{images.1}">
+                    <i:image
+                        class="mono_text__image"
+                        addWebp="1"
+                        lossless="1"
+                        alt="{images.0.alternative}"
+                        title="{images.1.title}"
+                        height="800"
+                        image="{images.1}"
+                    />
+                </f:if>
+            </div>
+            <span class="mono_hero__claim mono_hero__claim--1">velo</span>
+        </div>
+        <div class="mono_hero__col mono_hero__col--2">
+            <span class="mono_hero__claim mono_hero__claim--2">ve</span>
+        </div>
+        <div class="mono_hero__col mono_hero__col--4">
+            <div class="mono_hero__text">
+                <div>
+                    <header>
+                        <p class="h2 mono_hero__header">{data.header->f:format.raw()}</p>
+                    </header>
+                    {data.bodytext->f:format.html()}
+                </div>
+                <p class="mono_hero__claim">
+                <span class="mono_hero__claim mono_hero__claim--shift">
+                    <span class="mono_hero__claim mono_hero__claim--1">velo</span><span
+                    class="mono_hero__claim mono_hero__claim--2">ve</span>
+                </span>
+                    <span class="mono_hero__claim mono_hero__claim--3">sustainable<br>mobilitiy</span>
+                </p>
+                <div class="mono_hero__scroll-down">
+                    <img src="{f:uri.image(src:'EXT:mono_site/Resources/Public/images/icons/Mouse_32x50.svg')}"
+                         width="32" height="50"/>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mono_hero__claim--mobile mono_hero__col--3">
+        <span class="mono_hero__claim mono_hero__claim--3">sustainable<br>mobilitiy</span>
+        <div class="mono_hero__scroll-down">
+            <img src="{f:uri.image(src:'EXT:mono_site/Resources/Public/images/icons/Mobile_Smartphone_30x50.svg')}"
+                 width="32"
+                 height="50"/>
+            <span></span>
+        </div>
+    </div>
+</div>
+<div class="mono_container mono_hero__mobile-content">
+    <div class="mono_hero__text">
+        <div>
+            <header>
+                <p class="h2">{data.header->f:format.raw()}</p>
+            </header>
+            {data.bodytext->f:format.html()}
+        </div>
+    </div>
+</div>
+</html>
+<style type="text/scss">
+    @import 'src/scss/Abstracts/abstract';
+
+    .mono_hero {
+        width: 100%;
+        height: calc(100vh - map-get($navigationheight, 'large'));
+
+        &__wrapper {
+            max-height: calc(100vh - map-get($navigationheight, 'large'));
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            @media (min-width: map-get($breakpoints, 'large')) {
+                height: 100%;
+                max-height: none;
+            }
+        }
+
+        margin-top: map-get($navigationheight, 'small');
+        max-height: 200vw;
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: stretch;
+        @media (min-width: map-get($breakpoints, 'large')) {
+            margin-top: map-get($navigationheight, 'large');
+            height: auto;
+            //height: calc(100vh - map-get($navigationheight, 'large'));
+            flex-wrap: nowrap;
+            gap: 30px;
+            margin-left: -115px;
+        }
+
+        &__header {
+            @media (min-width: map-get($breakpoints, 'large')) {
+                font-size: 4vh;
+                line-height: 120%;
+            }
+        }
+
+        &__col {
+            position: relative;
+            flex-shrink: 0;
+
+            &--1 {
+                position: relative;
+                width: 70%;
+                @media (min-width: map-get($breakpoints, 'large')) {
+                    width: 50%;
+                    .mono_hero__claim {
+                        display: none;
+                    }
+                }
+            }
+
+            &--2 {
+                width: 30%;
+                @media (min-width: map-get($breakpoints, 'large')) {
+                    width: 60%;
+                    display: none;
+                }
+            }
+
+            &--3 {
+                width: 100%;
+                align-self: flex-start;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                @media (min-width: map-get($breakpoints, 'large')) {
+                    display: none;
+                }
+            }
+
+            &--4 {
+                display: none;
+                @media (min-width: map-get($breakpoints, 'large')) {
+                    display: block;
+                    position: relative;
+                    width: 50%;
+                }
+
+            }
+        }
+
+        &__scroll-down {
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 90px;
+            color: white;
+            text-align: center;
+            position: relative;
+
+            > span {
+                display: block;
+                width: 2px;
+                height: 16px;
+                position: relative;
+                overflow: hidden;
+                margin-top: -37px;
+
+                &:after {
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 2px;
+                    height: 12px;
+                    background: var(--accent-2);
+                    border-radius: 1px;
+                    content: "";
+                    animation-name: mono_animation__scroll;
+                    animation-duration: 1.5s;
+                    animation-iteration-count: infinite;
+                }
+
+                @media (min-width: map-get($breakpoints, 'large')) {
+                    margin-top: 5px;
+                }
+            }
+        }
+
+        &__image {
+            height: 100%;
+            display: flex;
+            justify-content: end;
+            background-attachment: fixed;
+            background-position-y: map-get($navigationheight, 'large');
+            background-position-x: 40%;
+            background-repeat: no-repeat;
+            background-size: auto calc(100% - map-get($navigationheight, 'large'));
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: top 0 right 15%;
+                @media (min-width: map-get($breakpoints, 'large')) {
+                    display: none;
+                }
+            }
+
+            @media (min-width: map-get($breakpoints, 'large')) {
+                background-position-x: 50%;
+            }
+        }
+
+        &__claim {
+            text-transform: uppercase;
+            font-size: 12vw;
+            line-height: 110%;
+            font-family: "Red Hat Text", Arial, sans-serif;
+            font-weight: 700;
+            color: var(--accent);
+
+            @media (min-width: 720px) {
+                font-size: 85px;
+            }
+            @media (min-width: map-get($breakpoints, 'large')) {
+                //font-size: 85px;
+                font-size: 4vh;
+                letter-spacing: 4px;
+            }
+
+            &--1 {
+                position: absolute;
+                color: white;
+                bottom: 0;
+                right: 0;
+            }
+
+            &--2 {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+            }
+
+            &--3 {
+                display: inline-block;
+                margin-left: -62vw;
+                padding-left: 70%;
+                @media (min-width: 720px) {
+                    margin-left: -447px;
+                }
+            }
+        }
+
+
+        &__text {
+            width: var(--containerWidth);
+            @media (min-width: map-get($breakpoints, 'large')) {
+                width: calc(var(--containerWidth) * 0.6 - 57px);
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                padding-right: 30px;
+                box-sizing: border-box;
+            }
+
+            header {
+                margin-top: 10px;
+
+                > * {
+                    margin: 0 !important;
+                }
+            }
+
+            p {
+                margin-top: 23px;
+            }
+
+            > p.mono_hero__claim {
+                display: none;
+                @media (min-width: map-get($breakpoints, 'large')) {
+                    display: block;
+                    margin-top: 0;
+                    padding: 10px 0;
+                    .mono_hero__claim--1,
+                    .mono_hero__claim--2,
+                    > * {
+                        margin: 0;
+                        padding: 0;
+                        position: relative;
+                        top: 0;
+                        bottom: auto;
+                        left: auto;
+                    }
+                    .mono_hero__claim--shift {
+                        left: -50%;
+                        width: 64%;
+                        text-align: center;
+                        margin-left: 78px;
+                        display: inline-flex;
+
+                        > * {
+                            width: 50%;
+                            display: block;
+
+                            &:first-child {
+                                text-align: right;
+                            }
+
+                            &:last-child {
+                                text-align: left;
+                            }
+                        }
+                    }
+                    .mono_hero__claim--2 {
+                        padding-left: 10px;
+                    }
+                }
+            }
+        }
+
+        &__mobile-content {
+            @media (min-width: map-get($breakpoints, 'large')) {
+                display: none;
+                background: green;
+            }
+        }
+
+        @keyframes mono_animation__scroll {
+            0% {
+                opacity: 1;
+                transform: translate(0, -12px);
+            }
+            100% {
+                opacity: 1;
+                transform: translate(0, 16px);
+            }
+        }
+    }
+
+
+</style>

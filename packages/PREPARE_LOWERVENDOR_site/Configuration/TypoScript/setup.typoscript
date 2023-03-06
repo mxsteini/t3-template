@@ -1,0 +1,10 @@
+
+
+# Global Setup
+@import 'EXT:PREPARE_LOWERVENDOR_site/Configuration/TypoScript/Setup/*.typoscript'
+
+# Environment Context
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:PREPARE_LOWERVENDOR_site/Configuration/TypoScript/_DEV/setup.typoscript" condition="[applicationContext == \"Development\"]">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:PREPARE_LOWERVENDOR_site/Configuration/TypoScript/_DEV/setup.typoscript" condition="[applicationContext == \"Development/Ddev\"]">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:PREPARE_LOWERVENDOR_site/Configuration/TypoScript/_PREV/setup.typoscript" condition="[applicationContext == \"Production/Preview\"]">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:PREPARE_LOWERVENDOR_site/Configuration/TypoScript/_PROD/setup.typoscript" condition="[applicationContext == \"Production\"]">

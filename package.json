@@ -1,0 +1,85 @@
+{
+	"name": "veloroad",
+	"version": "1.0.1",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"start": "node ./bin/watch.js",
+		"watch": "node ./bin/watch.js",
+		"html": "npx posthtml '**/*.html' -o packages/mono_site/Resources/Private -a -r src/html",
+		"build": "node ./bin/build.js",
+		"browserify:build": "npx browserify -p esmify src/js/Main.js | uglifyjs -c >  packages/mono_site/Resources/Public/JavaScript/Main.js",
+		"browserify:development": "npx browserify -p esmify src/js/Main.js -o packages/mono_site/Resources/Public/JavaScript/Main.js --debug"
+	},
+	"type": "module",
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"@alpinejs/collapse": "^3.10.5",
+		"@alpinejs/focus": "^3.10.5",
+		"@alpinejs/intersect": "^3.10.5",
+		"alpinejs": "^3.10.5",
+		"browser-sync": "^2.27.9",
+		"browserify": "^17.0.0",
+		"dotenv": "^16.0.0",
+		"esmify": "^2.1.1",
+		"glob": "^8.0.3",
+		"node-watch": "^0.7.3",
+		"npm-watch": "^0.11.0",
+		"posthtml": "^0.16.6",
+		"posthtml-cli": "^0.10.0",
+		"posthtml-custom-elements": "^1.1.2",
+		"posthtml-include": "^1.7.4",
+		"posthtml-modules": "^0.8.0",
+		"posthtml-scss-to-file": "file:includes/posthtml-scss-to-file",
+		"pristinejs": "^0.1.9",
+		"sass": "^1.56.1",
+		"uglifyify": "^5.0.2"
+	},
+	"browserify": {
+		"parser": "babel-eslint",
+		"parserOptions": {
+			"sourceType": "module",
+			"allowImportExportEverywhere": true
+		}
+	},
+	"t3template": {
+		"site_package": "./packages/mono_site"
+	},
+	"posthtml": {
+		"options": {
+			"xmlMode": true,
+			"directives": [
+				{
+					"name": "?php",
+					"start": "<",
+					"end": ">"
+				}
+			]
+		},
+		"plugins": {
+			"posthtml-scss-to-file": {
+				"path": "./packages/mono_site/Resources/Public/Css/style.css",
+				"src": "src/html",
+				"dest": "./packages/mono_site/Resources/Public/Css",
+				"cssLink": {
+					"tag": "link",
+					"attrs": {
+						"rel": "stylesheet",
+						"href": "/typo3conf/ext/mono_site/Resources/Public/Css%s.css"
+					}
+				},
+				"sass": {
+					"includePaths": [
+						"node_modules"
+					],
+					"outputStyle": "compressed",
+					"sourceMap": false
+				}
+			},
+			"posthtml-modules": {
+				"from": "src/modules/*"
+			}
+		}
+	}
+}

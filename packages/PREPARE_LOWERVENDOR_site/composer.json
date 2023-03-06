@@ -1,0 +1,16 @@
+{
+    "name": "PREPARE_LOWERVENDOR/PREPARE_LOWERVENDOR-site",
+    "description": "This extension contains the complete site configuration.",
+    "type": "typo3-cms-extension",
+    "license": "proprietary",
+    "autoload": {
+        "psr-4": {
+            "PREPARE_UPPERVENDOR\\PREPARE_CAPITALVENDORSite\\": "Classes/"
+        }
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "PREPARE_LOWERVENDOR_site"
+        }
+    }
+}

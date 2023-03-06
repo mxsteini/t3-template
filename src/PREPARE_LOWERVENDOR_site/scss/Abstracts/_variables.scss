@@ -1,0 +1,33 @@
+/// Breakpoints map
+/// @prop {String} keys - Keys are identifiers mapped to a given length
+/// @prop {Map} values - Values are actual breakpoints expressed in pixels
+$breakpoints: (
+    'small': 576px,
+    'medium': 768px,
+    'large': 1024px,
+    'wide': 1440px,
+);
+
+$containerWith: (
+    'small': none,
+    'medium': none,
+    'large': 80vw,
+    'wide': 1140px,
+);
+
+$navigationheight: (
+    'small': 40px,
+    'medium': 70px,
+    'large': 100px,
+    'wide': 100px,
+);
+
+$burgerSize: (
+    'small': 30,
+    'medium': 50,
+    'large': 50,
+    'wide': 50,
+);
+
+$animationSpeed: 0.3s;
+

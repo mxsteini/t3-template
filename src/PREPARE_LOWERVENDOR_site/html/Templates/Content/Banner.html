@@ -1,0 +1,54 @@
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:i="http://typo3.org/ns/B13/Picture/ViewHelpers"
+    data-namespace-typo3-fluid="true"
+>
+<f:render section="css" optional="1"/>
+
+<div class="mono_banner mono_container--fullsize">
+    <div class="mono_banner__image">
+        <f:if condition="{images.0}">
+            <i:image
+                class="mono_banner__image"
+                addWebp="1"
+                lossless="1"
+                alt="{images.0.alternative}"
+                title="{images.0.title}"
+                width="100"
+                style="width: 100%; height: 100%; object-fit: cover;"
+                image="{images.0}"
+                sources="{
+            0: {width: '1450c', height: '551c', media: 'min-width: 760px', cropVariant: 'desktop'},
+            1: {width: '760c', height: '370c', media: 'min-width: 450px', cropVariant: 'tablet'},
+            2: {width: '440c', height: '450c', cropVariant: 'mobile'}
+        }"
+            />
+        </f:if>
+    </div>
+    <div class="mono_banner__header mono_container--fullsize">
+        <div class="mono_container display-1">
+            {data.header->f:format.raw()}
+        </div>
+    </div>
+</div>
+</html>
+<style type="text/scss">
+    .mono_banner {
+        width: 100%;
+        position: relative;
+
+        &__image {
+            width: 100%;
+        }
+
+        &__header {
+            position: absolute;
+            top: 30%;
+            left: 0;
+            height: 100%;
+            font-weight: bold;
+        }
+    }
+
+</style>
+

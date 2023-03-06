@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xliff version="1.0">
+  <file source-language="en" datatype="plaintext" original="messages" product-name="PREPARE_LOWERVENDOR_site">
+    <header/>
+    <body>
+		<!-- overwrites start-->
+		<trans-unit id="card.linktext.1">
+			<source>Learn more!</source>
+		</trans-unit>
+		<trans-unit id="card.linktext.2">
+			<source>More</source>
+		</trans-unit>
+		<trans-unit id="LanguageLabel">
+			<source>Language:</source>
+		</trans-unit>
+		<trans-unit id="ContactFormSendInquiry">
+			<source>Send us your inquiry!</source>
+		</trans-unit>
+	</body>
+  </file>
+</xliff>

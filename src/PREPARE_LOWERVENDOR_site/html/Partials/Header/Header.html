@@ -1,0 +1,53 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:variable name="headlineClass" value="" />
+<f:if condition="{tx_monosite_headersize} > 0">
+    <f:variable name="headlineClass" value="h{tx_monosite_headersize}" />
+</f:if>
+<f:if condition="{header}">
+    <f:switch expression="{layout}">
+        <f:case value="1">
+            <h1 class="{positionClass} {headlineClass}">
+                <f:link.typolink parameter="{link}">{header}</f:link.typolink>
+            </h1>
+        </f:case>
+        <f:case value="2">
+            <h2 class="{positionClass} {headlineClass}">
+                <f:link.typolink parameter="{link}">{header}</f:link.typolink>
+            </h2>
+        </f:case>
+        <f:case value="3">
+            <h3 class="{positionClass} {headlineClass}">
+                <f:link.typolink parameter="{link}">{header}</f:link.typolink>
+            </h3>
+        </f:case>
+        <f:case value="4">
+            <h4 class="{positionClass} {headlineClass}">
+                <f:link.typolink parameter="{link}">{header}</f:link.typolink>
+            </h4>
+        </f:case>
+        <f:case value="5">
+            <h5 class="{positionClass} {headlineClass}">
+                <f:link.typolink parameter="{link}">{header}</f:link.typolink>
+            </h5>
+        </f:case>
+        <f:case value="6">
+            <h6 class="mono_typo__h6 {positionClass} {headlineClass}">
+                <f:link.typolink parameter="{link}">{header}</f:link.typolink>
+            </h6>
+        </f:case>
+        <f:case value="0">
+            <f:comment><!-- do not show header --></f:comment>
+        </f:case>
+        <f:defaultCase>
+            <f:if condition="{default}">
+                <f:render partial="Header/Header" arguments="{
+                    header: header,
+                    layout: default,
+                    positionClass: positionClass,
+                    link: link}" />
+            </f:if>
+        </f:defaultCase>
+    </f:switch>
+</f:if>
+</html>

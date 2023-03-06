@@ -1,0 +1,50 @@
+tt_content {
+    PREPARE_LOWERVENDOR_site_col50-50 =< lib.containerElement
+    PREPARE_LOWERVENDOR_site_col50-50 {
+        templateName = Col50-50
+    }
+
+    PREPARE_LOWERVENDOR_site_col40-40 =< lib.containerElement
+    PREPARE_LOWERVENDOR_site_col40-40 {
+        templateName = Col40-40
+    }
+
+    PREPARE_LOWERVENDOR_site_col40-60 =< lib.containerElement
+    PREPARE_LOWERVENDOR_site_col40-60 {
+        templateName = Col40-60
+    }
+
+    PREPARE_LOWERVENDOR_site_col33-33-33 =< lib.containerElement
+    PREPARE_LOWERVENDOR_site_col33-33-33 {
+        templateName = Col33-33-33
+    }
+
+    PREPARE_LOWERVENDOR_site_col80 =< lib.containerElement
+    PREPARE_LOWERVENDOR_site_col80 {
+        templateName = Col80
+    }
+
+    PREPARE_LOWERVENDOR_site_pipelines =< lib.containerElement
+    PREPARE_LOWERVENDOR_site_pipelines {
+        templateName = Pipelines
+        dataProcessing {
+            500 = B13\Container\DataProcessing\ContainerProcessor
+            500 {
+                colPos = 500
+                as = col_500
+            }
+
+            501 = B13\Container\DataProcessing\ContainerProcessor
+            501 {
+                colPos = 501
+                as = col_501
+            }
+
+            502 = B13\Container\DataProcessing\ContainerProcessor
+            502 {
+                colPos = 502
+                as = col_502
+            }
+        }
+    }
+}

@@ -1,0 +1,122 @@
+# Load default processing options
+imports:
+  - { resource: "EXT:rte_ckeditor/Configuration/RTE/Processing.yaml" }
+  - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Base.yaml" }
+  - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Plugins.yaml" }
+
+editor:
+  config:
+    contentsCss: [ "EXT:PREPARE_LOWERVENDOR_site/Resources/Public/Css/rte.css" ]
+
+    stylesSet:
+      - { name: "Emaillink", element: "a", attributes: { 'class': 'btn--email' } }
+      - { name: "Link Transparent", element: "a", attributes: { 'class': 'btn-arrow' } }
+      # Inline styles
+      - { name: "h1 as Class", element: "span", attributes: { 'class': 'h1' } }
+      - { name: "h2 as Class", element: "span", attributes: { 'class': 'h2' } }
+      - { name: "h3 as Class", element: "span", attributes: { 'class': 'h3' } }
+      - { name: "h4 as Class", element: "span", attributes: { 'class': 'h4' } }
+      # Text format
+      - { name: "Text 2 spaltig", element: "p", attributes: { 'class': 'PREPARE_LOWERVENDOR_typo--two-columns' } }
+      #      - { name: "Text white", element: "span", attributes: { 'class': 'text-white' } }
+      # List styles
+    #      - { name: 'list-dotted', element: 'ul', attributes: { 'class': 'PREPARE_LOWERVENDOR_list__dotted' } }
+    #      - { name: 'list-checked', element: 'ul', attributes: { 'class': 'PREPARE_LOWERVENDOR_list__checked' } }
+
+    toolbar:
+      - [ 'Link', 'Unlink' ]
+      - [ 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock' ]
+      - [ 'NumberedList', 'BulletedList' ]
+      - [ 'PasteText', 'PasteFromWord' ]
+      - [ 'Table' ]
+      - [ 'Source', 'LineUtils' ]
+      - '/'
+      - [ 'Undo', 'Redo', 'RemoveFormat', 'ShowBlocks' ]
+      - [ 'Format', 'Styles' ]
+      - [ 'Bold', 'Italic', 'Underline', 'Blockquote', 'Subscript', 'Superscript' ]
+      - '/'
+    removeButtons:
+      - Anchor
+      - Underline
+      - Strike
+      - Image
+      - HorizontalRule
+      - SpecialChar
+#      - Table
+#            - Format
+    justifyClasses:
+      - text-left
+      - text-center
+      - text-right
+      - text-justify
+
+    extraPlugins:
+      - justify
+
+buttons:
+  link:
+    properties:
+      class:
+        allowedClasses: 'green'
+        default: 'hover'
+    file:
+      properties:
+        class:
+          default: 'PREPARE_LOWERVENDOR_link__download'
+    url:
+      properties:
+        class:
+          default: 'PREPARE_LOWERVENDOR_link__external'
+    mail:
+      properties:
+        class:
+          default: 'hover'
+    page:
+      properties:
+        class:
+          default: 'hover'
+
+classes:
+  green:
+    name: 'Grün'
+  PREPARE_LOWERVENDOR_link__download:
+    name: 'Download'
+  PREPARE_LOWERVENDOR_link__external:
+    name: 'Link zu einer externen Seite'
+  PREPARE_LOWERVENDOR_btn__download--soft:
+    name: 'Softbutton für Download'
+  PREPARE_LOWERVENDOR_btn__external--soft:
+    name: 'Softbutton für externe Seiten'
+  PREPARE_LOWERVENDOR_btn__page--soft:
+    name: 'Softbutton für interne Seiten'
+  PREPARE_LOWERVENDOR_btn__download--outline:
+    name: 'Oulinebutton für Download'
+  PREPARE_LOWERVENDOR_btn__external--outline:
+    name: 'Oulinebutton für externe Seiten'
+  PREPARE_LOWERVENDOR_btn__page--outline:
+    name: 'Oulinebutton für interne Seiten'
+  PREPARE_LOWERVENDOR_btn__download--solid:
+    name: 'Solidbutton für Download'
+  PREPARE_LOWERVENDOR_btn__external--solid:
+    name: 'Solidbutton für externe Seiten'
+  PREPARE_LOWERVENDOR_btn__page--solid:
+    name: 'Solidbutton für interne Seiten'
+
+
+classesAnchor:
+  linkPage:
+    class: 'hover'
+    type: 'page'
+  linkMail:
+    class: 'hover'
+    type: 'mail'
+  linkDownload:
+    class: 'PREPARE_LOWERVENDOR_link__download'
+    type: 'file'
+  linkExternal:
+    class: 'PREPARE_LOWERVENDOR_link__external'
+    type: 'url'
+  linkExternalBlank:
+    class: 'PREPARE_LOWERVENDOR_link__external'
+    type: 'url'
+    target: '_blank'

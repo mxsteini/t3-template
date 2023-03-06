@@ -1,0 +1,211 @@
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    data-namespace-typo3-fluid="true"
+>
+
+<f:layout name="Default"/>
+
+<f:section name="Content">
+    <div class="mono_contact ce-{data.CType}" id="c{data.uid}">
+        <div class="mono_contact__bodytext">
+            {data.bodytext->f:format.html()}
+        </div>
+        <div class="mono_contact__wrapper">
+            <div class="mono_contact__wrapper_left">
+                <div class="mono_contact__number">
+                    <f:link.typolink parameter="tel:{data.tx_monosite_header2->f:format.raw()}">
+                        {data.tx_monosite_header2->f:format.raw()}
+                    </f:link.typolink>
+                </div>
+                <div class="mono_contact__link">
+                    <f:link.typolink parameter="">{data.tx_monosite_bodytext3->f:format.raw()}</f:link.typolink>
+                </div>
+            </div>
+            <div class="mono_contact__mail">
+                <f:link.email email="{data.tx_monosite_bodytext2}">
+                    <span class="mono_contact__mail-text">
+                        {data.tx_monosite_bodytext2}
+                    </span>
+                    <img class="mono_contact__mail-arrow"
+                         src="typo3conf/ext/mono_site/Resources/Public/images/icons/Arrow.svg">
+                    <img class="mono_contact__mail-newsletter"
+                         src="typo3conf/ext/mono_site/Resources/Public/images/icons/Mobile_Mail_50x50.svg">
+                </f:link.email>
+            </div>
+        </div>
+    </div>
+</f:section>
+<style type="text/scss">
+    @import 'src/scss/Abstracts/abstract';
+
+
+    .mono_contact {
+
+        &__bodytext {
+            margin-bottom: 50px;
+        }
+
+        &__wrapper {
+            display: flex;
+            flex-direction: column;
+            @media (min-width: map-get($breakpoints, 'large')) {
+                flex-direction: initial;
+            }
+        }
+
+        &__wrapper_left {
+            width: 100%;
+            @media (min-width: map-get($breakpoints, 'large')) {
+                width: 50%;
+            }
+        }
+
+        &__link {
+            color: var(--accent);
+            font-weight: bold;
+            @media (min-width: map-get($breakpoints, 'large')) {
+                font-size: 24px;
+                margin-top: 10px;
+            }
+        }
+
+        &__number {
+            font-weight: bold;
+            text-decoration: none;
+
+            @media (min-width: map-get($breakpoints, 'large')) {
+                font-size: 24px;
+            }
+
+            a {
+                text-decoration: none;
+                color: var(--accent);
+                position: relative;
+                transition: transform .1s ease-in-out;
+
+                &::before, &::after {
+                    content: "";
+                    position: absolute;
+                    background-color: var(--accent);
+                    transition: transform .5s;
+                }
+
+                &::after {
+                    left: 0;
+                    width: 100%;
+                    height: 3px;
+                    bottom: -1px;
+                    transform: scaleX(0);
+                    transform-origin: left;
+                }
+
+                &:hover::after {
+                    transform: scaleX(1);
+                }
+            }
+        }
+
+        &__mail {
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            color: var(--accent);
+            font-weight: normal;
+            margin-top: 20px;
+
+            @media (min-width: map-get($breakpoints, 'large')) {
+                justify-content: end;
+                width: 50%;
+                margin-top: 0px;
+            }
+
+            img {
+                width: 40px;
+
+                @media (min-width: map-get($breakpoints, 'large')) {
+                    width: 60px !important;
+                }
+
+                heigth: 60px;
+                margin-left: 10px;
+            }
+
+            a {
+                font-weight: bold;
+                color: var(--accent);
+                text-decoration: none;
+                display: flex;
+                align-items: center;
+                @media (min-width: map-get($breakpoints, 'large')) {
+                    font-weight: bold;
+                }
+
+
+            }
+
+
+            /* Hover Effect */
+            a span {
+                text-decoration: none;
+                position: relative;
+                transition: transform .1s ease-in-out;
+            }
+
+            span::before, span::after {
+                content: "";
+                position: absolute;
+                background-color: var(--accent);
+                transition: transform .5s;
+            }
+
+            span::after {
+                left: 0;
+                width: 100%;
+                height: 3px;
+                bottom: -1px;
+                transform: scaleX(0);
+                transform-origin: left;
+            }
+
+            span:hover::after {
+                transform: scaleX(1);
+            }
+
+            /* Hover Effect End */
+        }
+
+    }
+
+    .mono_col--80 {
+        .mono_col {
+            background-color: rgba(255, 255, 255, .8);
+            padding: 23px;
+            @media (min-width: map-get($breakpoints, 'medium')) {
+
+            }
+        }
+    }
+
+    textarea {
+        padding-top: 20px;
+        height: 400px;
+
+        &:after {
+            content: url(/typo3conf/ext/mono_site/Resources/Public/images/icons/Arrow.svg);
+            width: 60px;
+            display: flex;
+            margin: 0 20px 0 20px;
+        }
+    }
+
+
+    /* Nur für letztes Element da Footer mit negativ margin hochgezogen wird */
+    .ce-ContainerWrapper-24 .mono_col--80 {
+        margin-bottom: 100px;
+    }
+
+
+</style>
+
+</html>
+

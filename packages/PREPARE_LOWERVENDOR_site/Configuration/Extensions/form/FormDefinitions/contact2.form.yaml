@@ -1,0 +1,146 @@
+
+renderingOptions:
+  submitButtonLabel: Submit
+identifier: contact2
+label: 'Contact #2'
+type: Form
+prototypeName: standard
+finishers:
+  -
+    options:
+      subject: 'Your message: {subject}'
+      recipients:
+        info@PREPARE_LOWERVENDORbloc.de: 'Testmail to PREPARE_LOWERVENDORbloc'
+      senderAddress: '{email}'
+      senderName: '{name}'
+      format: html
+      attachUploads: true
+      translation:
+        language: default
+      useFluidEmail: true
+      title: 'Confirmation of your message'
+    identifier: EmailToReceiver
+renderables:
+  -
+    renderingOptions:
+      previousButtonLabel: 'Previous step'
+      nextButtonLabel: 'Next step'
+    identifier: page-1
+    label: 'Contact Form'
+    type: Page
+    properties:
+      fluidAdditionalAttributes:
+        data: Name
+    renderables:
+      -
+        defaultValue: ''
+        identifier: name
+        label: Name
+        type: Text
+        properties:
+          fluidAdditionalAttributes:
+            placeholder: Name
+            required: required
+          validationErrorMessages:
+            -
+              code: 1221560910
+              message: foofoo
+            -
+              code: 1221560718
+              message: foofoo
+            -
+              code: 1347992400
+              message: foofoo
+            -
+              code: 1347992453
+              message: foofoo
+        validators:
+          -
+            identifier: NotEmpty
+      -
+        defaultValue: ''
+        identifier: subject
+        label: Subject
+        type: Text
+        properties:
+          fluidAdditionalAttributes:
+            placeholder: Subject
+            required: required
+          validationErrorMessages:
+            -
+              code: 1221560910
+              message: babar
+            -
+              code: 1221560718
+              message: babar
+            -
+              code: 1347992400
+              message: babar
+            -
+              code: 1347992453
+              message: babar
+        validators:
+          -
+            identifier: NotEmpty
+      -
+        defaultValue: ''
+        identifier: email
+        label: Email1
+        type: Email
+        properties:
+          invalidLabel: foofoo
+          fluidAdditionalAttributes:
+            placeholder: 'Email address'
+            required: required
+          validationErrorMessages:
+            -
+              code: 1221559976
+              message: foobar2
+            -
+              code: 1221560910
+              message: foofoo
+            -
+              code: 1221560718
+              message: foofoo
+            -
+              code: 1347992400
+              message: foofoo
+            -
+              code: 1347992453
+              message: foofoo
+        validators:
+          -
+            identifier: NotEmpty
+          -
+            identifier: EmailAddress
+      -
+        defaultValue: ''
+        identifier: message
+        label: Message
+        type: Textarea
+        properties:
+          fluidAdditionalAttributes:
+            placeholder: ''
+            required: required
+        validators:
+          -
+            identifier: NotEmpty
+      -
+        properties:
+          text: 'ich bin einfacher Text'
+        type: StaticText
+        identifier: statictext-1
+        label: 'Static text'
+      -
+        label: 'Content element'
+        properties:
+          contentElementUid: '77'
+        type: ContentElement
+        identifier: contentelement-1
+  -
+    renderingOptions:
+      previousButtonLabel: 'Previous step'
+      nextButtonLabel: 'Next step'
+    identifier: summarypage
+    label: 'Summary page'
+    type: SummaryPage

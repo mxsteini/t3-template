@@ -1,0 +1,255 @@
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    data-namespace-typo3-fluid="true"
+>
+<f:render section="css" optional="1" contentAs="extraContent"></f:render>
+<div class="mono_container--fullsize mono_street__wrapper">
+        <div class="mono_container">
+            <div class="mono_row">
+                <div class="mono_col">
+                    <header>
+                        <f:render partial="Header/Header" arguments="{
+                            header: data.header,
+                            layout: data.header_layout,
+                            tx_monosite_headersize: data.tx_monosite_headersize,
+                            positionClass: '{f:if(condition: data.header_position, then: \'ce-headline-{data.header_position}\')}',
+                            link: data.header_link,
+                            default: settings.defaultHeaderType}"></f:render>
+                    </header>
+                </div>
+            </div>
+        </div>
+
+    <template x-if="$store.mono_page.isViewPort(['medium', 'large', 'wide'])">
+        <span x-intersect.once.margin.ß.0.0.-50%="$store.mono_page.street.showcontent = true"></span>
+    </template>
+    <div class="mono_street"
+         :class="{'mono_street--show-content' : $store.mono_page.street.showcontent}"
+         :style="{'padding-top': $store.mono_page.street['paddingTop'] + 'px', 'padding-bottom': $store.mono_page.street['paddingBottom'] + 'px'}"
+         x-init="$nextTick(() => $store.mono_page.initializeStreet($el))">
+        <div class="mono_street__image">
+            <include src="svg/street-complete.svg"/>
+            <template x-if="$store.mono_page.street.pins">
+                <div class="mono_street__content-wrapper"
+                     x-init="$store.mono_page.street.paddingBottom = $refs.heuteContent.getBoundingClientRect().height +'px'"
+                     :class="{'mono_modal-content--in-view': $store.mono_page.street.showcontent}">
+                    <div
+                        :style="{'top': $store.mono_page.getTop('mono_page__gestern'), 'left': $store.mono_page.getLeft('mono_page__gestern')}"
+                        class="mono_street__content mono_street__content--gestern" x-ref="gesternContent"
+                        id="mono_page__gestern-content">
+                        <template x-if="$store.mono_page.isViewPort(['mobile', 'small'])">
+                            <span
+                                x-intersect.once.margin.ß.0.0.-30%="$el.parentNode.classList.add('mono_street--show-content')"></span>
+                        </template>
+                        <div class="mono_street__content-inner">
+                            <h3>{f:or(content:data.subheader, alternative:'Gestern')}</h3>
+                            <p>{f:or(content:data.bodytext, alternative:'Gestern waren mir noch am Rande des
+                                Abgrundes')}</p>
+                        </div>
+                    </div>
+
+                    <div
+                        :style="{'top': $store.mono_page.getTop('mono_page__heute'),'left': $store.mono_page.getLeft('mono_page__heute')}"
+                        class="mono_street__content mono_street__content--heute" x-ref="heuteContent"
+                        id="mono_page__heute-content">
+                        <template x-if="$store.mono_page.isViewPort(['mobile', 'small'])">
+                            <span
+                                x-intersect.once.margin.ß.0.0.-30%="$el.parentNode.classList.add('mono_street--show-content')"></span>
+                        </template>
+                        <div class="mono_street__content-inner">
+                            <h3>{f:or(content:data.tx_monosite_header2, alternative:'Heute')}</h3>
+                            <p>{f:or(content:data.tx_monosite_bodytext2, alternative:'Heute sind wir schon einen Schritt
+                                weiter.')}</p>
+                        </div>
+                    </div>
+                    <div
+                        :style="{'top': $store.mono_page.getTop('mono_page__morgen'),'left': $store.mono_page.getLeft('mono_page__morgen')}"
+                        class="mono_street__content mono_street__content--morgen" x-ref="morgenContent"
+                        id="mono_page__morgen-content">
+                        <template x-if="$store.mono_page.isViewPort(['mobile', 'small'])">
+                            <span
+                                x-intersect.once.margin.ß.0.0.-30%="$el.parentNode.classList.add('mono_street--show-content')"></span>
+                        </template>
+                        <div class="mono_street__content-inner">
+                            <h3>{f:or(content:data.tx_monosite_header3, alternative:'Morgen')}</h3>
+                            <p>{f:or(content:data.tx_monosite_bodytext3, alternative:'Ops…')}</p>
+                        </div>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </div>
+</div>
+
+
+<style type="text/scss">
+    @import 'src/scss/Abstracts/abstract';
+
+    body {
+    }
+
+    .mono_clickable-pin {
+        cursor: pointer;
+        //fill: var(--accent-2) !important;
+    }
+
+    .mono_street {
+        box-sizing: border-box;
+        justify-content: center;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        margin: 20px 0;
+        padding: 0 20px 0 20px;
+
+        &__wrapper {
+            padding: 60px 0 80px 0;
+            @media (min-width: map-get($breakpoints, 'medium')) {
+                padding: 60px 0 80px 0;
+            }
+        }
+
+        &__image {
+            max-width: 500px;
+            background-image: url("/typo3conf/ext/mono_site/Resources/Public/images/page/street-vertical.svg");
+            background-repeat: repeat-y;
+            background-size: 40px auto;
+            display: flex;
+            position: relative;
+            padding: 20px 0 0 40px;
+            @media (min-width: map-get($breakpoints, 'medium')) {
+                padding: 0;
+                background-image: none;
+                height: auto;
+                display: block;
+                max-width: none;
+            }
+        }
+
+        svg {
+            display: none;
+            @media (min-width: map-get($breakpoints, 'medium')) {
+                display: block;
+                left: 20px;
+                height: 500px;
+                max-height: 40vw;
+                width: auto;
+                position: relative;
+            }
+        }
+
+        &__content {
+            border: solid var(--accent-2);
+            border-width: 2px 0 0 0;
+            width: 80%;
+            position: relative;
+            margin-top: 30px;
+            margin-left: 29px;
+
+            &:before {
+                display: block;
+                position: absolute;
+                content: url("/typo3conf/ext/mono_site/Resources/Public/images/icons/Pin_21x29.svg");
+                width: 21px;
+                height: 29px;
+                transform: rotateZ(90deg);
+                top: -15px;
+                left: -25px;
+                @media (min-width: map-get($breakpoints, 'medium')) {
+                    transform: rotateZ(180deg);
+                    top: -28px;
+                    left: -12px;
+                }
+            }
+
+            @media (min-width: map-get($breakpoints, 'medium')) {
+                border-width: 0 0 0 2px;
+                z-index: 10;
+                width: 35vw;
+                max-width: 600px;
+                height: auto;
+                padding-left: 10px;
+                margin-left: 11px;
+                position: absolute;
+            }
+
+            &-inner {
+                @include defaultTransition('transform, opacity');
+                transform: translateX(50%);
+                opacity: 0;
+                @media (min-width: map-get($breakpoints, 'medium')) {
+                    width: 80%;
+                }
+
+                @media (min-width: map-get($breakpoints, 'medium')) {
+                    transform: translateX(-50%);
+                    transition-duration: .5s;
+                }
+
+                .mono_street--show-content & {
+                    transform: translateX(0) !important;
+                    opacity: 1;
+                }
+
+                h3 {
+                    margin-top: 12px !important;
+                }
+            }
+
+
+            p {
+                background-color: rgba(255, 255, 255, .85);
+            }
+
+            *:first-child {
+                margin-top: 0;
+            }
+
+            &--heute {
+                > .mono_street__content-inner {
+                    transition-delay: .5s;
+                }
+
+                margin-top: 28px;
+            }
+
+            &--gestern {
+                > .mono_street__content-inner {
+                    transition-delay: 0;
+                }
+
+                &:before {
+                    @media (min-width: map-get($breakpoints, 'medium')) {
+                        transform: rotateZ(0);
+                        top: auto;
+                        bottom: -28px;
+                        left: -11px;
+                    }
+                }
+
+                @media (min-width: map-get($breakpoints, 'medium')) {
+                    transform: translateY(-100%) !important;
+                    margin-bottom: 28px;
+                }
+            }
+
+            &--morgen {
+                @media (min-width: map-get($breakpoints, 'medium')) {
+                    margin-top: 28px;
+                    width: calc(35vw - 20px);
+                }
+
+                > .mono_street__content-inner {
+                    @media (min-width: map-get($breakpoints, 'medium')) {
+                        transition-delay: 1s;
+                        transform: translateX(50%);
+                        padding-right: 90px;
+                    }
+                }
+            }
+        }
+    }
+</style>
+
+</html>

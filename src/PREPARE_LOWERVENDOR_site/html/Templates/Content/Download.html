@@ -1,0 +1,82 @@
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    data-namespace-typo3-fluid="true"
+>
+<f:render section="css" optional="1"/>
+
+<div class="mono_download ce-{data.CType}" id="c{data.uid}">
+    <f:link.typolink title="{data.header->f:format.raw()}" class="mono_download__link" parameter="{data.header_download}">
+        <div class="mono_download__link-icon">
+            <img alt="Download Icon {data.subheader->f:format.raw()}" src="{f:uri.image(src:'EXT:mono_site/Resources/Public/images/icons/ico-download.svg')}"
+                 height="50"
+                 width="50"
+            />
+        </div>
+        <div class="mono_download__wrapper">
+            <f:if condition="data.header">
+            <span class="mono_download__link-description">
+                {data.header->f:format.html()}
+            </span>
+            </f:if>
+            <f:if condition="data.subheader">
+            <span class="mono_download__link-text">
+                {data.subheader->f:format.html()}
+            </span>
+            </f:if>
+        </div>
+    </f:link.typolink>
+</div>
+</html>
+<style type="text/scss">
+    @import 'src/scss/Abstracts/abstract';
+
+    .mono_download {
+        display: flex;
+        margin-top: 25px;
+        .mono_col40-40 & {
+            margin-top: 0;
+        }
+
+        &__header {
+            text-transform: uppercase;
+        }
+
+        &__link {
+            text-decoration: none;
+        }
+
+        &__link-text {
+            text-decoration: underline;
+            p {
+                color: var(--dark_red);
+            }
+        }
+
+        &__link-description {
+            p {
+                font-weight: bold;
+            }
+        }
+
+        &__link {
+            color: var(--dark_red);
+            display: flex;
+        }
+
+        &__link-icon {
+            width: 50px;
+            padding-right: 10px;
+
+            svg {
+                background-color: var(--dark_red);
+            }
+
+            path {
+                fill: white;
+            }
+        }
+    }
+
+</style>
+
+

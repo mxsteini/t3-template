@@ -1,0 +1,57 @@
+# Load default processing options
+imports:
+  - { resource: "EXT:rte_ckeditor/Configuration/RTE/Processing.yaml" }
+  - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Base.yaml" }
+  - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Plugins.yaml" }
+
+editor:
+  config:
+    contentsCss: [ "EXT:eoi_site/Resources/Public/css/rte.css" ]
+    width: "472px"
+    height: "300px"
+    resize_enabled: false
+    toolbarGroups:
+      - { name: basicstyles, groups: [ basicstyles ] }
+      - { name: clipboard, groups: [ clipboard, undo ] }
+      - { name: document, groups: [ mode ] }
+      - { name: links, groups: [ links ] }
+
+    removeButtons:
+      - Anchor
+      - Superscript
+      - Subscript
+      - Underline
+
+buttons:
+  link:
+    properties:
+      class:
+        allowedClasses: 'hover,eoi_link__download,eoi_link__external'
+    file:
+      properties:
+        class:
+          default: 'eoi_link__download'
+    url:
+      properties:
+        class:
+          default: 'eoi_link__external'
+    email:
+      properties:
+        class:
+          default: 'hover'
+    page:
+      properties:
+        class:
+          default: 'hover'
+
+classesAnchor:
+  linkDownload:
+    class: 'eoi_link__download'
+    type: 'file'
+  linkExternal:
+    class: 'eoi_link__external'
+    type: 'url'
+  linkExternalBlank:
+    class: 'eoi_link__external'
+    type: 'url'
+    target: '_blank'

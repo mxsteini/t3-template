@@ -1,0 +1,32 @@
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:i="http://typo3.org/ns/B13/Picture/ViewHelpers"
+    data-namespace-typo3-fluid="true"
+>
+<div class="mono_page"
+     x-data
+     id="start"
+     :class="$store.mono_page.scrolled && 'mono_page--scrolled' + ' ' + $store.mono_page.viewport.class && $store.mono_page.viewport.class"
+>
+    <div class="mono_al_intersector"
+         x-intersect:enter="$store.mono_page.scrolled = false"
+         x-intersect:leave="$store.mono_page.scrolled = true"
+    ></div>
+    <f:render partial="Page/Navigation" arguments="{_all}"></f:render>
+    <f:render section="Content"></f:render>
+    <f:render partial="Page/Footer" arguments="{_all}"></f:render>
+    <f:render partial="Page/Modal" arguments="{_all}"/>
+    <f:render partial="Page/Info" arguments="{_all}"/>
+</div>
+
+<style type="text/scss">
+
+    .mono_al_intersector {
+        height: 10px;
+    }
+    .mono_page {
+        width: 100vw;
+    }
+</style>
+</html>
+

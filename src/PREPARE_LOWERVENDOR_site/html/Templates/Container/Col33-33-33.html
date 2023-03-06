@@ -1,0 +1,44 @@
+<html lang="de"
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    data-namespace-typo3-fluid="true"
+>
+<f:layout name="Content/Default"/>
+
+<f:section name="Content">
+    <f:if condition="{data.bodytext}"><p>{data.bodytext}</p></f:if>
+    <div class="mono_row mono_row--33-33-33">
+        <div class="mono_col mono_col--33">
+            <f:if condition="{col_0}">
+                <f:for each="{col_0}" as="record">
+                    <f:format.raw>
+                        {record.renderedContent}
+                    </f:format.raw>
+                </f:for>
+            </f:if>
+        </div>
+        <div class="mono_col mono_col--33">
+            <f:if condition="{col_1}">
+                <f:for each="{col_1}" as="record">
+                    <f:format.raw>
+                        {record.renderedContent}
+                    </f:format.raw>
+                </f:for>
+            </f:if>
+        </div>
+        <div class="mono_col mono_col--33">
+            <f:if condition="{col_2}">
+                <f:for each="{col_2}" as="record">
+                    <f:format.raw>
+                        {record.renderedContent}
+                    </f:format.raw>
+                </f:for>
+            </f:if>
+        </div>
+    </div>
+</f:section>
+<style>
+
+
+
+</style>
+</html>

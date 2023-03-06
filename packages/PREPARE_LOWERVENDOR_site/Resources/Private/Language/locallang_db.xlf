@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xliff version="1.0">
+  <file source-language="en" datatype="plaintext" original="messages" date="2020-09-11T14:31:41Z" product-name="cyz_site">
+    <header/>
+    <body>
+		<!-- overwrites start-->
+		<trans-unit id="card.linktext.1">
+			<source>Learn more!</source>
+		</trans-unit>
+		<trans-unit id="card.linktext.2">
+			<source>More</source>
+		</trans-unit>
+		<trans-unit id="pages.doktype.101">
+			<source>Content</source>
+		</trans-unit>
+	</body>
+  </file>
+</xliff>

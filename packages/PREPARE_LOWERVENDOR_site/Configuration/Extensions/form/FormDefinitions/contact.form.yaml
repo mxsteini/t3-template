@@ -1,0 +1,266 @@
+
+renderingOptions:
+  submitButtonLabel: Submit
+  translation:
+    translationFiles:
+      99: 'EXT:PREPARE_LOWERVENDOR_site/Configuration/Extensions/form/FormDefinitions/l10n/contact.xlf'
+  fieldState:
+    company:
+      identifier: company
+      label: Company
+      type: Text
+      renderingOptions:
+        deleted: 0
+        listView: 1
+    salutation:
+      type: SingleSelect
+      identifier: salutation
+      label: Salutation
+      renderingOptions:
+        deleted: 1
+        listView: 1
+    firstname:
+      identifier: firstname
+      label: 'First Name'
+      type: Text
+      renderingOptions:
+        deleted: 1
+        listView: 1
+    lastname:
+      identifier: lastname
+      label: 'Last Name'
+      type: Text
+      renderingOptions:
+        deleted: 0
+        listView: 1
+    email:
+      type: Email
+      identifier: email
+      label: Email
+      renderingOptions:
+        deleted: 1
+        listView: 0
+    telephone-1:
+      type: Telephone
+      identifier: telephone-1
+      label: Phone
+      renderingOptions:
+        deleted: 1
+        listView: 0
+    zip:
+      identifier: zip
+      label: Zip
+      type: Text
+      renderingOptions:
+        deleted: 1
+        listView: 0
+    city:
+      identifier: city
+      label: City
+      type: Text
+      renderingOptions:
+        deleted: 1
+        listView: 0
+    country:
+      type: CountrySelect
+      identifier: country
+      label: 'Country select'
+      renderingOptions:
+        deleted: 0
+        listView: 0
+    message:
+      identifier: message
+      label: Message
+      type: Textarea
+      renderingOptions:
+        deleted: 0
+        listView: 0
+    market:
+      type: SingleSelect
+      identifier: market
+      label: Market
+      renderingOptions:
+        deleted: 0
+        listView: 0
+    image:
+      type: ImageUpload
+      identifier: image
+      label: 'Image upload'
+      renderingOptions:
+        deleted: 0
+        listView: 0
+    pdfupload:
+      type: FileUpload
+      identifier: pdfupload
+      label: 'PDF upload'
+      renderingOptions:
+        deleted: 0
+        listView: 0
+    gridrow-1:
+      type: GridRow
+      identifier: gridrow-1
+      label: 'Grid: Row'
+      renderingOptions:
+        listView: 0
+        deleted: 0
+    gridrow-3:
+      type: GridRow
+      identifier: gridrow-3
+      label: 'Grid: Row'
+      renderingOptions:
+        listView: 0
+        deleted: 0
+    gridrow-2:
+      type: GridRow
+      identifier: gridrow-2
+      label: 'Grid: Row'
+      renderingOptions:
+        listView: 0
+        deleted: 0
+    hcaptcha-1:
+      type: Hcaptcha
+      identifier: hcaptcha-1
+      label: hCaptcha
+      renderingOptions:
+        deleted: 0
+        listView: 0
+identifier: contact
+label: contact
+type: Form
+prototypeName: standard
+finishers:
+  -
+    identifier: DepartmentEmail
+  -
+    identifier: contact
+  -
+    options:
+      pageUid: '62'
+      additionalParameters: ''
+    identifier: Redirect
+renderables:
+  -
+    renderingOptions:
+      previousButtonLabel: 'Previous step'
+      nextButtonLabel: Send
+    identifier: page-1
+    label: Contact
+    type: Page
+    renderables:
+      -
+        defaultValue: ''
+        identifier: company
+        label: Company
+        type: Text
+        properties:
+          elementDescription: ''
+      -
+        type: GridRow
+        identifier: gridrow-1
+        label: 'Grid: Row'
+        renderables:
+          -
+            properties:
+              options:
+                Mr.: Mr.
+                Mrs.: Mrs.
+              prependOptionLabel: 'Please select'
+              fluidAdditionalAttributes:
+                required: required
+            type: SingleSelect
+            identifier: salutation
+            label: Salutation
+            validators:
+              -
+                identifier: NotEmpty
+          -
+            defaultValue: ''
+            identifier: firstname
+            label: 'First Name'
+            type: Text
+            properties:
+              fluidAdditionalAttributes:
+                required: required
+            validators:
+              -
+                identifier: NotEmpty
+      -
+        defaultValue: ''
+        identifier: lastname
+        label: 'Last Name'
+        type: Text
+        properties:
+          fluidAdditionalAttributes:
+            required: required
+          elementDescription: ''
+        validators:
+          -
+            identifier: NotEmpty
+      -
+        type: GridRow
+        identifier: gridrow-3
+        label: 'Grid: Row'
+        renderables:
+          -
+            defaultValue: ''
+            type: Email
+            identifier: email
+            label: Email
+            properties:
+              fluidAdditionalAttributes:
+                required: required
+            validators:
+              -
+                identifier: EmailAddress
+              -
+                identifier: NotEmpty
+          -
+            defaultValue: ''
+            type: Telephone
+            identifier: telephone-1
+            label: Phone
+            properties:
+              elementDescription: ''
+      -
+        type: GridRow
+        identifier: gridrow-2
+        label: 'Grid: Row'
+        renderables:
+          -
+            defaultValue: ''
+            identifier: zip
+            label: Zip
+            type: Text
+            properties:
+              fluidAdditionalAttributes:
+                required: required
+              elementDescription: ''
+              gridColumnClassAutoConfiguration:
+                viewPorts:
+                  xxl:
+                    numbersOfColumnsToUse: '3'
+            validators:
+              -
+                identifier: NotEmpty
+          -
+            defaultValue: ''
+            identifier: city
+            label: City
+            type: Text
+            properties:
+              fluidAdditionalAttributes:
+                required: required
+            validators:
+              -
+                identifier: NotEmpty
+      -
+        defaultValue: ''
+        identifier: message
+        label: Message
+        type: Textarea
+        properties:
+          fluidAdditionalAttributes:
+            placeholder: ''
+        validators:
+          -
+            identifier: NotEmpty

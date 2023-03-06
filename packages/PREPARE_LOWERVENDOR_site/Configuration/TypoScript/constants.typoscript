@@ -1,0 +1,15 @@
+# Static Extension Templates
+@import 'EXT:fluid_styled_content/Configuration/TypoScript/constants.typoscript'
+#@import 'EXT:seo/Configuration/TypoScript/XmlSitemap/constants.typoscript'
+#@import 'EXT:hcaptcha/Configuration/TypoScript/constants.typoscript'
+#@import 'EXT:metermix_website/Configuration/TypoScript/constants.typoscript'
+
+# Global Constants
+@import 'EXT:PREPARE_LOWERVENDOR_site/Configuration/TypoScript/Constants/*.typoscript'
+@import 'EXT:PREPARE_LOWERVENDOR_site/Configuration/TypoScript/Constants/Extensions/*.typoscript'
+
+
+# Environment Context
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:PREPARE_LOWERVENDOR_site/Configuration/TypoScript/_DEV/constants.typoscript" condition="[applicationContext == \"Development\"]">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:PREPARE_LOWERVENDOR_site/Configuration/TypoScript/_PREV/constants.typoscript" condition="[applicationContext == \"Production/Preview\"]">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:PREPARE_LOWERVENDOR_site/Configuration/TypoScript/_PROD/constants.typoscript" condition="[applicationContext == \"Production\"]">

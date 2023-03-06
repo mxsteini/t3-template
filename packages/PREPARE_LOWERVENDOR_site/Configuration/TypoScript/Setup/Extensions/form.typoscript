@@ -1,0 +1,29 @@
+plugin.tx_form.settings.yamlConfigurations {
+    1499086547 = EXT:PREPARE_LOWERVENDOR_site/Configuration/Extensions/form/CustomFormSetup.yaml
+}
+
+module.tx_form.settings.yamlConfigurations {
+    1499086547 = EXT:PREPARE_LOWERVENDOR_site/Configuration/Extensions/form/CustomFormSetup.yaml
+}
+
+plugin.tx_form {
+    view {
+        templateRootPaths.40 = EXT:PREPARE_LOWERVENDOR_site/Resources/Private/Templates/Form/
+        partialRootPaths.40 = EXT:PREPARE_LOWERVENDOR_site/Resources/Private/Partials/Form/
+        layoutRootPaths.40 = EXT:PREPARE_LOWERVENDOR_site//Resources/Private/Layouts/Form/
+    }
+}
+
+/*
+
+module.tx_form {
+view {
+templateRootPaths.10 = EXT:form/Resources/Private/Templates/
+partialRootPaths.10 = EXT:form/Resources/Private/Partials/
+layoutRootPaths.10 = EXT:form/Resources/Private/Layouts/
+templateRootPaths.20 = EXT:PREPARE_LOWERVENDOR_site/Resources/Private/Templates/
+partialRootPaths.20 = EXT:PREPARE_LOWERVENDOR_site/Resources/Private/Partials/
+layoutRootPaths.20 = EXT:PREPARE_LOWERVENDOR_site/Resources/Private/Layouts/
+}
+}
+*/
