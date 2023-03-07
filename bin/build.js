@@ -21,11 +21,18 @@ dotenv.config({
     path: path.join(projectPath, '.env')
 })
 
-console.log('processing watch js')
+console.log('processing js')
 buildFuncs.jsProcessor()
 
-console.log('processing sass')
+console.log('processing html')
+buildFuncs.packages.forEach(target => {
+    const targetPath = path.join(path.resolve('src'), target, 'html/**/*.html')
+    glob.sync(targetPath).forEach(file => {
+        buildFuncs.postHtmlProcessor(file)
+    })
+})
 buildFuncs.sassProcessor()
+
 process.exit()
 
 let htmlRoot = 'src/html'
