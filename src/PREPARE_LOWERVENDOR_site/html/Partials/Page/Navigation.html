@@ -5,16 +5,11 @@
 <div class="PREPARE_LOWERVENDOR_header"
      :class="$store.PREPARE_LOWERVENDOR_page.menuOpen ? 'PREPARE_LOWERVENDOR_navigation--opend' : 'PREPARE_LOWERVENDOR_navigation--closed'"
 >
-    <div class="PREPARE_LOWERVENDOR_navigation__border PREPARE_LOWERVENDOR_navigation__border--left">
-        <img alt="velo groen lijntjes links"
-             src="{f:uri.image(src:'EXT:PREPARE_LOWERVENDOR_site/Resources/Public/images/page/velo_lijntjes-groen.svg')}"
-             height="4"/>
-    </div>
     <div class="PREPARE_LOWERVENDOR_navigation">
         <div class="PREPARE_LOWERVENDOR_navigation__logo">
             <a class="PREPARE_LOWERVENDOR_navigation__logo-link" href="/">
-                <img alt="Logo VeloRoad (by Possehl)"
-                     src="{f:uri.image(src:'EXT:PREPARE_LOWERVENDOR_site/Resources/Public/images/page/Logo.svg')}"
+                <img alt="Michael Stein IT-Beratung"
+                     src="{f:uri.image(src:'EXT:PREPARE_LOWERVENDOR_site/Resources/Public/images/page/Itb.svg')}"
                      width="" height="27"/>
             </a>
         </div>
@@ -40,18 +35,6 @@
             </div>
         </div>
     </div>
-    <div class="PREPARE_LOWERVENDOR_navigation__border PREPARE_LOWERVENDOR_navigation__border--right">
-        <img alt="velo groen lijntjes rechts"
-             src="{f:uri.image(src:'EXT:PREPARE_LOWERVENDOR_site/Resources/Public/images/page/velo_lijntjes-groen.svg')}"
-             height="4"/>
-        <div class="PREPARE_LOWERVENDOR_navigation__nav">
-            <ul>
-                <li class="PREPARE_LOWERVENDOR_navigation__list PREPARE_LOWERVENDOR_navigation__list--empty"></li>
-                <li class="PREPARE_LOWERVENDOR_navigation__list PREPARE_LOWERVENDOR_navigation__list--empty"></li>
-                <f:render section="language_menu" arguments="{_all}"></f:render>
-            </ul>
-        </div>
-    </div>
 </div>
 
 <f:section name="language_menu">
@@ -64,7 +47,7 @@
             <f:if condition="{lang.active}">
                 <f:then>
                     <a href="{lang.link}"
-                       class="PREPARE_LOWERVENDOR_navigation__link" title="VeloRoad {lang.title}">{lang.navigationTitle}</a>
+                       class="PREPARE_LOWERVENDOR_navigation__link" title="{lang.title}">{lang.navigationTitle}</a>
                 </f:then>
             </f:if>
         </f:for>
