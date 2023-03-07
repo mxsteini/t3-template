@@ -25,7 +25,7 @@
 		"b13/picture": "*",
 		"helhum/dotenv-connector": "*",
 		"helhum/typo3-console": "*",
-		"ichhabrecht/content-defender": "^3.2",
+		"ichhabrecht/content-defender": "*",
 		"lochmueller/language-detection": "*",
 		"lochmueller/staticfilecache": "*",
 		"PREPARE_LOWERVENDOR/PREPARE_LOWERVENDOR-site": "dev-main",
