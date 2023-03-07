@@ -7,13 +7,11 @@ else
     command="$1"
 fi
 
-GITLAB_URL="https://gitlab.monobloc.de"
-# https://gitlab.monobloc.de/hkg/huk/t3-template/-/settings/access_tokens
+GITLAB_URL="PREPARE_gitlaburl"
 GITLAB_ACCESS_TOKEN="PREPARE_accesstoken"
-# https://gitlab.monobloc.de/hkg/huk/t3-template/-/settings/ci_cd -> Pipeline triggers
 GITLAB_PIPELINE_TOKEN="PREPARE_pipelinetoken"
 
-project="t3-template"
+project="PREPARE_projectname"
 project_id=PREPARE_projectid
 branch="dump"
 job="dump-data"
