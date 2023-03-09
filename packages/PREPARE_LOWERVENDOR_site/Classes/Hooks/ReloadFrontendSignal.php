@@ -1,7 +1,4 @@
 <?php
-
-declare(strict_types=1);
-
 namespace PREPARE_UPPERVENDOR\PREPARE_CAPITALVENDORSite\Hooks;
 
 use TYPO3\CMS\Core\Core\Environment;

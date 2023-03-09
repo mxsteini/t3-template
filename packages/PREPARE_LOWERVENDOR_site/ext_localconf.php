@@ -1,10 +1,8 @@
 <?php
 
-use PREPARE_UPPERVENDOR\PREPARE_CAPITALVENDORSite\Hooks\ReloadFrontendSignal;
-
-$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['clearCachePostProc'][] = ReloadFrontendSignal::class . '->clearCachePostProc';
-$GLOBALS ['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['processDatamapClass'][''] = ReloadFrontendSignal::class;
-$GLOBALS ['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['processCmdmapClass'][''] = ReloadFrontendSignal::class;
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['clearCachePostProc'][] = PREPARE_UPPERVENDOR\PREPARE_CAPITALVENDORSite\Hooks\ReloadFrontendSignal::class . '->clearCachePostProc';
+$GLOBALS ['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['processDatamapClass'][''] = PREPARE_UPPERVENDOR\PREPARE_CAPITALVENDORSite\Hooks\ReloadFrontendSignal::class;
+$GLOBALS ['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['processCmdmapClass'][''] = PREPARE_UPPERVENDOR\PREPARE_CAPITALVENDORSite\Hooks\ReloadFrontendSignal::class;
 
 defined('TYPO3_MODE') || exit();
 
@@ -54,5 +52,14 @@ defined('TYPO3_MODE') || exit();
         'options.pageTree.doktypesToShowInNewPageDragArea := addToList(101)'
     );
 
+    $GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['custom'] = 'EXT:PREPARE_LOWERVENDOR_site/Configuration/RTE/custom.yaml';
+
+//    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addUserTSConfig('@import "EXT:PREPARE_LOWERVENDOR_site/Configuration/TypoScript/User.tsconfig"');
+//    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTypoScriptSetup('@import "EXT:PREPARE_LOWERVENDOR_site/Configuration/TypoScript/Rootpages/Project1/setup.tsconfig"');
+//    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTypoScriptConstants('@import "EXT:PREPARE_LOWERVENDOR_site/Configuration/TypoScript/Rootpages/Project1/constants.tsconfig"');
+
+// Customize the label for the input field "Relationship" in the link browser
+    $GLOBALS['TYPO3_CONF_VARS']['SYS']['locallangXMLOverride']['EXT:recordlist/Resources/Private/Language/locallang_browse_links.xlf'][] = 'EXT:PREPARE_LOWERVENDOR_site/Resources/Private/Language/locallang_browse_links.xlf';
+    $GLOBALS['TYPO3_CONF_VARS']['SYS']['locallangXMLOverride']['de']['EXT:recordlist/Resources/Private/Language/locallang_browse_links.xlf'][] = 'EXT:PREPARE_LOWERVENDOR_site/Resources/Private/Language/de.locallang_browse_links.xlf';
 
 })();

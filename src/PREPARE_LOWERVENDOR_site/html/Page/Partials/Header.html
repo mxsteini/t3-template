@@ -1,6 +1,6 @@
 <html
 	xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
-	xmlns:jw="http://typo3.org/ns/JWeiland/jwmusterprojekt11/ViewHelpers"
+	xmlns:PREPARE_LOWERVENDOR="http://typo3.org/ns/PREPARE_UPPERVENDOR/PREPARE_CAPITALVENDORSite/ViewHelpers"
 	data-namespace-typo3-fluid="true">
 
 
@@ -23,11 +23,11 @@
 				</f:if>
 			</div>
 			<div class="col-4_md-6_sm-12 wrapper-logo">
-				<jw:exists file="{settings.logoFile}">
+				<PREPARE_LOWERVENDOR:exists file="{settings.logoFile}">
 					<f:link.typolink parameter="{settings.logoLinkParameter}" title="{settings.logoLinkTitle}">
 						<f:image src="{settings.logoFile}" alt="{settings.logoAltText}" width="{settings.logoWidth}"/>
 					</f:link.typolink>
-				</jw:exists>
+				</PREPARE_LOWERVENDOR:exists>
 			</div>
 		</div>
 		<f:if condition="{settings.showSearch}">

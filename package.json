@@ -25,7 +25,15 @@
 		"alpinejs": "^3.11.1",
 		"dotenv": "^16.0.1",
 		"esbuild": "^0.17.5",
-		"fs-extra": "^11.1.0"
+		"fs-extra": "^11.1.0",
+		"posthtml": "^0.16.6",
+		"posthtml-cli": "^0.10.0",
+		"posthtml-custom-elements": "^1.1.2",
+		"posthtml-include": "^1.7.4",
+		"posthtml-modules": "^0.8.0",
+		"posthtml-scss-to-file": "file:lib/posthtml-scss-to-file",
+		"pristinejs": "^1.0.0",
+		"sass": "^1.56.1"
 	},
 	"type": "module"
 }

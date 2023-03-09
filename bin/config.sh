@@ -3,7 +3,7 @@ PREPARE[projectname]="t3-template"
 PREPARE[author]="Michael Stein"
 PREPARE[LOWERVENDOR]="mst"
 PREPARE[UPPERVENDOR]="MST"
-PREPARE[CAPITIALVENDOR]="Mst"
+PREPARE[CAPITALVENDOR]="Mst"
 
 #
 PREPARE[url]=""

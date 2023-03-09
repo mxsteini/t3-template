@@ -6,9 +6,6 @@ baseVariants:
     base: 'https://PREPARE_projectname.ddev.site/'
     condition: 'applicationContext == "Development/Ddev"'
   -
-    base: 'https://PREPARE_projectname.ddev.site:8082'
-    condition: 'applicationContext == "Development/Greiner"'
-  -
     base: 'https://current.PREPARE_url/'
     condition: 'getenv("HTTP_HOST") == "current.PREPARE_url"'
   -

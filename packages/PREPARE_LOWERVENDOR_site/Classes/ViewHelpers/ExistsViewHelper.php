@@ -1,6 +1,6 @@
 <?php
 
-namespace JWeiland\PREPARE_LOWERVENDOR_site\ViewHelpers;
+namespace PREPARE_UPPERVENDOR\PREPARE_CAPITALVENDORSite\ViewHelpers;
 
 /*
  * This file is part of the FluidTYPO3/Vhs project under GPLv2 or later.

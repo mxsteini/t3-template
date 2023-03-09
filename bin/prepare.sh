@@ -58,6 +58,7 @@ if [ "$command" == 'rollback' ]; then
 
     removeVariables .env
     removeVariables composer.json
+    removeVariables package.json
     mv .env .env.dist
 
 else
@@ -95,4 +96,5 @@ else
     fi
     insertVariables .env
     insertVariables composer.json
+    insertVariables package.json
 fi
