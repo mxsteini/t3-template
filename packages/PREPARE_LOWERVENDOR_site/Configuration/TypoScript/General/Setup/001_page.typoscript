@@ -1,0 +1,178 @@
+page = PAGE
+
+page.meta {
+  viewport = width=device-width,initial-scale=1
+}
+
+###################### Favicon und Touchicons ######################
+page.headerData.2347 >
+page.headerData.2347 = COA
+page.headerData.2347 {
+  # iPhone
+  10 = IMAGE
+  10 {
+    file = {$PREPARE_LOWERVENDOR_site.iconSquare}
+    file.width = 60
+    file.height = 60
+    layoutKey = apple-touch-icon
+    layout {
+      apple-touch-icon {
+        element = <link rel="apple-touch-icon" href="###SRC###"###SELFCLOSINGTAGSLASH###>
+      }
+
+      apple-touch-icon-with-sizes {
+        element = <link rel="apple-touch-icon" sizes="###WIDTH###x###HEIGHT###" href="###SRC###"###SELFCLOSINGTAGSLASH###>
+      }
+
+      msapplication-TileImage {
+        element = <meta name="msapplication-TileImage" content="###SRC###"###SELFCLOSINGTAGSLASH###>
+      }
+
+      msapplication-square {
+        element = <meta name="msapplication-square###WIDTH###x###HEIGHT###logo" content="###SRC###"###SELFCLOSINGTAGSLASH###>
+      }
+
+      msapplication-wide {
+        element = <meta name="msapplication-wide###WIDTH###x###HEIGHT###logo" content="###SRC###"###SELFCLOSINGTAGSLASH###>
+      }
+    }
+  }
+
+  # iPad
+  20 < .10
+  20.layoutKey = apple-touch-icon-with-sizes
+  20.file.width = 76
+  20.file.height = 76
+
+  # iPhone Retina
+  30 < .20
+  30.file.width = 120
+  30.file.height = 120
+
+  # iPad Retina
+  40 < .20
+  40.file.width = 152
+  40.file.height = 152
+
+  110 < .10
+  110.layoutKey = msapplication-TileImage
+  110.file.width = 144
+  110.file.height = 144
+
+  120 < .10
+  120.layoutKey = msapplication-square
+  120.file.width = 70
+  120.file.height = 70
+
+  130 < .10
+  130.layoutKey = msapplication-square
+  130.file.width = 150
+  130.file.height = 150
+
+  140 < .10
+  140.layoutKey = msapplication-square
+  140.file.width = 310
+  140.file.height = 310
+
+  150 < .10
+  150.layoutKey = msapplication-wide
+  150.file = {$PREPARE_LOWERVENDOR_site.iconWide}
+  150.file.width = 310
+  150.file.height = 150c
+}
+
+page.shortcutIcon = {$PREPARE_LOWERVENDOR_site.iconSquare}
+page.meta {
+  #IE11TileforWindows8.1StartScreen
+  msapplication-config = none
+  msapplication-TileColor = #ffffff
+  msapplication-tooltip = {$PREPARE_LOWERVENDOR_site.companyName}
+  application-name = {$PREPARE_LOWERVENDOR_site.companyName}
+  theme-color = #ffffff
+}
+
+###################### CSS-Files ######################
+page.includeCSS {
+  ## Icon fonts see: https://fontawesome.com/icons?d=gallery&m=free
+  fontawesome = EXT:PREPARE_LOWERVENDOR_site/Resources/Public/Css/Fontawesome/fontawesome.css
+  fontawesomesolid = EXT:PREPARE_LOWERVENDOR_site/Resources/Public/Css/Fontawesome/solid.css
+  #fontawesomeregular = EXT:PREPARE_LOWERVENDOR_site/Resources/Public/Css/Fontawesome/regular.css
+  #fontawesomebrands= EXT:PREPARE_LOWERVENDOR_site/Resources/Public/Css/Fontawesome/brands.css
+
+  general = EXT:PREPARE_LOWERVENDOR_site/Resources/Public/Css/style.css
+
+  ## CSS fuer gewaehltes Farbschema der Navigation
+  mainmenu = EXT:PREPARE_LOWERVENDOR_site/Resources/Public/Css/Smartmenu/sm-clean.css
+  megamenu = EXT:PREPARE_LOWERVENDOR_site/Resources/Public/Css/Smartmenu/mega-menu.css
+  megamenu.if.value = megamenu
+  megamenu.if.equals = {$PREPARE_LOWERVENDOR_site.menuTheme}
+
+  fancybox = EXT:PREPARE_LOWERVENDOR_site/Resources/Public/Css/Extensions/jquery.fancybox.css
+
+  videoshariff = EXT:PREPARE_LOWERVENDOR_site/Resources/Public/Css/Extensions/videoshariff.css
+
+  ## CSS fuer EXT:news
+  news = EXT:PREPARE_LOWERVENDOR_site/Resources/Public/Css/Extensions/news.css
+
+  ## CSS für Anwenderspezifische Modifikationen
+  modifications = /fileadmin/CSS-Modifications/modifications.css
+
+  ## CSS für Styleguide
+  styleguide = EXT:PREPARE_LOWERVENDOR_site/Resources/Public/Css/Modules/styleguidemodules.css
+  styleguide.if.value = pagets__styleguide
+  styleguide.if.equals.data = pagelayout
+}
+
+###################### Javascript im Header ######################
+page.includeJSLibs {
+  jquery = EXT:PREPARE_LOWERVENDOR_site/Resources/Public/JavaScript/Lib/jquery-3.5.1.min.js
+  jquery {
+    forceOnTop = 1
+    disableCompression = 1
+    excludeFromConcatenation = 1
+    allWrap = <!--[if lte IE 8]><script src="EXT:PREPARE_LOWERVENDOR_site/Resources/Public/JavaScript/Lib/jquery-1.12.4.min.js"></script><![endif]--><!--[if gt IE 8]><!-->|<!--<![endif]-->
+  }
+}
+
+###################### JavaScript im Footer ######################
+
+page.includeJSFooter {
+  smartMenu = EXT:PREPARE_LOWERVENDOR_site/Resources/Public/JavaScript/Smartmenu/jquery.smartmenus.min.js
+  smartMenu.disableCompression = 1
+
+  ## menu with "more" option
+  initMoreSmartMenu = EXT:PREPARE_LOWERVENDOR_site/Resources/Public/JavaScript/Smartmenu/initMoreSmartMenu.js
+  initMoreSmartMenu {
+    if.isFalse = {$PREPARE_LOWERVENDOR_site.menuType}
+    if.value = standard
+    if.equals = {$PREPARE_LOWERVENDOR_site.menuTheme}
+  }
+
+  initSmartMenu = EXT:PREPARE_LOWERVENDOR_site/Resources/Public/JavaScript/Smartmenu/initSmartMenu.js
+
+  fancyBox = EXT:PREPARE_LOWERVENDOR_site/Resources/Public/JavaScript/jquery.fancybox.min.js
+  fancyBox.disableCompression = 1
+
+  toggleContent = EXT:PREPARE_LOWERVENDOR_site/Resources/Public/JavaScript/contentToggle.js
+
+  ## JavaScript fuer Klaro nur laden, wenn benoetigt
+  klaro = EXT:PREPARE_LOWERVENDOR_site/Resources/Public/JavaScript/Klaro/klaro.js
+  klaro.if.value = 1
+  klaro.if.equals = {$PREPARE_LOWERVENDOR_siteCCM.showKlaro}
+
+  custom = EXT:PREPARE_LOWERVENDOR_site/Resources/Public/JavaScript/custom.js
+}
+
+# Load JavaScript and CSS for Syntax-Highlighting only if the TSconfig is loaded
+[getTSFE() && getTSFE().getPagesTSconfig()["RTE."]["default."]["preset"] == "custom"]
+page.includeCSS {
+  prism = EXT:PREPARE_LOWERVENDOR_site/Resources/Public/Css/Extensions/prismcoy.css
+}
+
+page.includeJSFooter {
+  prism = EXT:PREPARE_LOWERVENDOR_site/Resources/Public/JavaScript/prism.js
+  prism.excludeFromConcatenation = 1
+  prismts = EXT:PREPARE_LOWERVENDOR_site/Resources/Public/JavaScript/prism-typoscript.js
+  prismts.excludeFromConcatenation = 1
+}
+[END]

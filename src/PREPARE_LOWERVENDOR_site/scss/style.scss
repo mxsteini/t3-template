@@ -1,21 +1,31 @@
-@import './Abstracts/abstract';
+@import "variables";
 
-@import './Vendors/normalize';
+@import "Default/mixins";
+@import "Default/fontfamily";
+@import "Default/normalize";
+@import "Default/general";
+@import "Default/flexgrid";
+@import "Modules/flexbox";
 
-@import './Base/typo';
-@import './Base/variables';
-@import './Base/fonts';
-@import './Base/decoration';
-@import './Components/icons';
-@import './Components/form';
-@import './Components/button';
-@import './Components/burger';
-@import './Components/newsletter';
+@import "Modules/layout";
+@import "Modules/menu";
+@import "Modules/typography";
+@import "Modules/fluidstyledcontent";
+@import "Modules/responsiveimages";
+@import "Modules/metaimages";
+@import "Modules/forms";
+@import "Modules/tables";
+@import "Modules/search";
+@import "Modules/togglecontent";
+@import "Modules/modal";
+@import "Modules/messaging";
+@import "Modules/paginator";
+@import "Modules/scrolltotop";
+@import "Modules/socialmedia";
 
-@import './Layout/grid';
-@import './Layout/spacing';
 
 
-[x-cloak] {
-    display: none !important;
+// last include!
+@media print {
+  @import "Modules/print";
 }

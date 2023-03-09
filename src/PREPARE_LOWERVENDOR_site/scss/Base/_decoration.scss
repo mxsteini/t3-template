@@ -1,8 +1,0 @@
-.PREPARE_LOWERVENDOR_decoration {
-    &__dash {
-        @include dash(var(--foreground))
-    }
-    &__dash--accent {
-        @include dash(var(--accent))
-    }
-}

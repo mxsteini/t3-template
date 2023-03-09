@@ -1,0 +1,93 @@
+/////////////////// search //////////////////
+
+.wrapper-search {
+  max-width: 100%;
+  background: $menu-bg;
+  height: $mobile-header-height;
+  z-index: 200;
+  position: absolute;
+  top: -100px;
+  left:0;
+  right: $base-size*3;
+  @include transition(all);
+
+  .input-group input {
+    display: inline-block;
+    width: 100%;
+  }
+  button {
+    width: $base-size*2;
+    height: $base-size*2;
+  }
+  &.visible {
+    top: 0;
+    > div {
+      padding: 0 0 0 $gutter;
+    }
+  }
+  fieldset > div {
+    padding-bottom: 0.5rem;
+    margin: 0;
+  }
+}
+
+@media screen and (min-width: $desktop-menu-min) {
+  .wrapper-search {
+    background: $white-opacity;
+    height: $header-height;
+    &.visible {
+      > div {
+        width: $gutter*15;
+        padding: $base-size*.5 0 0 $gutter;
+      }
+    }
+  }
+}
+.search-hide-btn {
+  padding: ($base-size*.375) 0;
+  width: $base-size*2;
+  display: inline-block;
+  cursor: pointer;
+  color: $body-link-color;
+  @include transition(all);
+  &.active .fa-search:before {
+    content: "\f00d";
+  }
+  &:hover,
+  &:focus {
+    color: $body-link-hover-color;
+  }
+}
+.page-searchresult .search-hide-btn {
+  display: none;
+}
+
+//@media screen and (min-width: $mediaquery-medium-min) {
+//  .wrapper-search {
+//    left: auto;
+//  }
+//}
+
+.tx-indexedsearch-info > dt {
+  float: left;
+  clear: left;
+  width: 25%;
+  overflow: hidden;
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tx-indexedsearch-info > dd {
+  margin-left: 25%;
+}
+
+.tx-indexedsearch-res span {
+  display: inline-block;
+}
+
+.tx-indexedsearch-res {
+  border-bottom: $border-width solid $border-color;
+  margin-bottom: $base-size;
+}

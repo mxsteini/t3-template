@@ -1,0 +1,132 @@
+plugin.tx_news {
+  view {
+    templateRootPaths {
+      0 = EXT:news/Resources/Private/Templates/
+      1 = EXT:PREPARE_LOWERVENDOR_site/Resources/Private/Extensions/News/Templates/
+    }
+
+    partialRootPaths {
+      0 = EXT:news/Resources/Private/Partials/
+      1 = EXT:PREPARE_LOWERVENDOR_site/Resources/Private/Extensions/News/Partials/
+    }
+
+    layoutRootPaths {
+      0 = EXT:news/Resources/Private/Layouts/
+      #1 = EXT:PREPARE_LOWERVENDOR_site/Resources/Private/Extensions/News/Layouts/
+    }
+  }
+}
+
+plugin.tx_news.settings {
+  cssFile =
+  defaultDetailPid = {$PREPARE_LOWERVENDOR_site.newsDetailPid}
+  #displayDummyIfNoMedia = 0
+  startingpoint = {$PREPARE_LOWERVENDOR_site.newsStartingPoints}
+  recursive = 10
+  listPid = {$PREPARE_LOWERVENDOR_site.newsListPid}
+  defaultDetailPid = {$PREPARE_LOWERVENDOR_site.newsDetailPid}
+  # Skip default controller/action to get shorter RealUrl path
+  link.skipControllerAndAction = 1
+}
+
+plugin.tx_news.settings.list {
+  paginate {
+    insertAbove = 0
+  }
+
+  media.image {
+    maxWidth = 120
+    maxHeight =
+  }
+
+  mediacard.image {
+    maxWidth = 360
+    maxHeight = 240c
+  }
+}
+
+plugin.tx_news.settings.detail {
+  ## Width of images in detail view
+  media.image {
+    maxWidth = {$PREPARE_LOWERVENDOR_site.imgTextMaxWidth}
+  }
+
+  showSocialShareButtons = 0
+  ## Behaviour of news, if no news-id is given in detail URL
+  ## In this case, redirect to the page with the list view
+  errorHandling = redirectToPage,{$PREPARE_LOWERVENDOR_site.newsListPid}
+}
+
+
+## Default Language German
+plugin.tx_news.settings.facebookLocale = de_DE
+plugin.tx_news.settings.googlePlusLocale = de
+plugin.tx_news.settings.disqusLocale = de
+
+## English
+[siteLanguage("title") == "English"]
+  plugin.tx_news.settings.facebookLocale = en_EN
+  plugin.tx_news.settings.googlePlusLocale = en
+  plugin.tx_news.settings.disqusLocale = en
+[END]
+
+## change labels in frontend
+plugin.tx_news._LOCAL_LANG {
+  default {
+    #dateFormat =
+    #more-link =
+    #list_nonewsfound =
+  }
+
+  de {
+    #dateFormat =
+    #more-link =
+    #list_nonewsfound =
+  }
+}
+
+## RSS Feed
+## See: https://docs.typo3.org/p/georgringer/news/master/en-us/AdministratorManual/BestPractice/Rss/Index.html
+[getTSFE().type == 9818]
+  config {
+    disableAllHeaderCode = 1
+    xhtml_cleaning = none
+    admPanel = 0
+    debug = 0
+    disablePrefixComment = 1
+    metaCharset = utf-8
+    additionalHeaders.10.header = Content-Type:application/rss+xml;charset=utf-8
+    absRefPrefix = {$plugin.tx_news.rss.channel.link}
+    linkVars >
+  }
+
+  pageNewsRSS = PAGE
+  pageNewsRSS {
+    config.index_enable = 0
+    typeNum = 9818
+    10 < tt_content.list.20.news_pi1
+    10 {
+      switchableControllerActions {
+        News {
+          1 = list
+        }
+      }
+
+      settings < plugin.tx_news.settings
+      settings {
+        #categories = 9
+        #categoryConjunction = notor
+        limit = 30
+        detailPid = {$PREPARE_LOWERVENDOR_site.newsDetailPid}
+        startingpoint = {$PREPARE_LOWERVENDOR_site.newsStartingPoints}
+        format = xml
+      }
+    }
+  }
+[END]
+
+## Add news title as "fake" entry to the rootline menu
+page.10.dataProcessing {
+  900 = GeorgRinger\News\DataProcessing\AddNewsToMenuProcessor
+  900.menus = rootline
+}

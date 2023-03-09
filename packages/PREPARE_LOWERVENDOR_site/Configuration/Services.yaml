@@ -1,0 +1,25 @@
+services:
+
+  dashboard.buttons.jwmp11:
+    class: 'TYPO3\CMS\Dashboard\Widgets\Provider\ButtonProvider'
+    arguments:
+      $title: 'LLL:EXT:PREPARE_LOWERVENDOR_site/Resources/Private/Language/locallang.xlf:PREPARE_LOWERVENDOR_site.widgets.mp11doc.button.label'
+      $link: 'https://jweiland.net/typo3/typo3-template-responsive.html'
+      $target: '_blank'
+
+  dashboard.widget.jwmp11:
+    class: 'TYPO3\CMS\Dashboard\Widgets\CtaWidget'
+    arguments:
+      $view: '@dashboard.views.widget'
+      $buttonProvider: '@dashboard.buttons.jwmp11'
+      $options:
+        text: 'LLL:EXT:PREPARE_LOWERVENDOR_site/Resources/Private/Language/locallang.xlf:PREPARE_LOWERVENDOR_site.widgets.mp11doc.longdesc'
+    tags:
+      - name: dashboard.widget
+        identifier: 'jwmp11'
+        groupNames: 'general'
+        title: 'LLL:EXT:PREPARE_LOWERVENDOR_site/Resources/Private/Language/locallang.xlf:PREPARE_LOWERVENDOR_site.widgets.mp11doc.title'
+        description: 'LLL:EXT:PREPARE_LOWERVENDOR_site/Resources/Private/Language/locallang.xlf:PREPARE_LOWERVENDOR_site.widgets.mp11doc.shortdesc'
+        iconIdentifier: 'content-widget-text'
+        height: 'small'
+        width: 'medium'

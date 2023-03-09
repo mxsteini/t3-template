@@ -1,0 +1,303 @@
+// Base HTML Sizes:
+$base-html-size: 16px;
+$base-html-size-small: $base-html-size;
+$base-html-size-medium: $base-html-size;
+$base-html-size-large: $base-html-size * 1.125;
+// Base:
+$body-font-size: 1rem; // 16px
+
+//Vertical Space
+$base-size: 1.5rem; // default line height
+$base-size-double: $base-size * 2;
+$base-size-half: $base-size * 0.5;
+$base-size-quarter: $base-size * 0.25;
+$base-size-eighth: $base-size * 0.125;
+
+// Horizontal Space
+$gutter: 1.5rem;
+$gutter-px: (1.5 * $base-html-size-large);// gutter value/base-html-size
+$gutter-half: $gutter * 0.5;
+$gutter-quarter: $gutter * 0.25;
+$gutter-eighth: $gutter * 0.125;
+
+//default paddíng for all boxes with background or border
+$padding-boxes: ($base-size $gutter);
+
+// Max Content Width
+$content-max: 1280px;
+$content-max-with-gutter: ($content-max + ($gutter-px*2));
+
+// Breakpoints
+$mediaquery-xsmall-max: 400px;
+$mediaquery-small-min: ($mediaquery-xsmall-max + 1);
+$mediaquery-small-max: 600px;
+$mediaquery-medium-min: ($mediaquery-small-max + 1);
+$mediaquery-medium-max: 800px;
+$mediaquery-large-min: ($mediaquery-medium-max + 1);
+$mediaquery-large-max: $content-max;
+$mediaquery-xlarge-min: ($content-max + 1);
+
+$mobile-menu-max: $mediaquery-small-max;
+$desktop-menu-min: $mediaquery-medium-min;
+
+// Colors Links/Menus
+$color1: #0026a8;
+$color2: #000F42;
+
+// Colors decoration
+$color3: #ff9635;
+$color4: #9a031e;
+
+//Message Colors
+$error: #ba0202;
+$valid: #5abc55;
+$warning: #ffc800;
+$information: #0080ff;
+
+$black: #000;
+$gray1: #333438;
+$gray2: lighten($gray1, 20%);
+$gray3: lighten($gray1, 40%);
+$gray4: lighten($gray1, 60%);
+$gray5: lighten($gray1, 70%);
+$white: #fff;
+$white-opacity: rgba(255, 255, 255, 0.9);
+
+// fonts
+$font-name-normal: open_sansregular;
+$font-name-bold: open_sansbold;
+
+$font-path-normal:'../Fonts/OpenSans/OpenSans-Regular-webfont';
+$font-path-bold:'../Fonts/OpenSans/OpenSans-Bold-webfont';
+
+$font-family: '#{$font-name-normal}', verdana, arial, helvetica, sans-serif;
+$font-weight-normal: 400;
+$font-family-bold: '#{$font-name-bold}', verdana, arial, helvetica, sans-serif;
+$font-weight-bold: 400;
+
+$header-font-family: $font-family;
+$header-font-weight: $font-weight-normal;
+
+// transition
+$transition: .3s ease-in-out;
+
+////////// Variables assigned to layout //////////
+
+// body background
+$body-bg: $white;
+
+// font sizes - https://type-scale.com/ Perfect Fourth, 1.333
+$font-size1: 2.369rem; //h1
+$line-height1: ($base-size*2);
+$font-size2: 1.777rem; // h2
+$line-height2: ($base-size*1.5);
+$font-size3: 1.333rem; // h3
+$line-height3: ($base-size*1.25);
+$font-size4: 1.125rem; // h4
+$font-size5: $body-font-size; // h5
+$font-size-small: ($body-font-size*0.8);
+$line-height-small: ($base-size*0.8);
+// font colors
+$font-color: $gray1;
+$font-color-light: $gray2;
+
+//Link colors and backgrounds
+$body-link-color: $color1;
+$body-link-hover-color: $color2;
+$body-link-invers-color: $gray4;
+$body-link-invers-hover-color: $white;
+
+// buttons primary
+$button-color: $white;
+$button-hover-color: $white;
+$button-bg: $body-link-color;
+$button-hover-bg: $body-link-hover-color;
+$button-border: $body-link-color;
+$button-hover-border: $body-link-hover-color;
+
+//Navigation background over whole browser width
+$menu-bg-100vw: $gray5;
+
+//1.level menu
+$menu-link-color: $body-link-color;
+$menu-link-hover-color: $font-color;
+$menu-bg: $gray5;
+$menu-hover-bg: $gray5;
+
+//2.level menu
+$submenu-link-color: $body-link-color;
+$submenu-link-hover-color: $font-color;
+$submenu-bg: $gray5;
+$submenu-hover-bg: $white;
+
+// hamburger icon for mobile menu
+$menu-icon-button: $body-link-color;
+
+//page header default height, for logo and mobile menu
+$header-height: $base-size*3;
+$mobile-header-height: $base-size*2;
+
+//toggle content header
+$toggle-bg: $gray5;
+
+
+// footer
+$footer-link-color: $body-link-invers-color;
+$footer-link-hover-color: $body-link-invers-hover-color;
+
+$footer-bg: $gray2;
+$footer-color: $white;
+$footer2-bg: $gray1;
+$footer2-color: $white;
+
+$footer-min-height: 14rem;
+
+// border color for table and cell borders.
+$table-border-color: $gray3;
+$stripedblock-bg: $gray5;
+$table-header-bg: $gray5;
+$table-header-color: $font-color;
+
+$border-width: 0.063rem !default; //1px
+$border-width-px: 1px;
+$border-radius: 0.125rem !default; //2px
+$border-color: $gray3;
+
+$image-border-color: $gray4;
+$image-border-width: 0.25rem !default; //4px
+
+// colored content boxes
+$layout-100-bg: $gray5;
+
+//box shadows
+$box-shadow: rgba(0, 0, 0, 0.2);
+
+
+
+//Navigation smartmenu
+// ----------------------------------------------------------
+// :: 1.1. Colors
+// ----------------------------------------------------------
+
+$sm-clean__active: $color2;
+$sm-clean__box-shadow: $box-shadow;
+
+
+// ----------------------------------------------------------
+// :: 1.2. Breakpoints
+// ----------------------------------------------------------
+
+$sm-clean__desktop-vp: $desktop-menu-min; // switch from collapsible to desktop
+
+
+// ----------------------------------------------------------
+// :: 1.3. Typography
+// ----------------------------------------------------------
+
+$sm-clean__font-family: $font-family;
+$sm-clean__font-size-base: $body-font-size;
+$sm-clean__font-size-small: $body-font-size; //submenu font-size
+$sm-clean__line-height: $base-size;
+
+
+// ----------------------------------------------------------
+// :: 1.4. Borders
+// ----------------------------------------------------------
+
+$sm-clean__border-width: $border-width-px;
+$sm-clean__border-radius: $border-radius;
+
+
+// ----------------------------------------------------------
+// :: 1.5. Collapsible main menu
+// ----------------------------------------------------------
+
+// Menu box
+$sm-clean__collapsible-bg: $menu-bg;
+$sm-clean__collapsible-border-radius: $sm-clean__border-radius;
+
+// Items
+$sm-clean__collapsible-item-color: $menu-link-color;
+$sm-clean__collapsible-item-current-color: $menu-link-hover-color;
+$sm-clean__collapsible-item-disabled-color: darken($menu-bg, 20%) !default;
+$sm-clean__collapsible-item-padding-vertical: ($gutter*.5);
+$sm-clean__collapsible-item-padding-horizontal: ($base-size*.5);
+
+// Items separators
+$sm-clean__collapsible-separators-color: rgba(0, 0, 0, 0.05);
+
+// Toggle button (sub menu indicators)
+$sm-clean__collapsible-toggle-bg: $white-opacity;
+
+
+// ----------------------------------------------------------
+// :: 1.6. Collapsible sub menus
+// ----------------------------------------------------------
+
+// Menu box
+$sm-clean__collapsible-sub-bg: rgba(darken($sm-clean__collapsible-bg, 30%), 0.1) !default;
+
+// Items text indentation for deeper levels
+$sm-clean__collapsible-sub-item-indentation: ($gutter*.5);
+
+
+// ----------------------------------------------------------
+// :: 1.7. Desktop main menu
+// ----------------------------------------------------------
+
+// Menu box
+$sm-clean__desktop-bg: $menu-bg !default;
+$sm-clean__desktop-border-radius: 0 !default;
+$sm-clean__desktop-padding-horizontal: 0;
+
+// Items
+$sm-clean__desktop-item-color: $menu-link-color;
+$sm-clean__desktop-item-hover-color: $menu-link-hover-color;
+$sm-clean__desktop-item-current-color: $menu-link-hover-color;
+$sm-clean__desktop-item-disabled-color: darken($menu-bg, 20%);
+$sm-clean__desktop-item-padding-vertical: ($base-size*.5);
+$sm-clean__desktop-item-padding-horizontal: 12px;
+
+// Sub menu indicators
+$sm-clean__desktop-arrow-size: 4px !default; // border-width
+$sm-clean__desktop-arrow-color: $menu-link-color !default;
+$sm-clean__desktop-arrow-spacing: 4px !default;
+
+// Vertical menu box
+$sm-clean__desktop-vertical-border-radius: $sm-clean__border-radius !default;
+$sm-clean__desktop-vertical-padding-vertical: ($gutter*.5);
+
+// Vertical items
+$sm-clean__desktop-vertical-item-hover-bg: $white !default;
+$sm-clean__desktop-vertical-item-padding-vertical: ($gutter*.5);
+$sm-clean__desktop-vertical-item-padding-horizontal: ($base-size*.5);
+
+
+// ----------------------------------------------------------
+// :: 1.8. Desktop sub menus
+// ----------------------------------------------------------
+
+// Menu box
+$sm-clean__desktop-sub-bg: $submenu-bg !default;
+$sm-clean__desktop-sub-border-color: $border-color !default;
+$sm-clean__desktop-sub-border-radius: $sm-clean__border-radius !default;
+$sm-clean__desktop-sub-box-shadow: 0 5px 9px $sm-clean__box-shadow !default;
+$sm-clean__desktop-sub-padding-vertical: 5px !default;
+$sm-clean__desktop-sub-padding-horizontal: 0 !default;
+
+// Items
+$sm-clean__desktop-sub-item-color: $submenu-link-color !default;
+$sm-clean__desktop-sub-item-hover-color: $submenu-link-hover-color !default;
+$sm-clean__desktop-sub-item-hover-bg: $submenu-hover-bg !default;
+$sm-clean__desktop-sub-item-current-color: $submenu-link-hover-color !default;
+$sm-clean__desktop-sub-item-disabled-color: darken($white, 20%) !default;
+$sm-clean__desktop-sub-item-padding-vertical: ($gutter*.5);
+$sm-clean__desktop-sub-item-padding-horizontal: ($base-size*.5);
+
+// Sub menu indicators
+$sm-clean__desktop-sub-arrow-size: 5px !default; // border-width
+
+// Sub menu carets
+$sm-clean__desktop-sub-caret-size: 8px !default; // border-width
+$sm-clean__desktop-sub-caret-left: 30px !default;
+

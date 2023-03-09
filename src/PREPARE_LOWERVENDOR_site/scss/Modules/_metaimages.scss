@@ -1,0 +1,77 @@
+///////tooltip
+figure,
+.wrapper-tooltip {
+  min-height: $base-size;
+  position: relative;
+
+  .tooltip {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    span {
+      border-radius: 50%;
+      display: block;
+      line-height: 1.5rem;
+      width: 1.5rem;
+      height: 1.5rem;
+      font-size: 1rem;
+      text-align: center;
+      text-shadow: 0 0 6px $black;
+      color: $white;
+      transition: .25s;
+      &::after {
+        font-size: $font-size-small;
+        line-height: $line-height-small;
+        text-align: left;
+        position: absolute;
+        text-shadow: none;
+        color: $font-color;
+        left: $gutter;
+        top: (-$base-size);
+        max-width: 80%;
+        display: block;
+        content: attr(data-tooltip);
+        opacity: 0;
+        @include transition(all);
+        z-index: 100;
+        background: $white-opacity;
+        padding: $gutter*.25;
+      }
+
+      &:focus,
+      &:hover {
+        &::after {
+          opacity: 1;
+          top: 0;
+        }
+      }
+    }
+
+
+  }
+}
+
+.rte-icon {
+  position: relative;
+  left: $gutter*1.5;
+  display: block;
+
+  &::before {
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    text-align: center;
+    display: inline-block;
+    width: $gutter*1.5;
+    font-size: inherit;
+    line-height: inherit;
+    position: absolute;
+    left: -$gutter*1.5;
+  }
+}
+
+.ce-row .inclmeta {
+  display: inline-block;
+}
+

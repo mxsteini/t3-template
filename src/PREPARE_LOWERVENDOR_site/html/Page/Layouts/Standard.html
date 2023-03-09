@@ -1,0 +1,46 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+			xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
+			data-namespace-typo3-fluid="true">
+<f:if condition="{settings.showKlaro}">
+	<f:render partial="Klaro" arguments="{_all}"/>
+</f:if>
+<f:if condition="{settings.useRss}">
+	<n:headerData>
+		<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="{f:uri.page(additionalParams:{type:9818})}"/>
+	</n:headerData>
+</f:if>
+<f:spaceless>
+	<div class="wrapper-content">
+		<header class="content-header">
+			<a class="skip-to-content vhidden" href="#main" target="top" title="{f:translate(key: 'LLL:EXT:jwmusterprojekt11/Resources/Private/Language/locallang.xlf:jwmusterprojekt11.skiptocontent')}">
+				<f:translate key="LLL:EXT:jwmusterprojekt11/Resources/Private/Language/locallang.xlf:jwmusterprojekt11.skiptocontent"/>
+			</a>
+			<f:render partial="Header" arguments="{_all}"/>
+		</header>
+		<main id="main">
+			<f:if condition="{content5}">
+				<div class="header-image">
+					<f:format.raw>{content5}</f:format.raw>
+				</div>
+			</f:if>
+			<f:render partial="Rootline" arguments="{_all}"/>
+			<!--TYPO3SEARCH_begin-->
+			<f:render section="Content"/>
+			<!--TYPO3SEARCH_end-->
+
+		</main>
+	</div>
+	<div class="wrapper-footer">
+		<section aria-label="contentinfo">
+		<f:render partial="Footer" arguments="{_all}"/>
+		</section>
+		<footer>
+			<f:render partial="MetaMenus/FooterMenu" arguments="{_all}"/>
+			<div class="scrollToTop">
+				<a href="#" title="{f:translate(key: 'LLL:EXT:jwmusterprojekt11/Resources/Private/Language/locallang.xlf:jwmusterprojekt11.totop')}">
+					<i aria-hidden="true" class="fa fa-chevron-up fa-lg"></i><span class="vhidden"><f:translate key="LLL:EXT:jwmusterprojekt11/Resources/Private/Language/locallang.xlf:jwmusterprojekt11.totop"/></span>
+				</a>
+			</div>
+		</footer>
+	</div>
+</f:spaceless>

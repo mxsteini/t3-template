@@ -1,0 +1,24 @@
+.socialmedia {
+  display: inline-block;
+  a {
+    display: inline-block;
+    padding: ($gutter*.25);
+    margin: ($base-size*.25) ($gutter*.5) ($base-size*.25) 0;
+    background: $white;
+    border-radius: $border-radius;
+    width: $gutter*2;
+    span {
+      color: $font-color;
+    }
+  }
+
+  a:hover span:before,
+  a:focus span:before {
+    color: $body-link-hover-color;
+  }
+}
+
+.socialmedia span {
+  text-align: center;
+  width: $base-size;
+}

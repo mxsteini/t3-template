@@ -1,42 +1,102 @@
 <?php
-call_user_func(function ($extKey = 'PREPARE_LOWERVENDOR_site') {
-    // Add article doctypes
-    $articleDoktypes = [
-        101 => [
-            'type' => 'content',
-            'icon' => 'content-panel',
-        ]
-    ];
 
-    // add article page types
-    foreach (array_reverse($articleDoktypes, true) as $id => $articleDoktype) {
-        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTcaSelectItem(
-            'pages',
-            'doktype',
-            [
-                'LLL:EXT:' . $extKey . '/Resources/Private/Language/locallang_db.xlf:pages.doktype.' . $id,
-                $id,
-                $articleDoktype['icon'],
-            ],
-            '1',
-            'after'
-        );
+if (!defined('TYPO3_MODE')) {
+    die('Access denied.');
+}
 
-        \TYPO3\CMS\Core\Utility\ArrayUtility::mergeRecursiveWithOverrule(
-            $GLOBALS['TCA']['pages'],
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::registerPageTSConfigFile(
+    'PREPARE_LOWERVENDOR_site',
+    'Configuration/TSconfig/Page.tsconfig',
+    'General Page TSconfig'
+);
+
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::registerPageTSConfigFile(
+    'PREPARE_LOWERVENDOR_site',
+    'Configuration/TSconfig/BackendLayouts.tsconfig',
+    'Default Backend Layouts'
+);
+
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::registerPageTSConfigFile(
+    'PREPARE_LOWERVENDOR_site',
+    'Configuration/TSconfig/CropVariants.tsconfig',
+    'General Crop Variants'
+);
+
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::registerPageTSConfigFile(
+    'PREPARE_LOWERVENDOR_site',
+    'Configuration/TSconfig/FooterBackendLayout.tsconfig',
+    'Backend Layout Footer'
+);
+
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::registerPageTSConfigFile(
+    'PREPARE_LOWERVENDOR_site',
+    'Configuration/TSconfig/StyleguideBackendLayout.tsconfig',
+    'Backend Layout Styleguide'
+);
+
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::registerPageTSConfigFile(
+    'PREPARE_LOWERVENDOR_site',
+    'Configuration/TSconfig/RTE/custom.tsconfig',
+    'RTE: Custom Configuration'
+);
+
+$temporaryColumns = [
+    'nav_image' => [
+        'exclude' => true,
+        'label' => 'LLL:EXT:PREPARE_LOWERVENDOR_site/Resources/Private/Language/locallang_db.xlf:PREPARE_LOWERVENDOR_site.navimage',
+        'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
+            'nav_image',
             [
-                'ctrl' => [
-                    'typeicon_classes' => [
-                        $id => $articleDoktype['icon'],
-                    ],
+                'behaviour' => [
+                'allowLanguageSynchronization' => true,
                 ],
-                'types' => [
-                    $id => [
-                        'showitem' => $GLOBALS['TCA']['pages']['types'][\TYPO3\CMS\Core\Domain\Repository\PageRepository::DOKTYPE_DEFAULT]['showitem'],
+                // Use the imageoverlayPalette instead of the basicoverlayPalette
+                'overrideChildTca' => [
+                    'types' => [
+                        '0' => [
+                            'showitem' => '
+                                    --palette--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+                                    --palette--;;filePalette'
+                        ],
+                        \TYPO3\CMS\Core\Resource\File::FILETYPE_TEXT => [
+                            'showitem' => '
+                                    --palette--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+                                    --palette--;;filePalette'
+                        ],
+                        \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
+                            'showitem' => '
+                                    --palette--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+                                    --palette--;;filePalette'
+                        ],
+                        \TYPO3\CMS\Core\Resource\File::FILETYPE_AUDIO => [
+                            'showitem' => '
+                                    --palette--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.audioOverlayPalette;audioOverlayPalette,
+                                    --palette--;;filePalette'
+                        ],
+                        \TYPO3\CMS\Core\Resource\File::FILETYPE_VIDEO => [
+                            'showitem' => '
+                                    --palette--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.videoOverlayPalette;videoOverlayPalette,
+                                    --palette--;;filePalette'
+                        ],
+                        \TYPO3\CMS\Core\Resource\File::FILETYPE_APPLICATION => [
+                            'showitem' => '
+                                    --palette--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+                                    --palette--;;filePalette'
+                        ]
                     ],
                 ],
             ]
-        );
-    }
+        ),
+    ],
+];
 
-});
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns(
+    'pages',
+    $temporaryColumns
+);
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
+    'pages',
+    'nav_image',
+    '',
+    'after:media'
+);

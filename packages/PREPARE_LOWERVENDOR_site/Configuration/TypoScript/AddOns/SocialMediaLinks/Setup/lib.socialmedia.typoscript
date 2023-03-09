@@ -1,0 +1,60 @@
+## insert indiviual links below and activate them
+## include scss into style.scss: "Modules/socialmedia" and compile
+## include css file: page.includeCSS.fontawesomebrands
+## import in project folder in setup.typoscript typoscript for social media : ...Modules/SocialMediaLinks/Setup/*.typoscript"
+## add to fluidtemplate: <f:cObject typoscriptObjectPath="lib.socialmedia"/>
+
+lib.socialmedia = COA
+lib.socialmedia {
+  wrap= <div class="socialmedia">|</div>
+  #######facebook#######
+  10 = TEXT
+  10{
+    value = <span class="fab fa-lg fa-facebook-f"></span>
+    typolink {
+      parameter = https://www.facebook.com/...../
+      extTarget = _blank
+      title = facebook
+      ATagParams = rel="nofollow, noopener"
+    }
+  }
+  #######twitter#######
+#  20 < .10
+#  20 {
+#    value = <span class="fab fa-lg fa-twitter"></span>
+#    typolink {
+#      parameter = https://twitter.com/.....
+#      title = Twitter
+#    }
+#  }
+
+  #######instagram#######
+#  30 < .10
+#  30 {
+#    value = <span class="fab fa-lg fa-instagram"></span>
+#    typolink {
+#      parameter = https://www.instagram.com/...../
+#      title = Instagram
+#    }
+#  }
+
+  #######xing#######
+#  40 < .10
+#  40 {
+#    value = <span class="fab fa-lg fa-xing"></span>
+#    typolink {
+#      parameter = https://www.xing.com/companies/.....
+#      title = Xing
+#    }
+#  }
+  #######linkin#######
+#  50 < .10
+#  50 {
+#    value = <span class="fab fa-lg fa-linkedin"></span>
+#    typolink {
+#      parameter = https://www.linkedin.com/showcase/.....
+#      title = Linkedin
+#    }
+#  }
+
+}

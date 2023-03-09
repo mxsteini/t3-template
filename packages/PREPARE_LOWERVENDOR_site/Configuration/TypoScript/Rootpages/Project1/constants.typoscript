@@ -1,0 +1,5 @@
+@import "EXT:PREPARE_LOWERVENDOR_site/Configuration/TypoScript/General/Constants/*.typoscript"
+
+@import "EXT:PREPARE_LOWERVENDOR_site/Configuration/TypoScript/Extensions/News/Constants/*.typoscript"
+
+@import "EXT:PREPARE_LOWERVENDOR_site/Configuration/TypoScript/Rootpages/Project1/Constants/*.typoscript"

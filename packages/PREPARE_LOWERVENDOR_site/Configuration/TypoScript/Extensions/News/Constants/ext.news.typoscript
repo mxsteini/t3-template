@@ -1,0 +1,11 @@
+## RSS Feed
+## See: https://docs.typo3.org/p/georgringer/news/master/en-us/AdministratorManual/BestPractice/Rss/Index.html#rss-feed-configuration
+plugin.tx_news.rss.channel {
+   title = {$PREPARE_LOWERVENDOR_site.rssTitle}
+   description = {$PREPARE_LOWERVENDOR_site.rssDescription}
+   link = {$PREPARE_LOWERVENDOR_site.rssLink}
+   language =
+   copyright = {$PREPARE_LOWERVENDOR_site.companyName}
+   category =
+   generator = TYPO3 EXT:news
+}
