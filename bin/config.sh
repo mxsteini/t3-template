@@ -1,5 +1,6 @@
 # short project key
 PREPARE[projectname]="t3-template"
+PREPARE[author]="Michael Stein"
 PREPARE[LOWERVENDOR]="mst"
 PREPARE[UPPERVENDOR]="MST"
 PREPARE[CAPITIALVENDOR]="Mst"

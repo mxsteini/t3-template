@@ -57,6 +57,7 @@ if [ "$command" == 'rollback' ]; then
     mv ./src/${PREPARE[LOWERVENDOR]}_site ./src/PREPARE_LOWERVENDOR_site
 
     removeVariables .env
+    removeVariables composer.json
     mv .env .env.dist
 
 else
@@ -93,4 +94,5 @@ else
         cp .env.dist .env
     fi
     insertVariables .env
+    insertVariables composer.json
 fi

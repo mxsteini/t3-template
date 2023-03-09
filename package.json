@@ -1,9 +1,8 @@
 {
-	"name": "sandbox",
-	"version": "3.2.0",
-	"description": "Sandbox - Modern & Multipurpose Bootstrap 5 Template",
-	"homepage": "https://sandbox.elemisthemes.com/",
-	"author": "elemis",
+	"name": "PREPARE_projectname",
+	"version": "1",
+	"description": "PREPARE_sitename",
+	"author": "PREPARE_author",
 	"private": true,
 	"scripts": {
 		"start": "node ./bin/watch.js",
@@ -28,75 +27,5 @@
 		"esbuild": "^0.17.5",
 		"fs-extra": "^11.1.0"
 	},
-	"type": "module",
-	"build": {
-		"production": {
-			"static": {
-				"scss": {
-					"dest": "./packages/eoi_site/Resources/Public/css",
-					"source": "./src/css",
-					"files": [
-						"plugins"
-					],
-					"config": {
-						"includePaths": [
-							"node_modules"
-						],
-						"outputStyle": "compressed",
-						"sourceMap": false
-					}
-				},
-				"js": {
-					"dest": "./packages/eoi_site/Resources/Public/js",
-					"source": "./src/js",
-					"files": [
-						"plugins"
-					],
-					"config": {
-						"parser": "babel-eslint",
-						"parserOptions": {
-							"sourceType": "module",
-							"allowImportExportEverywhere": true
-						}
-					}
-				}
-			},
-			"watch": {
-				"scss": {
-					"dest": "./packages/eoi_site/Resources/Public/css",
-					"source": "./src/scss",
-					"files": [
-						"fonts",
-						"override",
-						"rte",
-						"style"
-					],
-					"config": {
-						"includePaths": [
-							"node_modules"
-						],
-						"outputStyle": "compressed",
-						"sourceMap": true
-					}
-				},
-				"js": {
-					"dest": "./packages/eoi_site/Resources/Public/js",
-					"source": "./src/js",
-					"files": [
-						"theme",
-						"user"
-					],
-					"config": {
-						"sourceType": "module",
-						"parser": "babel-eslint",
-						"sourcemap": true,
-						"parserOptions": {
-							"sourceType": "module",
-							"allowImportExportEverywhere": true
-						}
-					}
-				}
-			}
-		}
-	}
+	"type": "module"
 }
