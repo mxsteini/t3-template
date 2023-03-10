@@ -137,6 +137,8 @@ page.includeJSLibs {
 ###################### JavaScript im Footer ######################
 
 page.includeJSFooter {
+    main = EXT:PREPARE_LOWERVENDOR_site/Resources/Public/JavaScript/Main.js
+
     smartMenu = EXT:PREPARE_LOWERVENDOR_site/Resources/Public/JavaScript/Smartmenu/jquery.smartmenus.min.js
     smartMenu.disableCompression = 1
 
