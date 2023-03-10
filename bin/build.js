@@ -31,7 +31,20 @@ buildFuncs.packages.forEach(target => {
         buildFuncs.postHtmlProcessor(file)
     })
 })
-buildFuncs.sassProcessor()
+
+console.log('processing scss')
+buildFuncs.packages.forEach(target => {
+    const targetPath = path.join(path.resolve('src'), target, 'scss/**/*.scss')
+    glob.sync(targetPath).forEach(file => {
+        if (!path.basename(file).startsWith('_')) {
+            const relativeFile = path.relative(
+                path.join(path.resolve('src'), target, 'scss'),
+                file
+            )
+            buildFuncs.sassProcessor(relativeFile, target)
+        }
+    })
+})
 
 process.exit()
 
