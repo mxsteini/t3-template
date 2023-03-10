@@ -1,4 +1,3 @@
-
 renderingOptions:
   submitButtonLabel: Senden
 type: Form
@@ -6,8 +5,7 @@ identifier: beispielformular
 label: Beispielformular
 prototypeName: standard
 finishers:
-  -
-    options:
+  - options:
       subject: 'Nachricht über Kontaktformular'
       senderAddress: noreply@domain.tld
       senderName: '{text-1}'
@@ -19,22 +17,19 @@ finishers:
         empfaenger@domain.tld: 'Max Mustermann'
       addHtmlPart: true
     identifier: EmailToReceiver
-  -
-    options:
+  - options:
       pageUid: '39'
       additionalParameters: ''
     identifier: Redirect
 renderables:
-  -
-    renderingOptions:
+  - renderingOptions:
       previousButtonLabel: 'Previous step'
       nextButtonLabel: 'Neue Seite'
     type: Page
     identifier: page-1
     label: 'Ihre Daten'
     renderables:
-      -
-        defaultValue: ''
+      - defaultValue: ''
         type: Text
         identifier: text-1
         label: Name
@@ -42,23 +37,17 @@ renderables:
           fluidAdditionalAttributes:
             required: required
           validationErrorMessages:
-            -
-              code: '1221560910'
+            - code: '1221560910'
               message: 'Bitte geben Sie Ihren Namen an.'
-            -
-              code: '1221560718'
+            - code: '1221560718'
               message: 'Bitte geben Sie Ihren Namen an.'
-            -
-              code: '1347992400'
+            - code: '1347992400'
               message: 'Bitte geben Sie Ihren Namen an.'
-            -
-              code: '1347992453'
+            - code: '1347992453'
               message: 'Bitte geben Sie Ihren Namen an.'
         validators:
-          -
-            identifier: NotEmpty
-      -
-        defaultValue: ''
+          - identifier: NotEmpty
+      - defaultValue: ''
         type: Email
         identifier: email-1
         label: E-Mail
@@ -66,28 +55,20 @@ renderables:
           fluidAdditionalAttributes:
             required: required
           validationErrorMessages:
-            -
-              code: '1221560910'
+            - code: '1221560910'
               message: 'Bitte geben Sie Ihre E-Mailadresse an.'
-            -
-              code: '1221560718'
+            - code: '1221560718'
               message: 'Bitte geben Sie Ihre E-Mailadresse an.'
-            -
-              code: '1347992400'
+            - code: '1347992400'
               message: 'Bitte geben Sie Ihre E-Mailadresse an.'
-            -
-              code: '1347992453'
+            - code: '1347992453'
               message: 'Bitte geben Sie Ihre E-Mailadresse an.'
-            -
-              code: '1221559976'
+            - code: '1221559976'
               message: 'Bitte geben Sie eine gültige E-Mailadresse an.'
         validators:
-          -
-            identifier: EmailAddress
-          -
-            identifier: NotEmpty
-      -
-        defaultValue: ''
+          - identifier: EmailAddress
+          - identifier: NotEmpty
+      - defaultValue: ''
         type: Textarea
         identifier: textarea-1
         label: Nachricht
@@ -95,23 +76,17 @@ renderables:
           fluidAdditionalAttributes:
             required: required
           validationErrorMessages:
-            -
-              code: '1221560910'
+            - code: '1221560910'
               message: 'Bitte geben Sie eine Nachricht ein.'
-            -
-              code: '1221560718'
+            - code: '1221560718'
               message: 'Bitte geben Sie eine Nachricht ein.'
-            -
-              code: '1347992400'
+            - code: '1347992400'
               message: 'Bitte geben Sie eine Nachricht ein.'
-            -
-              code: '1347992453'
+            - code: '1347992453'
               message: 'Bitte geben Sie eine Nachricht ein.'
         validators:
-          -
-            identifier: NotEmpty
-      -
-        properties:
+          - identifier: NotEmpty
+      - properties:
           options:
             qwqweqweeqwe: qweqwe
             wqewewee: wqee
@@ -119,8 +94,7 @@ renderables:
         type: SingleSelect
         identifier: singleselect-1
         label: 'Single select'
-      -
-        properties:
+      - properties:
           options:
             ewqeq: eqwe
             weweewe: wewe
@@ -128,25 +102,21 @@ renderables:
         type: MultiSelect
         identifier: multiselect-1
         label: 'Multi select'
-      -
-        properties:
+      - properties:
           options:
             wwewew: wew
             ewewew: ewe
         type: RadioButton
         identifier: radiobutton-1
         label: 'Radio button'
-      -
-        defaultValue: ''
+      - defaultValue: ''
         type: Telephone
         identifier: telephone-1
         label: 'Telephone number'
-      -
-        type: Checkbox
+      - type: Checkbox
         identifier: checkbox-1
         label: Checkbox
-      -
-        properties:
+      - properties:
           options:
             sasasa: sas
             sasasas: sas

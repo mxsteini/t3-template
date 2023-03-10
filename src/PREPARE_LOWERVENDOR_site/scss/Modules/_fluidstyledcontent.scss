@@ -3,22 +3,22 @@
 ////////////////text + headline position//////////////////////
 .text-left,
 .ce-headline-left {
-  text-align: left;
+    text-align: left;
 }
 
 .text-center,
 .ce-headline-center {
-  text-align: center;
+    text-align: center;
 }
 
 .text-right,
 .ce-headline-right {
-  text-align: right;
+    text-align: right;
 }
 
 .ce-table td,
 .ce-table th {
-  vertical-align: top;
+    vertical-align: top;
 }
 
 .ce-textpic,
@@ -28,292 +28,291 @@
 .ce-row,
 .ce-uploads li,
 .ce-uploads div {
-  overflow: hidden;
+    overflow: hidden;
 }
 
 ////////////////uploads////////////////
 .ce-uploads {
-  margin: $base-size 0;
-  padding: 0;
+    margin: $base-size 0;
+    padding: 0;
 }
 
 .ce-uploads li {
-  list-style: none outside none;
-  margin: 0;
-  padding-bottom: 0;
+    list-style: none outside none;
+    margin: 0;
+    padding-bottom: 0;
 }
 
 .ce-uploads img {
-  float: left;
-  margin: $base-size*.5;
-  vertical-align: top;
+    float: left;
+    margin: $base-size*.5;
+    vertical-align: top;
 }
 
 .ce-uploads span {
-  display: block;
+    display: block;
 }
 
 .ce-uploads li:nth-child(odd) {
-  background: $gray5;
+    background: $gray5;
 }
 
 .ce-uploads:before,
 .ce-uploads:after {
-  content: "";
-  display: table;
+    content: "";
+    display: table;
 }
 
 .ce-uploads:after {
-  clear: both;
+    clear: both;
 }
 
 .ce-uploads div {
-  margin: ($base-size*.5) $gutter;
+    margin: ($base-size*.5) $gutter;
 }
 
 .ce-uploads-fileName {
-  margin-bottom: ($base-size*.25);
+    margin-bottom: ($base-size*.25);
 }
 
 .ce-uploads-filesize {
-  text-align: right;
+    text-align: right;
 }
 
 .frame-layout-100 .ce-uploads li:nth-child(odd) {
-  background: transparent;
+    background: transparent;
 }
 
 //////////////////table//////////////////
 .ce-table-striped tbody tr:nth-of-type(odd) {
-  background-color: $gray5;
+    background-color: $gray5;
 }
 
 .ce-table-bordered th, .ce-table-bordered td {
-  border: $border-width solid $table-border-color;
+    border: $border-width solid $table-border-color;
 }
 
 ///////////////////spaces///////////////////
 [class*="frame-space-before-"] {
-  padding-top: $base-size;
+    padding-top: $base-size;
 }
 
 [class*="frame-space-after-"] {
-  padding-bottom: $base-size;
+    padding-bottom: $base-size;
 }
 
 @media screen and (min-width: $mediaquery-medium-min) {
-  .frame-space-before-medium {
-    padding-top: $base-size*2;
-  }
-  .frame-space-before-large {
-    padding-top: $base-size*3;
-  }
-  .frame-space-after-small {
-    padding-bottom: $base-size;
-  }
-  .frame-space-after-medium {
-    padding-bottom: $base-size*2;
-  }
-  .frame-space-after-large {
-    padding-bottom: $base-size*3;
-  }
-  .frame-space-before-small {
-    padding-top: $base-size;
-  }
-  .frame-space-before-medium {
-    padding-top: $base-size*2;
-  }
-  .frame-space-before-large {
-    padding-top: $base-size*3;
-  }
-  .frame-space-after-small {
-    padding-bottom: $base-size;
-  }
-  .frame-space-after-medium {
-    padding-bottom: $base-size*2;
-  }
-  .frame-space-after-large {
-    padding-bottom: $base-size*3;
-  }
+    .frame-space-before-medium {
+        padding-top: $base-size*2;
+    }
+    .frame-space-before-large {
+        padding-top: $base-size*3;
+    }
+    .frame-space-after-small {
+        padding-bottom: $base-size;
+    }
+    .frame-space-after-medium {
+        padding-bottom: $base-size*2;
+    }
+    .frame-space-after-large {
+        padding-bottom: $base-size*3;
+    }
+    .frame-space-before-small {
+        padding-top: $base-size;
+    }
+    .frame-space-before-medium {
+        padding-top: $base-size*2;
+    }
+    .frame-space-before-large {
+        padding-top: $base-size*3;
+    }
+    .frame-space-after-small {
+        padding-bottom: $base-size;
+    }
+    .frame-space-after-medium {
+        padding-bottom: $base-size*2;
+    }
+    .frame-space-after-large {
+        padding-bottom: $base-size*3;
+    }
 }
 
 //////////////////frames///////////////////
 .frame-ruler-before:before {
-  content: '';
-  display: block;
-  border-top: $border-width solid $table-border-color;
-  padding-top: $base-size - ($border-width);
+    content: '';
+    display: block;
+    border-top: $border-width solid $table-border-color;
+    padding-top: $base-size - ($border-width);
 }
 
 .frame-ruler-after:after {
-  content: '';
-  display: block;
-  border-bottom: $border-width solid $table-border-color;
-  margin-bottom: $base-size - ($border-width);
+    content: '';
+    display: block;
+    border-bottom: $border-width solid $table-border-color;
+    margin-bottom: $base-size - ($border-width);
 }
 
 @media screen and (min-width: $mediaquery-large-min) {
-  .frame-indent {
-    margin-left: 16.66667%;
-    margin-right: 16.66667%;
-  }
+    .frame-indent {
+        margin-left: 16.66667%;
+        margin-right: 16.66667%;
+    }
 
-  .frame-indent-left {
-    margin-left: 33.33333%;
-  }
+    .frame-indent-left {
+        margin-left: 33.33333%;
+    }
 
-  .frame-indent-right {
-    margin-right: 33.33333%;
-  }
+    .frame-indent-right {
+        margin-right: 33.33333%;
+    }
 }
 
 //////////////////sitemap////////////////////
 [class*="frame-type-menu_"] ul,
 [class*="frame-type-menu_"] ul li {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 [class*="frame-type-menu_"] > ul {
-  margin-bottom: ($base-size) - ($border-width);
-  border-bottom: $border-width solid $border-color;
+    margin-bottom: ($base-size) - ($border-width);
+    border-bottom: $border-width solid $border-color;
 }
 
 [class*="frame-type-menu_"] li {
-  border-top: $border-width solid $border-color;
+    border-top: $border-width solid $border-color;
 }
 
 [class*="frame-type-menu_"] a {
-  padding: ($base-size*.5) ($gutter*.25) (($base-size*.5) - ($border-width)) ($gutter*.25);
-  display: block;
+    padding: ($base-size*.5) ($gutter*.25) (($base-size*.5) - ($border-width)) ($gutter*.25);
+    display: block;
 
 }
 
 .frame-type-menu_sitemap a {
-  background: $gray5;
+    background: $gray5;
 }
 
 [class*="frame-type-menu_"] a,
 [class*="frame-type-menu_"] p {
-  padding-left: $gutter;
+    padding-left: $gutter;
 }
 
 [class*="frame-type-menu_"] ul li ul li a,
 [class*="frame-type-menu_"] ul li ul li p {
-  padding-left: $gutter*2;
+    padding-left: $gutter*2;
 }
 
 [class*="frame-type-menu_"] ul li ul li ul li a,
 [class*="frame-type-menu_"] ul li ul li ul li p {
-  padding-left: $gutter*3;
-  background: transparent;
+    padding-left: $gutter*3;
+    background: transparent;
 }
 
 ///////////////////card menu with navigation image///////////////////
 [class*=frame-type-menu_].frame-layout-251 {
-  p,
-  a {
-    margin: 0;
-    padding: 0;
-  }
+    p,
+    a {
+        margin: 0;
+        padding: 0;
+    }
 
-  h3 {
-    margin: 0 0 $base-size-quarter 0;
-  }
+    h3 {
+        margin: 0 0 $base-size-quarter 0;
+    }
 }
 
 ///////////////////ruler///////////////////
 hr.ce-div {
-  border: 0;
-  border-bottom: $border-width solid $border-color;
-  margin: ($base-size*.5) 0;
+    border: 0;
+    border-bottom: $border-width solid $border-color;
+    margin: ($base-size*.5) 0;
 }
 
 ///////////////////image border///////////////////
 .ce-border img {
-  border: $image-border-width solid $image-border-color;
+    border: $image-border-width solid $image-border-color;
 }
 
 ///////////////////media///////////////////
 .ce-gallery figure.video {
-  display: block;
+    display: block;
 }
 
 .video-embed {
-  position: relative;
-  padding-bottom: 56.25%;
-  height: 0;
-  overflow: hidden;
-  margin-bottom: $base-size;
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    margin-bottom: $base-size;
 }
 
 .video-embed iframe,
 .video-embed video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  max-width: 100%;
-  width: 100% !important;
-  height: 100% !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: 100%;
+    width: 100% !important;
+    height: 100% !important;
 }
 
 ///////////////////hover icon over images///////////////////
 figure.image,
 .img-enlarge {
-  a {
-    position: relative;
-    display: block;
-    overflow: hidden;
+    a {
+        position: relative;
+        display: block;
+        overflow: hidden;
 
-    img {
-      @include transition(all);
-      transform: scale(1.0);
+        img {
+            @include transition(all);
+            transform: scale(1.0);
+        }
+
+        &[data-fancybox] {
+            :after {
+                content: '';
+                opacity: 0;
+            }
+
+            &:hover:after,
+            &:focus:after {
+                position: absolute;
+                top: calc(50% - 24px);
+                left: calc(50% - 24px);
+                content: '\f067';
+                font-family: 'Font Awesome 5 Free';
+                font-style: normal;
+                font-weight: 900;
+                line-height: 48px;
+                width: 48px;
+                height: 48px; /* size of the element */
+                opacity: 1;
+                border-radius: 50%;
+                background: $white-opacity;
+                color: $body-link-color;
+                text-align: center;
+            }
+        }
+
+
+        &:hover img {
+            transform: scale(1.025);
+        }
     }
-
-    &[data-fancybox] {
-      :after {
-        content: '';
-        opacity: 0;
-      }
-
-      &:hover:after,
-      &:focus:after {
-        position: absolute;
-        top: calc(50% - 24px);
-        left: calc(50% - 24px);
-        content: '\f067';
-        font-family: 'Font Awesome 5 Free';
-        font-style: normal;
-        font-weight: 900;
-        line-height: 48px;
-        width: 48px;
-        height: 48px; /* size of the element */
-        opacity: 1;
-        border-radius: 50%;
-        background: $white-opacity;
-        color: $body-link-color;
-        text-align: center;
-      }
-    }
-
-
-
-    &:hover img {
-      transform: scale(1.025);
-    }
-  }
 }
 
 .image-caption span {
-  display: block
+    display: block
 }
 
 ///////////////////design boxes///////////////////
 .frame-layout-100 {
-  background: $layout-100-bg;
-  padding: $padding-boxes;
-  margin-bottom: $base-size;
+    background: $layout-100-bg;
+    padding: $padding-boxes;
+    margin-bottom: $base-size;
 }
 
 

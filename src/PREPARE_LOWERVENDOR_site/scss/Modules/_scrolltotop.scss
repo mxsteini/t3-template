@@ -1,23 +1,23 @@
 .scrollToTop {
-  width: ($base-size*2);
-  position: fixed;
-  bottom: ($base-size*2);
-  right: $gutter;
-  display: none;
-  background: $button-bg;
-  z-index: 1000;
-  text-align: center;
+    width: ($base-size*2);
+    position: fixed;
+    bottom: ($base-size*2);
+    right: $gutter;
+    display: none;
+    background: $button-bg;
+    z-index: 1000;
+    text-align: center;
 
-  > a {
-    color: $button-color;
-    display: block;
-    line-height: ($base-size*2);
+    > a {
+        color: $button-color;
+        display: block;
+        line-height: ($base-size*2);
 
-    &:hover,
-    &:focus,
-    &:active {
-      background: $button-hover-bg;
-      color: $button-hover-color;
+        &:hover,
+        &:focus,
+        &:active {
+            background: $button-hover-bg;
+            color: $button-hover-color;
+        }
     }
-  }
 }

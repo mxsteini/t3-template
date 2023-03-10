@@ -1,229 +1,231 @@
 fieldset {
-  padding: 0;
-  margin: 0;
-  border: 0;
+    padding: 0;
+    margin: 0;
+    border: 0;
 }
 
 .form-group {
-  margin-bottom: $base-size;
+    margin-bottom: $base-size;
 }
 
 label {
-  display: inline-block;
+    display: inline-block;
 }
 
 legend {
-  display: block;
-  width: 100%;
-  font-weight: bold;
+    display: block;
+    width: 100%;
+    font-weight: bold;
 }
 
 fieldset > div {
-  margin-bottom: $base-size;
+    margin-bottom: $base-size;
 }
 
 input,
 textarea,
 select[multiple],
 label {
-  width: 100%;
+    width: 100%;
 }
 
 input,
 textarea,
 select[multiple] {
-  background-color: #fff;
-  border: $border-width solid $border-color;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  -webkit-transition: box-shadow ease-in-out 0.15s;
-  transition: box-shadow ease-in-out 0.15s;
-  padding-top: calc(#{($base-size*.5)} - #{$border-width});
-  padding-bottom: calc(#{($base-size*.5)} - #{$border-width});
-  padding-left: ($gutter*.5);
-  padding-right: ($gutter*.5);
-  display: inline-block;
+    background-color: #fff;
+    border: $border-width solid $border-color;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    -webkit-transition: box-shadow ease-in-out 0.15s;
+    transition: box-shadow ease-in-out 0.15s;
+    padding-top: calc(#{($base-size*.5)} - #{$border-width});
+    padding-bottom: calc(#{($base-size*.5)} - #{$border-width});
+    padding-left: ($gutter*.5);
+    padding-right: ($gutter*.5);
+    display: inline-block;
 }
 
 input[type="search"] {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 input[type="file"] {
-  display: block;
+    display: block;
 }
 
 textarea {
-  min-height: $base-size*10;
+    min-height: $base-size*10;
 }
 
 input {
-  &[type="submit"] {
-    padding-left: ($gutter);
-    padding-right: ($gutter);
-    margin-top: $base-size;
-    margin-bottom: $base-size;
-  }
+    &[type="submit"] {
+        padding-left: ($gutter);
+        padding-right: ($gutter);
+        margin-top: $base-size;
+        margin-bottom: $base-size;
+    }
 }
 
 input[type=checkbox],
 input[type=radio] {
-  border: 0;
-  height: auto;
-  display: inline-block;
-  width: auto;
-  vertical-align: baseline;
-  margin: 0;
-  -webkit-box-shadow: none;
-  box-shadow: none;
+    border: 0;
+    height: auto;
+    display: inline-block;
+    width: auto;
+    vertical-align: baseline;
+    margin: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
 }
 
 .radio,
 .checkbox {
-  span {
-    padding-left: ($gutter*.5);
-  }
+    span {
+        padding-left: ($gutter*.5);
+    }
 }
 
 .input-group {
-  position: relative;
-  display: table;
-  border-collapse: separate;
-  width: 100%;
+    position: relative;
+    display: table;
+    border-collapse: separate;
+    width: 100%;
 }
 
 .content-main .input-group {
-  margin-bottom: $base-size;
+    margin-bottom: $base-size;
 }
 
 .input-group-btn,
 .input-group input {
-  display: table-cell;
-  vertical-align: middle;
+    display: table-cell;
+    vertical-align: middle;
 }
 
 .input-group-btn {
-  width: 1%;
+    width: 1%;
 }
 
 .input-group-btn,
 .input-group-btn input {
-  position: relative;
-  white-space: nowrap;
+    position: relative;
+    white-space: nowrap;
 }
 
 .input-group input:first-child {
-  margin-right: $gutter;
+    margin-right: $gutter;
 }
 
 select[multiple],
 select[size] {
-  height: auto;
+    height: auto;
 }
 
 select optgroup {
-  font-family: inherit;
-  font-size: inherit;
-  font-style: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    font-style: inherit;
 }
 
 /* For IE10 */
 select::-ms-expand {
-  display: none;
+    display: none;
 }
-select {
-  width: 100%;
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  appearance: none;
-  border: $border-width solid $border-color;
-  padding-top: calc(#{($base-size*.5)} - #{$border-width});
-  padding-bottom: calc(#{($base-size*.5)} - #{$border-width});
-  padding-left: ($gutter*.5);
-  padding-right: ($gutter*2);
-  border-radius: 0;
-  background-color: #fff;
-  background-image: linear-gradient($white, $white),
-  linear-gradient(-135deg, transparent 50%, $white 50%),
-  linear-gradient(-225deg, transparent 50%, $white 50%),
-  linear-gradient($white 42%, $body-link-color 42%);
-  background-repeat: no-repeat;
-  background-size: 1px 100%, ($base-size*1.5) ($base-size*1.5), ($base-size*1.5) ($base-size*1.5), ($base-size*1.5) 100%;
-  background-position: right center, right bottom, right bottom, right bottom;
-  @include transition(all);
 
-  &:hover,
-  &:active {
-    background-image: linear-gradient($body-link-color, $body-link-color),
-    linear-gradient(-135deg, transparent 50%, $body-link-color 50%),
-    linear-gradient(-225deg, transparent 50%, $body-link-color 50%),
-    linear-gradient($body-link-color 42%, $white 42%);
-  }
+select {
+    width: 100%;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    border: $border-width solid $border-color;
+    padding-top: calc(#{($base-size*.5)} - #{$border-width});
+    padding-bottom: calc(#{($base-size*.5)} - #{$border-width});
+    padding-left: ($gutter*.5);
+    padding-right: ($gutter*2);
+    border-radius: 0;
+    background-color: #fff;
+    background-image: linear-gradient($white, $white),
+    linear-gradient(-135deg, transparent 50%, $white 50%),
+    linear-gradient(-225deg, transparent 50%, $white 50%),
+    linear-gradient($white 42%, $body-link-color 42%);
+    background-repeat: no-repeat;
+    background-size: 1px 100%, ($base-size*1.5) ($base-size*1.5), ($base-size*1.5) ($base-size*1.5), ($base-size*1.5) 100%;
+    background-position: right center, right bottom, right bottom, right bottom;
+    @include transition(all);
+
+    &:hover,
+    &:active {
+        background-image: linear-gradient($body-link-color, $body-link-color),
+        linear-gradient(-135deg, transparent 50%, $body-link-color 50%),
+        linear-gradient(-225deg, transparent 50%, $body-link-color 50%),
+        linear-gradient($body-link-color 42%, $white 42%);
+    }
 }
 
 select[multiple] {
-  background-image: none;
+    background-image: none;
 }
 
 /////////////////////buttons///////////
 button,
 .btn {
-  display: inline-block;
-  font-weight: normal;
-  text-align: center;
-  //white-space: nowrap;
-  vertical-align: middle;
-  cursor: pointer;
-  width: auto;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  @include transition(all);
+    display: inline-block;
+    font-weight: normal;
+    text-align: center;
+    //white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    width: auto;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    @include transition(all);
 }
 
 .btn[class*="btn-"] {
-  padding-top: calc(#{($base-size*.5)} - #{$border-width});
-  padding-bottom: calc(#{($base-size*.5)} - #{$border-width});
-  padding-left: ($gutter*.5);
-  padding-right: ($gutter*.5);
+    padding-top: calc(#{($base-size*.5)} - #{$border-width});
+    padding-bottom: calc(#{($base-size*.5)} - #{$border-width});
+    padding-left: ($gutter*.5);
+    padding-right: ($gutter*.5);
 }
 
 .btn-primary {
-  background: $button-bg;
-  color: $button-color;
-  border: $border-width solid $button-border;
+    background: $button-bg;
+    color: $button-color;
+    border: $border-width solid $button-border;
 
-  &:hover,
-  &:focus {
-    background: $button-hover-bg;
-    color: $button-hover-color;
-    border-color: $button-hover-border;
-  }
+    &:hover,
+    &:focus {
+        background: $button-hover-bg;
+        color: $button-hover-color;
+        border-color: $button-hover-border;
+    }
 }
 
 .btn-secondary {
-  color: $button-bg;
-  background: $button-color;
-  border: $border-width solid $button-border;
+    color: $button-bg;
+    background: $button-color;
+    border: $border-width solid $button-border;
 
-  &:hover,
-  &:focus {
-    background: $button-hover-color;
-    color: $button-hover-bg;
-    border-color: $button-hover-border;
-  }
+    &:hover,
+    &:focus {
+        background: $button-hover-color;
+        color: $button-hover-bg;
+        border-color: $button-hover-border;
+    }
 }
 
 .btn-thirdary {
-  border: $border-width solid $border-color;
-  color: $font-color-light;
-  &:hover,
-  &:focus {
-    border-color: $button-hover-border;
-  }
+    border: $border-width solid $border-color;
+    color: $font-color-light;
+
+    &:hover,
+    &:focus {
+        border-color: $button-hover-border;
+    }
 }
 
 

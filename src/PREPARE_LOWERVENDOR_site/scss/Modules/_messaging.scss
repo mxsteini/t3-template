@@ -4,34 +4,34 @@
 
 // Alerts
 .alert {
-  text-align: center;
-  background: $gray5;
-  border: $border-width solid $font-color;
-  padding: $base-size $gutter;
-  margin-bottom: $base-size;
-  color: $black;
+    text-align: center;
+    background: $gray5;
+    border: $border-width solid $font-color;
+    padding: $base-size $gutter;
+    margin-bottom: $base-size;
+    color: $black;
 }
 
 .bg-error,
 .alert.alert-error {
-  background: lighten($error, 60%);
-  border: $border-width solid $error;
+    background: lighten($error, 60%);
+    border: $border-width solid $error;
 }
 
 .bg-valid,
 .alert.alert-valid {
-  background: lighten($valid, 40%);
-  border: $border-width solid $valid;
+    background: lighten($valid, 40%);
+    border: $border-width solid $valid;
 }
 
 .bg-warning,
 .alert.alert-warning {
-  background: lighten($warning, 40%);
-  border: $border-width solid $warning;
+    background: lighten($warning, 40%);
+    border: $border-width solid $warning;
 }
 
 .bg-information,
 .alert.alert-information {
-  background: lighten($information, 45%);
-  border: $border-width solid $information;
+    background: lighten($information, 45%);
+    border: $border-width solid $information;
 }

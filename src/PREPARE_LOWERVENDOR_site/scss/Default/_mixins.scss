@@ -1,42 +1,43 @@
 @mixin transition($x) { // @include transition(all);
-  -webkit-transition: $x $transition;
-  -moz-transition: $x $transition;
-  -ms-transition: $x $transition;
-  -o-transition: $x $transition;
-  transition: $x $transition;
+    -webkit-transition: $x $transition;
+    -moz-transition: $x $transition;
+    -ms-transition: $x $transition;
+    -o-transition: $x $transition;
+    transition: $x $transition;
 }
 
 @mixin rotate($degrees, $rotation) { // @include rotate(180deg, 2);
-  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=#{$rotation})";
-  transform: rotate($degrees);
+    -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=#{$rotation})";
+    transform: rotate($degrees);
 }
+
 @mixin flex-container($wrap) { // @include flex-container(wrap);
-  box-sizing: border-box;
-  display: -webkit-flex;
-  display: -ms-flex;
-  display: flex;
-  -ms-flex-wrap: $wrap;
-  flex-wrap: $wrap;
+    box-sizing: border-box;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    -ms-flex-wrap: $wrap;
+    flex-wrap: $wrap;
 }
 
 @mixin flex($flexvalues) { // @include flex(0 0 auto);
-  -moz-box-flex: $flexvalues;
-  -webkit-flex: $flexvalues;
-  -ms-flex: $flexvalues;
-  flex: $flexvalues;
-  position: relative;
-  min-height: 1px;
+    -moz-box-flex: $flexvalues;
+    -webkit-flex: $flexvalues;
+    -ms-flex: $flexvalues;
+    flex: $flexvalues;
+    position: relative;
+    min-height: 1px;
 
-  padding-right: $gutter;
-  padding-left: $gutter;
+    padding-right: $gutter;
+    padding-left: $gutter;
 }
 
 @mixin order($num) { // @include order(1);
-  -webkit-box-ordinal-group: $num;
-  -moz-box-ordinal-group: $num;
-  -ms-flex-order: $num;
-  -webkit-order: $num;
-  order: $num;
+    -webkit-box-ordinal-group: $num;
+    -moz-box-ordinal-group: $num;
+    -ms-flex-order: $num;
+    -webkit-order: $num;
+    order: $num;
 }
 
 @mixin wordbreak() { // @include wordbreak();
@@ -50,17 +51,17 @@
 }
 
 @mixin fontbold() { // @include fontbold();
-  font-family: $font-family-bold;
-  font-weight: $font-weight-bold;
+    font-family: $font-family-bold;
+    font-weight: $font-weight-bold;
 }
 
 @mixin clearfix() { // @include clearfix();
-  *zoom: 1;
-  &:before, &:after {
-    content: " ";
-    display: table;
-  }
-  &:after {
-    clear: both;
-  }
+    *zoom: 1;
+    &:before, &:after {
+        content: " ";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
 }

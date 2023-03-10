@@ -1,82 +1,82 @@
 @mixin toggleheader() {
-  cursor: pointer;
-  position: relative;
-  background: $toggle-bg;
-  padding: ($base-size*.5) ($gutter*3) ($base-size*.5) ($gutter);
-  min-height: ($base-size*2);
-  margin-bottom: $base-size;
-  > * {
-    margin: 0;
-  }
-  &:hover, &:focus {
-    color: $body-link-color;
-  }
-  &.open > *:before {
-    @include rotate(180deg, 2);
-  }
+    cursor: pointer;
+    position: relative;
+    background: $toggle-bg;
+    padding: ($base-size*.5) ($gutter*3) ($base-size*.5) ($gutter);
+    min-height: ($base-size*2);
+    margin-bottom: $base-size;
+    > * {
+        margin: 0;
+    }
+    &:hover, &:focus {
+        color: $body-link-color;
+    }
+    &.open > *:before {
+        @include rotate(180deg, 2);
+    }
 }
 
 @mixin arrowdown() {
-  content: "\f078";
-  display: inline-block;
-  font-family: "Font Awesome 5 Free";
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  vertical-align: 0;
-  overflow: hidden;
-  position: absolute;
-  right: $gutter;
-  top: $base-size*.5;
-  margin: 0;
-  font-weight: 900;
-  font-size: ($base-size*1.5);
+    content: "\f078";
+    display: inline-block;
+    font-family: "Font Awesome 5 Free";
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    vertical-align: 0;
+    overflow: hidden;
+    position: absolute;
+    right: $gutter;
+    top: $base-size*.5;
+    margin: 0;
+    font-weight: 900;
+    font-size: ($base-size*1.5);
 }
 
 ////////////////////////////////////////////////
 .accordion > header,
 .frame-custom-31 > header {
-  @include toggleheader();
+    @include toggleheader();
 }
 
 .accordion.container,
 .width-max > .frame-custom-31 {
-  padding-bottom: 0;
+    padding-bottom: 0;
 }
 
 .accordion > header > *:before,
 .frame-custom-31 > header > *:before {
-  @include arrowdown();
-  @include transition(all);
+    @include arrowdown();
+    @include transition(all);
 }
 
 .accordion,
 .frame-custom-31 {
-  .togglecontent {
-    display: none;
-  }
+    .togglecontent {
+        display: none;
+    }
 }
 
 ///////////////////////////only mobile ///////////////////////////
 @media (max-width: $mediaquery-small-max) {
-  .frame-custom-30 > header *,
-  .frame-custom-31 > header * {
-    margin: 0;
-  }
+    .frame-custom-30 > header *,
+    .frame-custom-31 > header * {
+        margin: 0;
+    }
 }
 
 @media (max-width: $mediaquery-medium-max) {
-  .width-max > .frame-custom-30 {
-    padding-bottom: 0;
-  }
-  .frame-custom-30 > header {
-    @include toggleheader();
-  }
-  .frame-custom-30 .togglecontent {
-    display: none;
-  }
-  .frame-custom-30 > header > *:before {
-    @include arrowdown();
-    @include transition(all);
-  }
+    .width-max > .frame-custom-30 {
+        padding-bottom: 0;
+    }
+    .frame-custom-30 > header {
+        @include toggleheader();
+    }
+    .frame-custom-30 .togglecontent {
+        display: none;
+    }
+    .frame-custom-30 > header > *:before {
+        @include arrowdown();
+        @include transition(all);
+    }
 }

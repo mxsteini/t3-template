@@ -228,11 +228,11 @@ var klaroConfig = {
             // An optional callback function that will be called each time
             // the consent state for the app changes (true=consented). Passes
             // the `app` config as the second parameter as well.
-            callback: function(consent, app) {
+            callback: function (consent, app) {
                 // This is an example callback function.
                 console.log(
                     'User consent for app ' + app.name + ': consent=' + consent
-                );
+                )
             },
 
             // If "required" is set to true, Klaro will not allow this app to
@@ -296,4 +296,4 @@ var klaroConfig = {
             required: true,
         },
     ],
-};
+}

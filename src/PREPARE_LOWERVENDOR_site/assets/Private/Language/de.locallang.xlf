@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-	<file source-language="en" target-language="de" datatype="plaintext" original="EXT:jwmusterprojekt11/Resources/Private/Language/locallang.xlf" date="2021-09-24T08:23:01Z" product-name="jwmusterprojekt11">
+	<file source-language="en" target-language="de" datatype="plaintext"
+		  original="EXT:jwmusterprojekt11/Resources/Private/Language/locallang.xlf" date="2021-09-24T08:23:01Z"
+		  product-name="jwmusterprojekt11">
 		<header/>
 		<body>
 			<trans-unit id="jwmusterprojekt11.bgrimage" resname="jwmusterprojekt11.bgrimage">
-				<source>Background Image:Background image for the whole page (&lt;body&gt; element). Specify the path to the mage file, f.e. fileadmin/images/my_bgr.jpg, or EXT:myext/Resources/Public/Images/my_bgr.jpg
+				<source>Background Image:Background image for the whole page (&lt;body&gt; element). Specify the path to
+					the mage file, f.e. fileadmin/images/my_bgr.jpg, or EXT:myext/Resources/Public/Images/my_bgr.jpg
 				</source>
-				<target>Hintergrundbild:Hintergrundbild für die gesamte Seite (&lt;body&gt; Element). Geben Sie den Pfad zur Bilddatei ein, z.B. fileadmin/images/my_bgr.jpg, oder EXT:myext/Resources/Public/Images/my_bgr.jpg
+				<target>Hintergrundbild:Hintergrundbild für die gesamte Seite (&lt;body&gt; Element). Geben Sie den Pfad
+					zur Bilddatei ein, z.B. fileadmin/images/my_bgr.jpg, oder
+					EXT:myext/Resources/Public/Images/my_bgr.jpg
 				</target>
 			</trans-unit>
 			<trans-unit id="jwmusterprojekt11.bodybgr" resname="jwmusterprojekt11.bodybgr">
@@ -206,14 +211,17 @@
 				<target>Concatenate CSS:Zusammenfassung mehrerer CSS-Dateien zu einer einzelnen aktivieren</target>
 			</trans-unit>
 			<trans-unit id="jwmusterprojekt11.concatenateJs" resname="jwmusterprojekt11.concatenateJs">
-				<source>Concatenate JavaScript:Activate concatenation of multiple JavaScript files to one single file</source>
+				<source>Concatenate JavaScript:Activate concatenation of multiple JavaScript files to one single file
+				</source>
 				<target>Concatenate JavaScript:Zusammenfassung mehrerer JavaScript-Dateien zu einer einzelnen aktivieren
 				</target>
 			</trans-unit>
 			<trans-unit id="jwmusterprojekt11.logo" resname="jwmusterprojekt11.logo">
-				<source>Logo:Path to an image file used as logo in the header of the website, f.e. fileadmin/images/my_bgr.jpg, or EXT:myext/Resources/Public/Images/my_bgr.jpg
+				<source>Logo:Path to an image file used as logo in the header of the website, f.e.
+					fileadmin/images/my_bgr.jpg, or EXT:myext/Resources/Public/Images/my_bgr.jpg
 				</source>
-				<target>Logo:Pfad zu einer Bilddatei, die als Logo im Kopfbereich der Seite genutzt wird, z.B. fileadmin/images/my_bgr.jpg, oder EXT:myext/Resources/Public/Images/my_bgr.jpg
+				<target>Logo:Pfad zu einer Bilddatei, die als Logo im Kopfbereich der Seite genutzt wird, z.B.
+					fileadmin/images/my_bgr.jpg, oder EXT:myext/Resources/Public/Images/my_bgr.jpg
 				</target>
 			</trans-unit>
 			<trans-unit id="jwmusterprojekt11.logoWidth" resname="jwmusterprojekt11.logoWidth">
@@ -286,15 +294,23 @@
 				<target>Suche</target>
 			</trans-unit>
 			<trans-unit id="jwmusterprojekt11.iconSquare" resname="jwmusterprojekt11.iconSquare">
-				<source>App-/FavIcon Square: Path to an image, which is used as Favicon in browsers and as touch icons for smartphones and Tablets. You need 2 variants of this icon to cover all devices, this one has to be square.
+				<source>App-/FavIcon Square: Path to an image, which is used as Favicon in browsers and as touch icons
+					for smartphones and Tablets. You need 2 variants of this icon to cover all devices, this one has to
+					be square.
 				</source>
-				<target>App-/Favicon Quadratisch: Pfad zu einer Bilddatei, die als Favicon in Browsern und TouchIcon für Smartphones und Tablets genutzt wird. Sie benötigen 2 Varianten des Bildes, um möglichst viele Geräte abzudecken, dieses Bild muss quadratisch sein.
+				<target>App-/Favicon Quadratisch: Pfad zu einer Bilddatei, die als Favicon in Browsern und TouchIcon für
+					Smartphones und Tablets genutzt wird. Sie benötigen 2 Varianten des Bildes, um möglichst viele
+					Geräte abzudecken, dieses Bild muss quadratisch sein.
 				</target>
 			</trans-unit>
 			<trans-unit id="jwmusterprojekt11.iconWide" resname="jwmusterprojekt11.iconWide">
-				<source>App-/FavIcon Wide: Path to a second image, which is used as Favicon in browsers and as touch icons for smartphones and Tablets. This variant need an aspect ratio of 31:15, for example: width 310px, height 150px.
+				<source>App-/FavIcon Wide: Path to a second image, which is used as Favicon in browsers and as touch
+					icons for smartphones and Tablets. This variant need an aspect ratio of 31:15, for example: width
+					310px, height 150px.
 				</source>
-				<target>App-/FavIcon Breit: Pfad zu einer zweiten Bilddatei, die als Favicon in Browsern und TouchIcon für Smartphones und Tablets genutzt wird. Diese Variante benötigt ein Seitenverhältnis von 31:15, zum Beispiel: Breite 310 px, Höhe 150 px.
+				<target>App-/FavIcon Breit: Pfad zu einer zweiten Bilddatei, die als Favicon in Browsern und TouchIcon
+					für Smartphones und Tablets genutzt wird. Diese Variante benötigt ein Seitenverhältnis von 31:15,
+					zum Beispiel: Breite 310 px, Höhe 150 px.
 				</target>
 			</trans-unit>
 			<trans-unit id="jwmusterprojekt11.showRootline" resname="jwmusterprojekt11.showRootline">
@@ -320,32 +336,41 @@
 				<target>Typ der Navigation: Wählen Sie den Stil der Navigation aus</target>
 			</trans-unit>
 			<trans-unit id="jwmusterprojekt11.newsStartingPoints" resname="jwmusterprojekt11.newsStartingPoints">
-				<source>Page IDs news storage: Comma separated list of page IDs with news records (default value, can be overwritten in the news plugins)
+				<source>Page IDs news storage: Comma separated list of page IDs with news records (default value, can be
+					overwritten in the news plugins)
 				</source>
-				<target>Page IDs News-Storage: Kommaseparierte Liste von IDs der Seiten, auf der News-Artikel gespeichert sind (Standardwert, kann in den Plugins überschrieben werden)
+				<target>Page IDs News-Storage: Kommaseparierte Liste von IDs der Seiten, auf der News-Artikel
+					gespeichert sind (Standardwert, kann in den Plugins überschrieben werden)
 				</target>
 			</trans-unit>
 			<trans-unit id="jwmusterprojekt11.newsDetailPid" resname="jwmusterprojekt11.newsDetailPid">
-				<source>Page ID news detail page: ID of the page with the news plugin for the detail view (default value, can be overwritten in the news plugins)
+				<source>Page ID news detail page: ID of the page with the news plugin for the detail view (default
+					value, can be overwritten in the news plugins)
 				</source>
-				<target>Page ID News-Detailseite: ID der Seite mit der News-Detailansicht (Standardwert, kann in den Plugins überschrieben werden)
+				<target>Page ID News-Detailseite: ID der Seite mit der News-Detailansicht (Standardwert, kann in den
+					Plugins überschrieben werden)
 				</target>
 			</trans-unit>
 			<trans-unit id="jwmusterprojekt11.newsListPid" resname="jwmusterprojekt11.newsListPid">
-				<source>Page ID news list page: ID of the page with the news plugin for the list view (default value, can be overwritten in the news plugins)
+				<source>Page ID news list page: ID of the page with the news plugin for the list view (default value,
+					can be overwritten in the news plugins)
 				</source>
-				<target>Page ID News-Listenseite: ID der Seite mit der News-Listenansicht (Standardwert, kann in den Plugins überschrieben werden)
+				<target>Page ID News-Listenseite: ID der Seite mit der News-Listenansicht (Standardwert, kann in den
+					Plugins überschrieben werden)
 				</target>
 			</trans-unit>
 			<trans-unit id="jwmusterprojekt11.footerContentUid" resname="jwmusterprojekt11.footerContentUid">
-				<source>Page ID for footer content: ID of the page, where the content for the footer of the website is stored
+				<source>Page ID for footer content: ID of the page, where the content for the footer of the website is
+					stored
 				</source>
 				<target>Page ID Seite Footer Inhalte: ID der Seite, welche die Inhalte für den Footer enthält</target>
 			</trans-unit>
 			<trans-unit id="jwmusterprojekt11.metaMenuUid" resname="jwmusterprojekt11.metaMenuUid">
-				<source>Page ID of starting point for meta navigation: ID of the folder, under which the pages for the meta navigation are stored
+				<source>Page ID of starting point for meta navigation: ID of the folder, under which the pages for the
+					meta navigation are stored
 				</source>
-				<target>Page ID Ordner Meta-Navigation:ID des Ordners, der die Seiten für die Meta-Navigation enthält</target>
+				<target>Page ID Ordner Meta-Navigation:ID des Ordners, der die Seiten für die Meta-Navigation enthält
+				</target>
 			</trans-unit>
 			<trans-unit id="jwmusterprojekt11.customcategory" resname="jwmusterprojekt11.customcategory">
 				<source>jweiland.net Templateproject</source>
@@ -355,31 +380,38 @@
 				<source>jweiland.net Cookie Consent Manager</source>
 				<target>jweiland.net Cookie Consent Manager</target>
 			</trans-unit>
-			<trans-unit id="jwmusterprojekt11.customsubcategory.layout" resname="jwmusterprojekt11.customsubcategory.layout">
+			<trans-unit id="jwmusterprojekt11.customsubcategory.layout"
+						resname="jwmusterprojekt11.customsubcategory.layout">
 				<source>Layout</source>
 				<target>Layout</target>
 			</trans-unit>
-			<trans-unit id="jwmusterprojekt11.customsubcategory.meta" resname="jwmusterprojekt11.customsubcategory.meta">
+			<trans-unit id="jwmusterprojekt11.customsubcategory.meta"
+						resname="jwmusterprojekt11.customsubcategory.meta">
 				<source>Settings for meta navigation</source>
 				<target>Angaben zur Meta-Navigation</target>
 			</trans-unit>
-			<trans-unit id="jwmusterprojekt11.customsubcategory.menu" resname="jwmusterprojekt11.customsubcategory.menu">
+			<trans-unit id="jwmusterprojekt11.customsubcategory.menu"
+						resname="jwmusterprojekt11.customsubcategory.menu">
 				<source>Settings for main navigation</source>
 				<target>Einstellungen für Navigation</target>
 			</trans-unit>
-			<trans-unit id="jwmusterprojekt11.customsubcategory.content" resname="jwmusterprojekt11.customsubcategory.content">
+			<trans-unit id="jwmusterprojekt11.customsubcategory.content"
+						resname="jwmusterprojekt11.customsubcategory.content">
 				<source>Page IDs</source>
 				<target>Seiten-IDs</target>
 			</trans-unit>
-			<trans-unit id="jwmusterprojekt11.customsubcategory.basic" resname="jwmusterprojekt11.customsubcategory.basic">
+			<trans-unit id="jwmusterprojekt11.customsubcategory.basic"
+						resname="jwmusterprojekt11.customsubcategory.basic">
 				<source>Basic settings</source>
 				<target>Grundeinstellungen</target>
 			</trans-unit>
-			<trans-unit id="jwmusterprojekt11.customsubcategory.cookies" resname="jwmusterprojekt11.customsubcategory.cookies">
+			<trans-unit id="jwmusterprojekt11.customsubcategory.cookies"
+						resname="jwmusterprojekt11.customsubcategory.cookies">
 				<source>Cookies and privacy</source>
 				<target>Cookies und Datenschutz</target>
 			</trans-unit>
-			<trans-unit id="jwmusterprojekt11.customsubcategory.tracking" resname="jwmusterprojekt11.customsubcategory.tracking">
+			<trans-unit id="jwmusterprojekt11.customsubcategory.tracking"
+						resname="jwmusterprojekt11.customsubcategory.tracking">
 				<source>Tracking codes</source>
 				<target>Tracking-Codes</target>
 			</trans-unit>
@@ -432,66 +464,110 @@
 				<target>Neueste Meldungen, Kartenansicht</target>
 			</trans-unit>
 			<trans-unit id="jwmusterprojekt11.matomourl" resname="jwmusterprojekt11.matomourl">
-				<source>Address of the Matomo installation:Insert the URL of your Matomo installation (f.e. matomo.domain.com or domain.com/matomo, without http or https and without trailing slash!)
+				<source>Address of the Matomo installation:Insert the URL of your Matomo installation (f.e.
+					matomo.domain.com or domain.com/matomo, without http or https and without trailing slash!)
 				</source>
-				<target>Adresse der Matomo-Installation:Fügen Sie die URL Ihrer Matomo-Installation ein (z.B. matomo.domain.de oder domain.de/matomo, ohne http oder https und ohne abschließenden Schrägstrich!)
+				<target>Adresse der Matomo-Installation:Fügen Sie die URL Ihrer Matomo-Installation ein (z.B.
+					matomo.domain.de oder domain.de/matomo, ohne http oder https und ohne abschließenden Schrägstrich!)
 				</target>
 			</trans-unit>
 			<trans-unit id="jwmusterprojekt11.matomoSiteId" resname="jwmusterprojekt11.matomoSiteId">
-				<source>ID of the website:Insert the ID of the website you want to monitor. You can find it in the Matomo settings (Administration -&gt; Websites -&gt; Manage).
+				<source>ID of the website:Insert the ID of the website you want to monitor. You can find it in the
+					Matomo settings (Administration -&gt; Websites -&gt; Manage).
 				</source>
-				<target>ID der Website:Fügen Sie die ID der zu überwachenden Website ein. Sie finden diese in den Einstellungen von Matomo (Administration -&gt; Websites -&gt; verwalten)
+				<target>ID der Website:Fügen Sie die ID der zu überwachenden Website ein. Sie finden diese in den
+					Einstellungen von Matomo (Administration -&gt; Websites -&gt; verwalten)
 				</target>
 			</trans-unit>
 			<trans-unit id="jwmusterprojekt11.pageTitleFirst" resname="jwmusterprojekt11.pageTitleFirst">
-				<source>Print the page title first in title-Tag:TYPO3 by default prints a title tag in the format “website:page title”. If pageTitleFirst is set then the page title will be printed IN FRONT OF the template title. So it will look like “page title: website”.
+				<source>Print the page title first in title-Tag:TYPO3 by default prints a title tag in the format
+					“website:page title”. If pageTitleFirst is set then the page title will be printed IN FRONT OF the
+					template title. So it will look like “page title: website”.
 				</source>
-				<target>					Ausgabe des Seitentitels zuerst im Titel-Tag:TYPO3 gibt standardmäßig ein Titel-Tag im Format &quot;Website:Seitentitel&quot; aus. Wenn pageTitleFirst gesetzt ist, wird der Seitentitel VOR dem Template-Titel ausgegeben. Die Ausgabe	wird so aussehen: &quot;Seitentitel: Website&quot;.
+				<target>Ausgabe des Seitentitels zuerst im Titel-Tag:TYPO3 gibt standardmäßig ein Titel-Tag im Format
+					&quot;Website:Seitentitel&quot; aus. Wenn pageTitleFirst gesetzt ist, wird der Seitentitel VOR dem
+					Template-Titel ausgegeben. Die Ausgabe wird so aussehen: &quot;Seitentitel: Website&quot;.
 				</target>
 			</trans-unit>
-			<trans-unit id="jwmusterprojekt11.customsubcategory.klaro" resname="jwmusterprojekt11.customsubcategory.klaro">
+			<trans-unit id="jwmusterprojekt11.customsubcategory.klaro"
+						resname="jwmusterprojekt11.customsubcategory.klaro">
 				<source>Settings for the Klaro consent management tool</source>
 				<target>Einstellungen für das Klaro Consent Management Tool</target>
 			</trans-unit>
 			<trans-unit id="jwmusterprojekt11.showKlaro" resname="jwmusterprojekt11.showKlaro">
-				<source>Show Consent Manager:Displays a window in which the website visitor can agree or decline the use of cookies</source>
-				<target>Consent Manager anzeigen:Zeigt ein Fenster an, in dem der Besucher der Website der Nutzung von Cookies zustimmen oder diese ablehnen kann</target>
+				<source>Show Consent Manager:Displays a window in which the website visitor can agree or decline the use
+					of cookies
+				</source>
+				<target>Consent Manager anzeigen:Zeigt ein Fenster an, in dem der Besucher der Website der Nutzung von
+					Cookies zustimmen oder diese ablehnen kann
+				</target>
 			</trans-unit>
 			<trans-unit id="jwmusterprojekt11.mustConsent" resname="jwmusterprojekt11.mustConsent">
-				<source>Visitor action required:If this checkbox is active, the visitor must decide whether to accept or reject cookies before the website can be used. If the checkbox is deactivated, the visitor can use the website even without accepting or rejecting cookies.</source>
-				<target>Besucheraktion erforderlich:Ist diese Checkbox aktiv, muss der Besucher entscheiden, ob er Cookies zustimmt oder sie ablehnt, bevor die Website genutzt werden kann. Ist die Checkbox deaktiviert, kann der Benutzer die Website auch ohne Zustimmung oder Ablehnung nutzen.</target>
+				<source>Visitor action required:If this checkbox is active, the visitor must decide whether to accept or
+					reject cookies before the website can be used. If the checkbox is deactivated, the visitor can use
+					the website even without accepting or rejecting cookies.
+				</source>
+				<target>Besucheraktion erforderlich:Ist diese Checkbox aktiv, muss der Besucher entscheiden, ob er
+					Cookies zustimmt oder sie ablehnt, bevor die Website genutzt werden kann. Ist die Checkbox
+					deaktiviert, kann der Benutzer die Website auch ohne Zustimmung oder Ablehnung nutzen.
+				</target>
 			</trans-unit>
 			<trans-unit id="jwmusterprojekt11.privacyPolicyUid" resname="jwmusterprojekt11.privacyPolicyUid">
 				<source>Privacy page ID:Enter the ID of the privacy page here</source>
 				<target>ID der Datenschutzseite:Hier die ID der Seite mit der Datenschutzerklärung eintragen</target>
 			</trans-unit>
 			<trans-unit id="jwmusterprojekt11.gaTrackingId" resname="jwmusterprojekt11.gaTrackingId">
-				<source>Tracking ID of Google Analytics:If you use Google Analytics, enter the ID of your property here. (Example: UA-123456-7)</source>
-				<target>Tracking ID von Google Analytics:Falls Sie Google Analytics verwenden, geben Sie hier die ID Ihrer Property ein. (Beispiel: UA-123456-7)</target>
+				<source>Tracking ID of Google Analytics:If you use Google Analytics, enter the ID of your property here.
+					(Example: UA-123456-7)
+				</source>
+				<target>Tracking ID von Google Analytics:Falls Sie Google Analytics verwenden, geben Sie hier die ID
+					Ihrer Property ein. (Beispiel: UA-123456-7)
+				</target>
 			</trans-unit>
 			<trans-unit id="jwmusterprojekt11.gaPath" resname="jwmusterprojekt11.gaPath">
 				<source>Path of the Google Analytics Cookies:Usually the entry / is sufficient here</source>
 				<target>Pfad der Google Analytics Cookies:In der Regel reicht hier die Angabe /</target>
 			</trans-unit>
 			<trans-unit id="jwmusterprojekt11.gaDomain" resname="jwmusterprojekt11.gaDomain">
-				<source>Domain of this website:To ensure that cookies can be deleted correctly, it is necessary to specify the domain. The domain must be specified in the form 'domain.tld', without www, without http and without /!</source>
-				<target>Domain dieser Website:Damit Cookies auch korrekt wieder gelöscht werden können, ist die Angabe der Domain notwendig. Die Domain muss in der Form 'domain.tld' angegeben werden, ohne www, ohne http und ohne /!</target>
+				<source>Domain of this website:To ensure that cookies can be deleted correctly, it is necessary to
+					specify the domain. The domain must be specified in the form 'domain.tld', without www, without http
+					and without /!
+				</source>
+				<target>Domain dieser Website:Damit Cookies auch korrekt wieder gelöscht werden können, ist die Angabe
+					der Domain notwendig. Die Domain muss in der Form 'domain.tld' angegeben werden, ohne www, ohne http
+					und ohne /!
+				</target>
 			</trans-unit>
 			<trans-unit id="jwmusterprojekt11.fbp" resname="jwmusterprojekt11.fbp">
-				<source>Facebook Pixel:If you use the Facebook pixel, enter the pixel ID here (you can find it on https://business.facebook.com/events_manager/pixel).</source>
-				<target>Facebook Pixel:Falls Sie den Facebook-Pixel nutzen, geben Sie hier die Pixel-ID ein (einsehbar unter https://business.facebook.com/events_manager/pixel)</target>
+				<source>Facebook Pixel:If you use the Facebook pixel, enter the pixel ID here (you can find it on
+					https://business.facebook.com/events_manager/pixel).
+				</source>
+				<target>Facebook Pixel:Falls Sie den Facebook-Pixel nutzen, geben Sie hier die Pixel-ID ein (einsehbar
+					unter https://business.facebook.com/events_manager/pixel)
+				</target>
 			</trans-unit>
 			<trans-unit id="jwmusterprojekt11.useTwitter" resname="jwmusterprojekt11.useTwitter">
-				<source>Twitter: Enable this checkbox if you embed Twitter widgets on your website, for example a timeline.
-Note: the JavaScript must be adapted according to our documentation, so that it is only executed after the website visitor has given his or her consent!</source>
-				<target>Twitter:Aktivieren sie diese Checkbox, wenn Sie Widgets von Twitter auf Ihrer Website einbetten, zum Beispiel eine Timeline.
-Beachten: das JavaScript muss entsprechend unserer Dokumentation angepasst werden, damit es erst nach Zustimmung des Website-Besuchers ausgeführt wird!</target>
+				<source>Twitter: Enable this checkbox if you embed Twitter widgets on your website, for example a
+					timeline.
+					Note: the JavaScript must be adapted according to our documentation, so that it is only executed
+					after the website visitor has given his or her consent!
+				</source>
+				<target>Twitter:Aktivieren sie diese Checkbox, wenn Sie Widgets von Twitter auf Ihrer Website einbetten,
+					zum Beispiel eine Timeline.
+					Beachten: das JavaScript muss entsprechend unserer Dokumentation angepasst werden, damit es erst
+					nach Zustimmung des Website-Besuchers ausgeführt wird!
+				</target>
 			</trans-unit>
 			<trans-unit id="jwmusterprojekt11.externalMedia" resname="jwmusterprojekt11.externalMedia">
-				<source>Use of external media: Activate this checkbox if you include videos from YouTube or Vimeo. Attention: the extension &quot;video_shariff&quot; should be activated!</source>
-				<target>Nutzung externer Medien:Aktivieren Sie diese Checkbox, wenn Sie Videos von YouTube oder Vimeo einbinden. Achtung: die Extension &quot;video_shariff&quot; sollte unbedingt aktiviert sein!</target>
+				<source>Use of external media: Activate this checkbox if you include videos from YouTube or Vimeo.
+					Attention: the extension &quot;video_shariff&quot; should be activated!
+				</source>
+				<target>Nutzung externer Medien:Aktivieren Sie diese Checkbox, wenn Sie Videos von YouTube oder Vimeo
+					einbinden. Achtung: die Extension &quot;video_shariff&quot; sollte unbedingt aktiviert sein!
+				</target>
 			</trans-unit>
-			<trans-unit id="jwmusterprojekt11.widgets.mp11doc.button.label" resname="jwmusterprojekt11.widgets.mp11doc.button.label">
+			<trans-unit id="jwmusterprojekt11.widgets.mp11doc.button.label"
+						resname="jwmusterprojekt11.widgets.mp11doc.button.label">
 				<source>Open documentation of the template project</source>
 				<target>Dokumentation des Musterprojekts öffnen</target>
 			</trans-unit>
@@ -499,11 +575,17 @@ Beachten: das JavaScript muss entsprechend unserer Dokumentation angepasst werde
 				<source>Documentation of the TYPO3 11 LTS template project</source>
 				<target>Dokumentation zum TYPO3 11 LTS Musterprojekt</target>
 			</trans-unit>
-			<trans-unit id="jwmusterprojekt11.widgets.mp11doc.longdesc" resname="jwmusterprojekt11.widgets.mp11doc.longdesc">
-				<source>On our website you will find detailed documentation about the sample project. In several text and video tutorials we show how you can adapt this template to your requirements.</source>
-				<target>Auf unserer Website finden Sie eine ausührliche Dokumentation zum Musterprojekt. In mehreren Text- und Videoanleitungen zeigen wir, wie Sie diese Vorlage an Ihre Anforderungen anpassen können.</target>
+			<trans-unit id="jwmusterprojekt11.widgets.mp11doc.longdesc"
+						resname="jwmusterprojekt11.widgets.mp11doc.longdesc">
+				<source>On our website you will find detailed documentation about the sample project. In several text
+					and video tutorials we show how you can adapt this template to your requirements.
+				</source>
+				<target>Auf unserer Website finden Sie eine ausührliche Dokumentation zum Musterprojekt. In mehreren
+					Text- und Videoanleitungen zeigen wir, wie Sie diese Vorlage an Ihre Anforderungen anpassen können.
+				</target>
 			</trans-unit>
-			<trans-unit id="jwmusterprojekt11.widgets.mp11doc.shortdesc" resname="jwmusterprojekt11.widgets.mp11doc.shortdesc">
+			<trans-unit id="jwmusterprojekt11.widgets.mp11doc.shortdesc"
+						resname="jwmusterprojekt11.widgets.mp11doc.shortdesc">
 				<source>Notes on the documentation of the template project</source>
 				<target>Hinweise zur Dokumentation des Musterprojekts</target>
 			</trans-unit>

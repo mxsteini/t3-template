@@ -15,7 +15,7 @@ $base-size-eighth: $base-size * 0.125;
 
 // Horizontal Space
 $gutter: 1.5rem;
-$gutter-px: (1.5 * $base-html-size-large);// gutter value/base-html-size
+$gutter-px: (1.5 * $base-html-size-large); // gutter value/base-html-size
 $gutter-half: $gutter * 0.5;
 $gutter-quarter: $gutter * 0.25;
 $gutter-eighth: $gutter * 0.125;
@@ -67,8 +67,8 @@ $white-opacity: rgba(255, 255, 255, 0.9);
 $font-name-normal: open_sansregular;
 $font-name-bold: open_sansbold;
 
-$font-path-normal:'../Fonts/OpenSans/OpenSans-Regular-webfont';
-$font-path-bold:'../Fonts/OpenSans/OpenSans-Bold-webfont';
+$font-path-normal: '../Fonts/OpenSans/OpenSans-Regular-webfont';
+$font-path-bold: '../Fonts/OpenSans/OpenSans-Bold-webfont';
 
 $font-family: '#{$font-name-normal}', verdana, arial, helvetica, sans-serif;
 $font-weight-normal: 400;
@@ -171,7 +171,6 @@ $layout-100-bg: $gray5;
 
 //box shadows
 $box-shadow: rgba(0, 0, 0, 0.2);
-
 
 
 //Navigation smartmenu

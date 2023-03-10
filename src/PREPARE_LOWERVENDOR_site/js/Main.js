@@ -30,7 +30,6 @@ Alpine.plugin(focus)
 Alpine.plugin(collapse)
 
 
-
 Alpine.store('PREPARE_LOWERVENDOR_page', {
     scrolled: true,
     menuOpen: false,
