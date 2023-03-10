@@ -5,7 +5,7 @@ if (!defined('TYPO3_MODE')) {
 }
 
 $temporaryColumn = [
-    'tx_PREPARE_LOWERVENDOR_site_imagesizes' => [
+    'tx_PREPARE_LOWERVENDORsite_imagesizes' => [
         'exclude' => 0,
         'label' => 'LLL:EXT:PREPARE_LOWERVENDOR_site/Resources/Private/Language/locallang_db.xlf:PREPARE_LOWERVENDOR_site.imagesizes',
         'config' => [
@@ -27,7 +27,7 @@ $temporaryColumn = [
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(
     'tt_content',
     'mediaAdjustments',
-    'tx_PREPARE_LOWERVENDOR_site_imagesizes',
+    'tx_PREPARE_LOWERVENDORsite_imagesizes',
     'after:imageborder'
 );
 
