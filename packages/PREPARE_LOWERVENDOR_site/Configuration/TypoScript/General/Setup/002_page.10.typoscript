@@ -1,99 +1,100 @@
 page.10 = FLUIDTEMPLATE
 page.10 {
-  partialRootPath = EXT:PREPARE_LOWERVENDOR_site/Resources/Private/Page/Partials
-  layoutRootPath = EXT:PREPARE_LOWERVENDOR_site/Resources/Private/Page/Layouts
+    partialRootPath = EXT:PREPARE_LOWERVENDOR_site/Resources/Private/Page/Partials
+    layoutRootPath = EXT:PREPARE_LOWERVENDOR_site/Resources/Private/Page/Layouts
 
-  file.stdWrap.cObject = CASE
-  file.stdWrap.cObject {
-    key.data = pagelayout
+    file.stdWrap.cObject = CASE
+    file.stdWrap.cObject {
+        key.data = pagelayout
 
-    ## Layout Varianten in Templates
-    pagets__standard = TEXT
-    pagets__standard.value = EXT:PREPARE_LOWERVENDOR_site/Resources/Private/Page/Templates/Standard.html
+        ## Layout Varianten in Templates
+        pagets__standard = TEXT
+        pagets__standard.value = EXT:PREPARE_LOWERVENDOR_site/Resources/Private/Page/Templates/Standard.html
 
-    pagets__1col = TEXT
-    pagets__1col.value = EXT:PREPARE_LOWERVENDOR_site/Resources/Private/Page/Templates/Onecol.html
+        pagets__1col = TEXT
+        pagets__1col.value = EXT:PREPARE_LOWERVENDOR_site/Resources/Private/Page/Templates/Onecol.html
 
-    pagets__2col = TEXT
-    pagets__2col.value = EXT:PREPARE_LOWERVENDOR_site/Resources/Private/Page/Templates/Twocol.html
+        pagets__2col = TEXT
+        pagets__2col.value = EXT:PREPARE_LOWERVENDOR_site/Resources/Private/Page/Templates/Twocol.html
 
-    pagets__3col = TEXT
-    pagets__3col.value = EXT:PREPARE_LOWERVENDOR_site/Resources/Private/Page/Templates/Threecol.html
+        pagets__3col = TEXT
+        pagets__3col.value = EXT:PREPARE_LOWERVENDOR_site/Resources/Private/Page/Templates/Threecol.html
 
-    pagets__styleguide = TEXT
-    pagets__styleguide.value = EXT:PREPARE_LOWERVENDOR_site/Resources/Private/Page/Templates/Styleguide.html
+        pagets__styleguide = TEXT
+        pagets__styleguide.value = EXT:PREPARE_LOWERVENDOR_site/Resources/Private/Page/Templates/Styleguide.html
 
-    default < .pagets__standard
-  }
+        default < .pagets__standard
+    }
 
-  variables {
-    ## Obererer Bereich fuer headermedia
-    content5 < styles.content.get
-    content5.select.where = colPos = 5
+    variables {
+        ## Obererer Bereich fuer headermedia
+        content5 < styles.content.get
+        content5.select.where = colPos = 5
 
-    ##Hauptinhaltsbereich und erste Spalte in Mehrspalter
-    content0 < styles.content.get
-    content0.select.where = colPos = 0
-    content0.stdWrap.ifEmpty.stdWrap.wrap = &nbsp;
-    ## Bereich oben ueber ganze Breite
-    content1 < styles.content.get
-    content1.select.where = colPos = 1
-    ##zweite Spalte in Mehrspalter
-    content2 < styles.content.get
-    content2.select.where = colPos = 2
+        ##Hauptinhaltsbereich und erste Spalte in Mehrspalter
+        content0 < styles.content.get
+        content0.select.where = colPos = 0
+        content0.stdWrap.ifEmpty.stdWrap.wrap = &nbsp;
+        ## Bereich oben ueber ganze Breite
+        content1 < styles.content.get
+        content1.select.where = colPos = 1
+        ##zweite Spalte in Mehrspalter
+        content2 < styles.content.get
+        content2.select.where = colPos = 2
 
-    ## Bereich unten ueber ganze Breite
-    content3 < styles.content.get
-    content3.select.where = colPos = 3
-    ##dritte Spalte in Dreispalter
-    content4 < styles.content.get
-    content4.select.where = colPos = 4
+        ## Bereich unten ueber ganze Breite
+        content3 < styles.content.get
+        content3.select.where = colPos = 3
+        ##dritte Spalte in Dreispalter
+        content4 < styles.content.get
+        content4.select.where = colPos = 4
 
-    ## Footer
-    content10 < styles.content.get
-    content10.select.where = colPos = 10
-    content10.select.pidInList = {$PREPARE_LOWERVENDOR_site.footerContentUid}
-    content11 < .content10
-    content11.select.where = colPos = 11
-    content12 < .content10
-    content12.select.where = colPos = 12
+        ## Footer
+        content10 < styles.content.get
+        content10.select.where = colPos = 10
+        content10.select.pidInList = {$PREPARE_LOWERVENDOR_site.footerContentUid}
+        content11 < .content10
+        content11.select.where = colPos = 11
+        content12 < .content10
+        content12.select.where = colPos = 12
 
-    ## Navigationsparameter
-    menuType = TEXT
-    menuType.value = {$PREPARE_LOWERVENDOR_site.menuType}
-    menuTheme = TEXT
-    menuTheme.value = {$PREPARE_LOWERVENDOR_site.menuTheme}
-    ## Sprachparameter
-    showLang = TEXT
-    showLang.value = {$PREPARE_LOWERVENDOR_site.showLang}
-    ## Footer Column Layout
-    footerBackendLayout = TEXT
-    footerBackendLayout.data = DB:pages:{$PREPARE_LOWERVENDOR_site.footerContentUid}:backend_layout
-  }
-  settings {
-    showRootline = {$PREPARE_LOWERVENDOR_site.showRootline}
-    showSearch = {$PREPARE_LOWERVENDOR_site.showSearch}
+        ## Navigationsparameter
+        menuType = TEXT
+        menuType.value = {$PREPARE_LOWERVENDOR_site.menuType}
+        menuTheme = TEXT
+        menuTheme.value = {$PREPARE_LOWERVENDOR_site.menuTheme}
+        ## Sprachparameter
+        showLang = TEXT
+        showLang.value = {$PREPARE_LOWERVENDOR_site.showLang}
+        ## Footer Column Layout
+        footerBackendLayout = TEXT
+        footerBackendLayout.data = DB:pages:{$PREPARE_LOWERVENDOR_site.footerContentUid}:backend_layout
+    }
 
-    logoFile = {$PREPARE_LOWERVENDOR_site.logoFile}
-    logoWidth = {$PREPARE_LOWERVENDOR_site.logoWidth}
-    logoAltText = {$PREPARE_LOWERVENDOR_site.companyName}
-    logoLinkParameter = {$PREPARE_LOWERVENDOR_site.rootId}
-    logoLinkTitle = {$PREPARE_LOWERVENDOR_site.companyName}
-    imgMaxWidth = {$PREPARE_LOWERVENDOR_site.imgMaxWidth}
+    settings {
+        showRootline = {$PREPARE_LOWERVENDOR_site.showRootline}
+        showSearch = {$PREPARE_LOWERVENDOR_site.showSearch}
 
-    useRss = {$PREPARE_LOWERVENDOR_site.useRss}
+        logoFile = {$PREPARE_LOWERVENDOR_site.logoFile}
+        logoWidth = {$PREPARE_LOWERVENDOR_site.logoWidth}
+        logoAltText = {$PREPARE_LOWERVENDOR_site.companyName}
+        logoLinkParameter = {$PREPARE_LOWERVENDOR_site.rootId}
+        logoLinkTitle = {$PREPARE_LOWERVENDOR_site.companyName}
+        imgMaxWidth = {$PREPARE_LOWERVENDOR_site.imgMaxWidth}
 
-    ## Klaro Consent Manager
-    showKlaro = {$PREPARE_LOWERVENDOR_siteCCM.showKlaro}
-    mustConsent = {$PREPARE_LOWERVENDOR_siteCCM.mustConsent}
-    privacyPolicy = {$PREPARE_LOWERVENDOR_siteCCM.privacyPolicyUid}
-    useMatomo = {$PREPARE_LOWERVENDOR_siteCCM.matomoUrl}
-    useGA = {$PREPARE_LOWERVENDOR_siteCCM.gaTrackingId}
-    gaPath = {$PREPARE_LOWERVENDOR_siteCCM.gaPath}
-    gaDomain = {$PREPARE_LOWERVENDOR_siteCCM.gaDomain}
-    fbp = {$PREPARE_LOWERVENDOR_siteCCM.fbp}
-    useTwitter = {$PREPARE_LOWERVENDOR_siteCCM.useTwitter}
-    externalMedia = {$PREPARE_LOWERVENDOR_siteCCM.externalMedia}
-  }
+        useRss = {$PREPARE_LOWERVENDOR_site.useRss}
+
+        ## Klaro Consent Manager
+        showKlaro = {$PREPARE_LOWERVENDOR_siteCCM.showKlaro}
+        mustConsent = {$PREPARE_LOWERVENDOR_siteCCM.mustConsent}
+        privacyPolicy = {$PREPARE_LOWERVENDOR_siteCCM.privacyPolicyUid}
+        useMatomo = {$PREPARE_LOWERVENDOR_siteCCM.matomoUrl}
+        useGA = {$PREPARE_LOWERVENDOR_siteCCM.gaTrackingId}
+        gaPath = {$PREPARE_LOWERVENDOR_siteCCM.gaPath}
+        gaDomain = {$PREPARE_LOWERVENDOR_siteCCM.gaDomain}
+        fbp = {$PREPARE_LOWERVENDOR_siteCCM.fbp}
+        useTwitter = {$PREPARE_LOWERVENDOR_siteCCM.useTwitter}
+        externalMedia = {$PREPARE_LOWERVENDOR_siteCCM.externalMedia}
+    }
 }
 

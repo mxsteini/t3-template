@@ -4,10 +4,10 @@
 
 ## Linkhandler for news records
 config.recordLinks.tx_news {
-  typolink {
-    parameter = {$PREPARE_LOWERVENDOR_site.newsDetailPid}
-    additionalParams.data = field:uid
-    additionalParams.wrap = &tx_news_pi1[news]=|
-    useCacheHash = 1
-  }
+    typolink {
+        parameter = {$PREPARE_LOWERVENDOR_site.newsDetailPid}
+        additionalParams.data = field:uid
+        additionalParams.wrap = &tx_news_pi1[news]=|
+        useCacheHash = 1
+    }
 }

@@ -1,56 +1,56 @@
 ## LanguageMenuProcessor
 page.10.dataProcessing {
-  ## Language Menu
-  10 = TYPO3\CMS\Frontend\DataProcessing\LanguageMenuProcessor
-  10 {
-    languages = auto
-    as = languageMenu
-  }
-
-  ## Main Menu
-  20 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
-  20 {
-    levels = 3
-    includeSpacer = 0
-    as = menuMain
-    dataProcessing {
-      10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
-      10 {
-        references.fieldName = nav_image
-      }
+    ## Language Menu
+    10 = TYPO3\CMS\Frontend\DataProcessing\LanguageMenuProcessor
+    10 {
+        languages = auto
+        as = languageMenu
     }
-  }
 
-  30 <.20
-  30 {
-    as = menuMeta
-    maxItems = 8
-  }
+    ## Main Menu
+    20 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+    20 {
+        levels = 3
+        includeSpacer = 0
+        as = menuMain
+        dataProcessing {
+            10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+            10 {
+                references.fieldName = nav_image
+            }
+        }
+    }
 
-  ## Footer Meta Menu
-  40 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
-  40 {
-    levels = 1
-    special = directory
-    special.value = {$PREPARE_LOWERVENDOR_site.metaMenuUid}
-    as = menuServiceFooter
-  }
+    30 < .20
+    30 {
+        as = menuMeta
+        maxItems = 8
+    }
 
-  ## Rootline Menu
-  50 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
-  50 {
-    as = rootline
-    includeNotInMenu = 1
-    excludeUidList = {$PREPARE_LOWERVENDOR_site.newsDetailPid}
-    entryLevel = 1
-    special = rootline
-    special.range = 0|-1
-  }
+    ## Footer Meta Menu
+    40 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+    40 {
+        levels = 1
+        special = directory
+        special.value = {$PREPARE_LOWERVENDOR_site.metaMenuUid}
+        as = menuServiceFooter
+    }
 
-  ## Vertical menu, if both the horizontal and vertical menu should be displayed
-  60 < .20
-  60 {
-    entryLevel = 1
-    as = verticalMenu1
-  }
+    ## Rootline Menu
+    50 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+    50 {
+        as = rootline
+        includeNotInMenu = 1
+        excludeUidList = {$PREPARE_LOWERVENDOR_site.newsDetailPid}
+        entryLevel = 1
+        special = rootline
+        special.range = 0|-1
+    }
+
+    ## Vertical menu, if both the horizontal and vertical menu should be displayed
+    60 < .20
+    60 {
+        entryLevel = 1
+        as = verticalMenu1
+    }
 }

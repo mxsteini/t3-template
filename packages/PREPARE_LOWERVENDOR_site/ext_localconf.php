@@ -54,9 +54,7 @@ defined('TYPO3_MODE') || exit();
 
     $GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['custom'] = 'EXT:PREPARE_LOWERVENDOR_site/Configuration/RTE/custom.yaml';
 
-//    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addUserTSConfig('@import "EXT:PREPARE_LOWERVENDOR_site/Configuration/TypoScript/User.tsconfig"');
-//    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTypoScriptSetup('@import "EXT:PREPARE_LOWERVENDOR_site/Configuration/TypoScript/Rootpages/Project1/setup.tsconfig"');
-//    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTypoScriptConstants('@import "EXT:PREPARE_LOWERVENDOR_site/Configuration/TypoScript/Rootpages/Project1/constants.tsconfig"');
+    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addUserTSConfig('@import "EXT:PREPARE_LOWERVENDOR_site/Configuration/TypoScript/User.tsconfig"');
 
 // Customize the label for the input field "Relationship" in the link browser
     $GLOBALS['TYPO3_CONF_VARS']['SYS']['locallangXMLOverride']['EXT:recordlist/Resources/Private/Language/locallang_browse_links.xlf'][] = 'EXT:PREPARE_LOWERVENDOR_site/Resources/Private/Language/locallang_browse_links.xlf';

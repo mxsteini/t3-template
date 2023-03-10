@@ -1,29 +1,31 @@
 plugin.tx_seo {
     config {
-       xmlSitemap {
-          sitemaps {
-             news {
-                provider = TYPO3\CMS\Seo\XmlSitemap\RecordsXmlSitemapDataProvider
-                config {
-                   table = tx_news_domain_model_news
-                   sortField = sorting
-                   lastModifiedField = tstamp
-                   #additionalWhere = AND (no_index = 0 OR no_follow = 0)
-                   pid = {$PREPARE_LOWERVENDOR_site.newsStartingPoints}
-                   url {
-                      pageId = {$PREPARE_LOWERVENDOR_site.newsDetailPid}
-                      fieldToParameterMap {
-                         uid = tx_news_pi1[news]
-                      }
-                      additionalGetParameters {
-                         tx_extension_pi1.controller = News
-                         tx_extension_pi1.action = detail
-                      }
-                      useCacheHash = 1
-                   }
+        xmlSitemap {
+            sitemaps {
+                news {
+                    provider = TYPO3\CMS\Seo\XmlSitemap\RecordsXmlSitemapDataProvider
+                    config {
+                        table = tx_news_domain_model_news
+                        sortField = sorting
+                        lastModifiedField = tstamp
+                        #additionalWhere = AND (no_index = 0 OR no_follow = 0)
+                        pid = {$PREPARE_LOWERVENDOR_site.newsStartingPoints}
+                        url {
+                            pageId = {$PREPARE_LOWERVENDOR_site.newsDetailPid}
+                            fieldToParameterMap {
+                                uid = tx_news_pi1[news]
+                            }
+
+                            additionalGetParameters {
+                                tx_extension_pi1.controller = News
+                                tx_extension_pi1.action = detail
+                            }
+
+                            useCacheHash = 1
+                        }
+                    }
                 }
-             }
-          }
-       }
+            }
+        }
     }
- }
+}

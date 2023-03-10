@@ -5,17 +5,17 @@ plugin.tx_indexedsearch.view.partialRootPaths.100 = EXT:PREPARE_LOWERVENDOR_site
 ## Suchformular aus dem Content Element holen
 lib.search = RECORDS
 lib.search {
-  ##Uid des Suche Plugins auf Suchergebnisseite
-  source = {$PREPARE_LOWERVENDOR_site.searchformUid}
-  dontCheckPid = 1
-  tables = tt_content
+    ##Uid des Suche Plugins auf Suchergebnisseite
+    source = {$PREPARE_LOWERVENDOR_site.searchformUid}
+    dontCheckPid = 1
+    tables = tt_content
 }
 
 ## Suchformular auf Suchergebnisseite ausblenden
 [page["uid"] == {$PREPARE_LOWERVENDOR_site.searchformPid}]
-  lib.search >
-  lib.search = TEXT
-  lib.search.value >
+    lib.search >
+    lib.search = TEXT
+    lib.search.value >
 
-  page.10.settings.showSearch = 0
+    page.10.settings.showSearch = 0
 [END]

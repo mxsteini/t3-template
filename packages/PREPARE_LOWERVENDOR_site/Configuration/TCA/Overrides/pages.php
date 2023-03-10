@@ -48,7 +48,7 @@ $temporaryColumns = [
             'nav_image',
             [
                 'behaviour' => [
-                'allowLanguageSynchronization' => true,
+                    'allowLanguageSynchronization' => true,
                 ],
                 // Use the imageoverlayPalette instead of the basicoverlayPalette
                 'overrideChildTca' => [

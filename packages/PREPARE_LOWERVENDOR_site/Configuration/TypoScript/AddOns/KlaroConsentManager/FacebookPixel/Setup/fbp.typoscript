@@ -2,8 +2,8 @@
 ## Set the ID of your Facebook Pixel in the Constants Editor on the root page of your website
 ["{$PREPARE_LOWERVENDOR_siteCCM.fbp}" != ""]
 
-page.headerData.1588670504 = TEXT
-page.headerData.1588670504.value (
+    page.headerData.1588670504 = TEXT
+    page.headerData.1588670504.value (
 <!-- Facebook Pixel Code -->
 <script type="text/plain"
   data-type="application/javascript"
@@ -20,5 +20,5 @@ page.headerData.1588670504.value (
   fbq('track', 'PageView');
 </script>
 <!-- End Facebook Pixel Code -->
-)
+    )
 [END]

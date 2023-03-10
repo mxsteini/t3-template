@@ -1,13 +1,13 @@
 options {
-  clearCache.pages = 1
-  pageTree.showPageIdWithTitle = 1
+    clearCache.pages = 1
+    pageTree.showPageIdWithTitle = 1
 }
 
 TCAdefaults.tt_content.filelink_size = 1
 
 ##Color for background in page tree "Wichtige Infos"
 options.pageTree.backgroundColor {
-  28 = #ff9696
+    28 = #ff9696
 }
 
 ## If set, a button "Duplicate" will appear in TCEFORMs.

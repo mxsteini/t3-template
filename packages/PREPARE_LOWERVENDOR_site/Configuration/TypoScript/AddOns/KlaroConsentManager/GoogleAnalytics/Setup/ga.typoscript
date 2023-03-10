@@ -2,8 +2,8 @@
 ## Set the ID of your Google Analytics property in the Constants Editor on the root page of your website
 ["{$PREPARE_LOWERVENDOR_siteCCM.gaTrackingId}" != ""]
 
-page.headerData.1588597223 = TEXT
-page.headerData.1588597223.value (
+    page.headerData.1588597223 = TEXT
+    page.headerData.1588597223.value (
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async type="text/plain"
   data-src="https://www.googletagmanager.com/gtag/js?id={$PREPARE_LOWERVENDOR_siteCCM.gaTrackingId}"
@@ -19,5 +19,5 @@ page.headerData.1588597223.value (
   gtag('config', '{$PREPARE_LOWERVENDOR_siteCCM.gaTrackingId}'), { 'anonymize_ip': true };
 </script>
 
-)
+    )
 [END]

@@ -5,187 +5,189 @@ lib.parseFunc_RTE.externalBlocks.table.stdWrap.wrap = <div class="table-responsi
 # Wird nicht direct verwendet. ISt nur dafuer da, um diese Arbeit wiederzuverwenden.
 lib.columnCalculator = CASE
 lib.columnCalculator {
-  key.field = colPos
-  default = TEXT
-  default.value = 100
-  ##Hauptinhalt
-  0 = CASE
-  0 {
-    key.data = pagelayout
+    key.field = colPos
     default = TEXT
     default.value = 100
-    pagets__standard = TEXT
-    pagets__standard.value = 66
-    pagets__1col = TEXT
-    pagets__1col.value = 100
-    pagets__2col = TEXT
-    pagets__2col.value = 50
-    pagets__3col = TEXT
-    pagets__3col.value = 33
-  }
-  ##Headerbild ueber ganze Breite
-  1 = TEXT
-  1.value = 100
-  ##Spalte rechts
-  2 < .0
-  2.pagets__standard.value = 33
-  ##Inhalt unten ueber ganze Breite
-  3 < .1
-  ##Inhalt dritte Spalte
-  4 = TEXT
-  4.value = 33
-  ## Inhalt headermedia
-  5 = TEXT
-  5.value = 100
+    ##Hauptinhalt
+    0 = CASE
+    0 {
+        key.data = pagelayout
+        default = TEXT
+        default.value = 100
+        pagets__standard = TEXT
+        pagets__standard.value = 66
+        pagets__1col = TEXT
+        pagets__1col.value = 100
+        pagets__2col = TEXT
+        pagets__2col.value = 50
+        pagets__3col = TEXT
+        pagets__3col.value = 33
+    }
 
-  ##Extention Container
-  ## Container 50:50
-  201 = TEXT
-  201.value = 50
-  202 < .201
+    ##Headerbild ueber ganze Breite
+    1 = TEXT
+    1.value = 100
+    ##Spalte rechts
+    2 < .0
+    2.pagets__standard.value = 33
+    ##Inhalt unten ueber ganze Breite
+    3 < .1
+    ##Inhalt dritte Spalte
+    4 = TEXT
+    4.value = 33
+    ## Inhalt headermedia
+    5 = TEXT
+    5.value = 100
 
-  # Container 33:33:33
-  301 = TEXT
-  301.value = 33
-  302 < .301
-  303 < .301
+    ##Extention Container
+    ## Container 50:50
+    201 = TEXT
+    201.value = 50
+    202 < .201
 
-  ## Container 25:25:25:25
-  401 = TEXT
-  401.value = 25
-  402 < .401
-  403 < .401
-  404 < .401
+    # Container 33:33:33
+    301 = TEXT
+    301.value = 33
+    302 < .301
+    303 < .301
+
+    ## Container 25:25:25:25
+    401 = TEXT
+    401.value = 25
+    402 < .401
+    403 < .401
+    404 < .401
 }
 
 styles.content.get = CONTENT
 styles.content.get {
-  table = tt_content
-  select.orderBy = sorting
-  select.where = colPos=0
+    table = tt_content
+    select.orderBy = sorting
+    select.where = colPos=0
 }
 
 tt_content.image.dataProcessing.20 {
-  maxGalleryWidth >
-  maxGalleryWidth.cObject < lib.columnCalculator
-  maxGalleryWidth.cObject {
-    default.value = {$PREPARE_LOWERVENDOR_site.imgMaxWidth}
-    0.default.value = {$PREPARE_LOWERVENDOR_site.imgMaxWidth}
-    0.pagets__standard.value = {$PREPARE_LOWERVENDOR_site.imgWidth66}
-    0.pagets__1col.value = {$PREPARE_LOWERVENDOR_site.imgMaxWidth}
-    0.pagets__2col.value = {$PREPARE_LOWERVENDOR_site.imgWidth50}
-    0.pagets__3col.value = {$PREPARE_LOWERVENDOR_site.imgWidth33}
-    1.value = {$PREPARE_LOWERVENDOR_site.imgMaxWidth}
-    2.pagets__standard.value = {$PREPARE_LOWERVENDOR_site.imgMaxWidth}
-    2.pagets__2col.value = {$PREPARE_LOWERVENDOR_site.imgWidth50}
-    2.pagets__3col.value = {$PREPARE_LOWERVENDOR_site.imgWidth33}
-    3.value = {$PREPARE_LOWERVENDOR_site.imgMaxWidth}
-    4.value = {$PREPARE_LOWERVENDOR_site.imgWidth33}
-    5.value = {$PREPARE_LOWERVENDOR_site.imgMaxHeaderWidth}
-    ## Container 50:50
-    201.value = {$PREPARE_LOWERVENDOR_site.imgWidth50}
-    202 < .201
+    maxGalleryWidth >
+    maxGalleryWidth.cObject < lib.columnCalculator
+    maxGalleryWidth.cObject {
+        default.value = {$PREPARE_LOWERVENDOR_site.imgMaxWidth}
+        0.default.value = {$PREPARE_LOWERVENDOR_site.imgMaxWidth}
+        0.pagets__standard.value = {$PREPARE_LOWERVENDOR_site.imgWidth66}
+        0.pagets__1col.value = {$PREPARE_LOWERVENDOR_site.imgMaxWidth}
+        0.pagets__2col.value = {$PREPARE_LOWERVENDOR_site.imgWidth50}
+        0.pagets__3col.value = {$PREPARE_LOWERVENDOR_site.imgWidth33}
+        1.value = {$PREPARE_LOWERVENDOR_site.imgMaxWidth}
+        2.pagets__standard.value = {$PREPARE_LOWERVENDOR_site.imgMaxWidth}
+        2.pagets__2col.value = {$PREPARE_LOWERVENDOR_site.imgWidth50}
+        2.pagets__3col.value = {$PREPARE_LOWERVENDOR_site.imgWidth33}
+        3.value = {$PREPARE_LOWERVENDOR_site.imgMaxWidth}
+        4.value = {$PREPARE_LOWERVENDOR_site.imgWidth33}
+        5.value = {$PREPARE_LOWERVENDOR_site.imgMaxHeaderWidth}
+        ## Container 50:50
+        201.value = {$PREPARE_LOWERVENDOR_site.imgWidth50}
+        202 < .201
 
-    # Container 33:33:33
-    301.value = {$PREPARE_LOWERVENDOR_site.imgWidth50}
-    302 < .301
-    303 < .301
+        # Container 33:33:33
+        301.value = {$PREPARE_LOWERVENDOR_site.imgWidth50}
+        302 < .301
+        303 < .301
 
-    ## Container 25:25:25:25
-    401.value = {$PREPARE_LOWERVENDOR_site.imgWidth25}
-    402 < .401
-    403 < .401
-    404 < .401
-  }
+        ## Container 25:25:25:25
+        401.value = {$PREPARE_LOWERVENDOR_site.imgWidth25}
+        402 < .401
+        403 < .401
+        404 < .401
+    }
 
-  maxGalleryWidthInText >
-  maxGalleryWidthInText.cObject < lib.columnCalculator
-  maxGalleryWidthInText.cObject {
-    default.value = {$PREPARE_LOWERVENDOR_site.imgTextMaxWidth}
-    0.default.value = {$PREPARE_LOWERVENDOR_site.imgTextMaxWidth}
-    0.pagets__standard.value = {$PREPARE_LOWERVENDOR_site.imgTextWidth66}
-    0.pagets__1col.value = {$PREPARE_LOWERVENDOR_site.imgTextMaxWidth}
-    0.pagets__2col.value = {$PREPARE_LOWERVENDOR_site.imgTextWidth50}
-    0.pagets__3col.value = {$PREPARE_LOWERVENDOR_site.imgTextWidth33}
-    1.value = {$PREPARE_LOWERVENDOR_site.imgTextMaxWidth}
-    2.pagets__standard.value = {$PREPARE_LOWERVENDOR_site.imgTextMaxWidth}
-    2.pagets__2col.value = {$PREPARE_LOWERVENDOR_site.imgWidth50}
-    2.pagets__3col.value = {$PREPARE_LOWERVENDOR_site.imgWidth33}
-    3.value = {$PREPARE_LOWERVENDOR_site.imgMaxWidth}
-    4.value = {$PREPARE_LOWERVENDOR_site.imgTextWidth33}
-    5.value = {$PREPARE_LOWERVENDOR_site.imgMaxHeaderWidth}
-    ## Container 50:50
-    201.value = {$PREPARE_LOWERVENDOR_site.imgTextWidth50}
-    202 < .201
+    maxGalleryWidthInText >
+    maxGalleryWidthInText.cObject < lib.columnCalculator
+    maxGalleryWidthInText.cObject {
+        default.value = {$PREPARE_LOWERVENDOR_site.imgTextMaxWidth}
+        0.default.value = {$PREPARE_LOWERVENDOR_site.imgTextMaxWidth}
+        0.pagets__standard.value = {$PREPARE_LOWERVENDOR_site.imgTextWidth66}
+        0.pagets__1col.value = {$PREPARE_LOWERVENDOR_site.imgTextMaxWidth}
+        0.pagets__2col.value = {$PREPARE_LOWERVENDOR_site.imgTextWidth50}
+        0.pagets__3col.value = {$PREPARE_LOWERVENDOR_site.imgTextWidth33}
+        1.value = {$PREPARE_LOWERVENDOR_site.imgTextMaxWidth}
+        2.pagets__standard.value = {$PREPARE_LOWERVENDOR_site.imgTextMaxWidth}
+        2.pagets__2col.value = {$PREPARE_LOWERVENDOR_site.imgWidth50}
+        2.pagets__3col.value = {$PREPARE_LOWERVENDOR_site.imgWidth33}
+        3.value = {$PREPARE_LOWERVENDOR_site.imgMaxWidth}
+        4.value = {$PREPARE_LOWERVENDOR_site.imgTextWidth33}
+        5.value = {$PREPARE_LOWERVENDOR_site.imgMaxHeaderWidth}
+        ## Container 50:50
+        201.value = {$PREPARE_LOWERVENDOR_site.imgTextWidth50}
+        202 < .201
 
-    # Container 33:33:33
-    301.value = {$PREPARE_LOWERVENDOR_site.imgTextWidth50}
-    302 < .301
-    303 < .301
+        # Container 33:33:33
+        301.value = {$PREPARE_LOWERVENDOR_site.imgTextWidth50}
+        302 < .301
+        303 < .301
 
-    ## Container 25:25:25:25
-    401.value = {$PREPARE_LOWERVENDOR_site.imgTextWidth25}
-    402 < .401
-    403 < .401
-    404 < .401
-  }
+        ## Container 25:25:25:25
+        401.value = {$PREPARE_LOWERVENDOR_site.imgTextWidth25}
+        402 < .401
+        403 < .401
+        404 < .401
+    }
 }
 
 tt_content {
-  textpic.dataProcessing.20 < tt_content.image.dataProcessing.20
-  textmedia.dataProcessing.20 < tt_content.image.dataProcessing.20
+    textpic.dataProcessing.20 < tt_content.image.dataProcessing.20
+    textmedia.dataProcessing.20 < tt_content.image.dataProcessing.20
 }
 
 ## images in ctype menus
 tt_content {
-  menu_pages.dataProcessing.10.dataProcessing.10.references.fieldName = nav_image
-  menu_subpages.dataProcessing.10.dataProcessing.10.references.fieldName = nav_image
-  menu_abstract.dataProcessing.10.dataProcessing.10.references.fieldName = nav_image
+    menu_pages.dataProcessing.10.dataProcessing.10.references.fieldName = nav_image
+    menu_subpages.dataProcessing.10.dataProcessing.10.references.fieldName = nav_image
+    menu_abstract.dataProcessing.10.dataProcessing.10.references.fieldName = nav_image
 }
+
 ## Add data attributes to click enlarge images for fancybox
 ## The data attributes are used by default from the fancybox script, https://fancyapps.com/fancybox/3/docs/#usage
 ## If you use another lightbox script, you may have to adapt these settings
 lib.contentElement.settings.media.popup {
-  linkParams.ATagParams.dataWrap =  data-fancybox="gallery[{file:current:uid_foreign}]" data-caption="{file:current:title}" class="{$styles.content.textmedia.linkWrap.lightboxCssClass}" rel="{$styles.content.textmedia.linkWrap.lightboxRelAttribute}"
+    linkParams.ATagParams.dataWrap = data-fancybox="gallery[{file:current:uid_foreign}]" data-caption="{file:current:title}" class="{$styles.content.textmedia.linkWrap.lightboxCssClass}" rel="{$styles.content.textmedia.linkWrap.lightboxRelAttribute}"
 }
 
 lib.contentElement.settings {
-  imageSizeSmall = {$PREPARE_LOWERVENDOR_site.mediaQuerySmallMax}
-  imageSizeMedium = {$PREPARE_LOWERVENDOR_site.mediaQueryMediumMax}
-  imageSizeLarge = {$PREPARE_LOWERVENDOR_site.mediaQueryLargeMax}
-  imageSizeHeader = {$PREPARE_LOWERVENDOR_site.imgMaxHeaderWidth}
-  ##info for container templates
-  menuType = {$PREPARE_LOWERVENDOR_site.menuType}
+    imageSizeSmall = {$PREPARE_LOWERVENDOR_site.mediaQuerySmallMax}
+    imageSizeMedium = {$PREPARE_LOWERVENDOR_site.mediaQueryMediumMax}
+    imageSizeLarge = {$PREPARE_LOWERVENDOR_site.mediaQueryLargeMax}
+    imageSizeHeader = {$PREPARE_LOWERVENDOR_site.imgMaxHeaderWidth}
+    ##info for container templates
+    menuType = {$PREPARE_LOWERVENDOR_site.menuType}
 }
 
 # Prozentualer Anteil der colPos in Relation zu PageLayout
 lib.contentElement.variables {
-  usedColPosPercentage < lib.columnCalculator
-  usedColPosPercentage {
-    default.value = 1
-    0.default.value = 1
-    0.pagets__standard.value = 1
-    0.pagets__1col.value = 1
-    0.pagets__2col.value = 0.5
-    0.pagets__3col.value = 0.33
-    1.value = 1
-    2.pagets__standard.value = 1
-    2.pagets__2col.value = 0.5
-    2.pagets__3col.value = 0.33
-    3.value = 1
-    4.value = 0.33
-    5.value = 1
-    ## Container 50:50
-    201.value = 0.50
-    202 < .201
-    ## Container 33:66
-    301.value = 0.50
-    302 < .301
-    303 < .301
-    ## Container 25:25:25:25
-    401.value = 0.25
-    402 < .401
-    403 < .401
-    404 < .401
-  }
+    usedColPosPercentage < lib.columnCalculator
+    usedColPosPercentage {
+        default.value = 1
+        0.default.value = 1
+        0.pagets__standard.value = 1
+        0.pagets__1col.value = 1
+        0.pagets__2col.value = 0.5
+        0.pagets__3col.value = 0.33
+        1.value = 1
+        2.pagets__standard.value = 1
+        2.pagets__2col.value = 0.5
+        2.pagets__3col.value = 0.33
+        3.value = 1
+        4.value = 0.33
+        5.value = 1
+        ## Container 50:50
+        201.value = 0.50
+        202 < .201
+        ## Container 33:66
+        301.value = 0.50
+        302 < .301
+        303 < .301
+        ## Container 25:25:25:25
+        401.value = 0.25
+        402 < .401
+        403 < .401
+        404 < .401
+    }
 }

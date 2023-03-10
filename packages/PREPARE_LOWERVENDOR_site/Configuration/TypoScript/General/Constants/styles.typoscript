@@ -1,41 +1,44 @@
 styles.templates {
-  partialRootPath = EXT:PREPARE_LOWERVENDOR_site/Resources/Private/Extensions/FluidStyledContent/Partials/
-  templateRootPath = EXT:PREPARE_LOWERVENDOR_site/Resources/Private/Extensions/FluidStyledContent/Templates/
+    partialRootPath = EXT:PREPARE_LOWERVENDOR_site/Resources/Private/Extensions/FluidStyledContent/Partials/
+    templateRootPath = EXT:PREPARE_LOWERVENDOR_site/Resources/Private/Extensions/FluidStyledContent/Templates/
 }
+
 styles.content.defaultHeaderType = 1
 styles.content.textmedia {
-  linkWrap {
-    lightboxEnabled = 1
-    lightboxCssClass =
-    lightboxRelAttribute =
-    width = 1200m
-    height = 800m
-  }
-  columnSpacing = 0
-  rowSpacing = 0
-  textMargin = 0
+    linkWrap {
+        lightboxEnabled = 1
+        lightboxCssClass =
+        lightboxRelAttribute =
+        width = 1200m
+        height = 800m
+    }
+
+    columnSpacing = 0
+    rowSpacing = 0
+    textMargin = 0
 }
 
 ##Bildbreiten abhaengig von Spaltenbreite
 PREPARE_LOWERVENDOR_site {
-  ##max content width
-  imgMaxHeaderWidth = 1600
-  imgMaxWidth = 1280
-  imgWidth66 = 844
-  imgWidth50 = 640
-  imgWidth33 = 640
+    ##max content width
+    imgMaxHeaderWidth = 1600
+    imgMaxWidth = 1280
+    imgWidth66 = 844
+    imgWidth50 = 640
+    imgWidth33 = 640
 
-  imgTextMaxWidth = 640
-  imgTextWidth66 = 422
-  imgTextWidth50 = 400
-  imgTextWidth33 = 400
+    imgTextMaxWidth = 640
+    imgTextWidth66 = 422
+    imgTextWidth50 = 400
+    imgTextWidth33 = 400
 }
+
 ## Media Queries, see lib.bgimage, TextMediaSrcSet.html
 PREPARE_LOWERVENDOR_site {
-  mediaQuerySmallMax = 400
-  mediaQueryMediumMin = 401
-  mediaQueryMediumMax = 844
-  mediaQueryLargeMin = 845
-  mediaQueryLargeMax = 1280
-  mediaQueryXLargeMax = 1281
+    mediaQuerySmallMax = 400
+    mediaQueryMediumMin = 401
+    mediaQueryMediumMax = 844
+    mediaQueryLargeMin = 845
+    mediaQueryLargeMax = 1280
+    mediaQueryXLargeMax = 1281
 }
