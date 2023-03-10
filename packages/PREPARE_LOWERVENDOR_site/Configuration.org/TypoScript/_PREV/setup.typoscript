@@ -1,4 +1,0 @@
-config {
-    compressJs = 1
-    concatenateJs = 1
-}
