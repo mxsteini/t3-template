@@ -64,8 +64,8 @@ config {
 }
 
 ## Check the constants to compress/concatante CSS/JavaScript
-config.compressCss = {$PREPARE_LOWERVENDOR_site.compressCss}
-config.concatenateCss = {$PREPARE_LOWERVENDOR_site.concatenateCss}
+config.compressCss = 0
+config.concatenateCss = 0
 config.compressJs = {$PREPARE_LOWERVENDOR_site.compressJs}
 config.concatenateJs = {$PREPARE_LOWERVENDOR_site.concatenateJs}
 
