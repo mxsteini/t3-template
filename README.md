@@ -1,13 +1,23 @@
-# TYPO3 CMS Base Distribution
+# TYPO3 Fast Develope Template
 
-Get going quickly with TYPO3 CMS.
+# Introduction
+
+This template closes the gap between between frontend and backend development.
+
+A browsersync-server gives you instant result of your developmen
+
+It contains a fast scss, js compiler based on dart-sass and esbuild
+
+The hole system is .env driven. So there is no need to put any secret information in your repository.
+
+## Information
+The base version doesn't track LocalConfiguration.php (or setup.php). This file contains critical information an could be change by the
+extension manager on the live system.
 
 ## Prerequisites
 
-* PHP 8.1
-* node v16.x
-* GraphicsMagick
-* [Composer 2](https://getcomposer.org/download/)
+* ddev
+* local node 14 or more
 
 ### fix broken mac apps
 
@@ -18,34 +28,28 @@ brew install unzip
 brew install gzip
 ```
 
-## Quickstart
-## Prerequisites
-* a running webserver
-* a running db
-* alternative use ddev-setup
 
-### Setup
+# Setup
+
+## base setup
 ```bash
-cp -i .env.dist .env
-cp -i .ddev/config.yaml.dist .ddev/config.yaml
-cp -i public/typo3conf/LocalConfiguration.php.dist public/typo3conf/LocalConfiguration.php
-ddev start
-ddev composer install
-npm i
-npm run build
-ddev typo3cms database:import < db/db.sql
+cp ./bin/config.sh.dist ./bin/config.sh
 ```
 
-login as monobloc/monobloc
+Have a look at .env
 
 
+Edit ./bin/config.sh according your needs (leave unknown values empty - they could be added later)
 
+## prepare
+this should create a setup for a working project
+```bash
+./bin/prepare.sh
+```
 
 ```bash
-
-vendor/bin/typo3cms install:fixfolderstructure
-vendor/bin/typo3cms database:updateschema
-
+ddev start
+ddev composer install
 ```
 
 ### downsync database and fileadmin
@@ -59,96 +63,16 @@ bin/down_sync.sh
 ```bash
 ddev exec bin/down_sync.sh
 ```
+# Credits
+## Frank Deutschmann
+You encouraged me to work on this project
 
-```bash
-cp -i .env.ddev .env
-cp -i .ddev/config.yaml.dist .ddev/config.yaml
-ddev composer install
-ddev typo3cms database:import < db/db.sql
-npm i
+## monobloc
+A famous company with smart peaple that uses this stuff. Visit their website:
 
-```
-adjust .env
-adjust .ddev/config.yaml
+https://www.monobloc.de/
 
-```bash
-ddev start
-cp -i public/typo3conf/LocalConfiguration.php.dist public/typo3conf/LocalConfiguration.php
-bin/build.sh all
-bin/down_sync.sh
-```
+## jweiland
+The html-template and parts of the typoscript and site-package are based on this template:
 
-# Deployment (git workflow)
-Every deployment is realised by feature branches.
-
-Normally branch production is used as base.
-
-Every feature must be buildable on the gitlab build-server.
-
-```bash
-git checkout production
-git checkout -b feature/new-feature
-# development
-git push
-```
-
-## Deploy on stage
-```bash
-git checkout stage
-git merge  feature/new-feature
-git push
-```
-
-## Deploy on production
-```bash
-git checkout production
-git merge feature/new-feature
-git push
-```
-
-# Development
-
-## Backend
-have a look at packages
-
-## Frontend
-The frontend sources are located in src
-
-src/html: sources to build fluid template, partials and layouts
-src/design: sources for css and js
-
-### init
-```bash
-npm i
-```
-
-### build assets and fluid-stuff
-```bash
-bin/build.sh assets
-bin/build.sh html
-```
-
-### Development with simple watch
-#### For small changes, use
-```bash
-npm run watch
-```
-
-#### Heavy development with browsersync
-For heavy frontend development, you can use.
-This includes watch from above and a browsersynced proxy from your local typo3 installation.
-```bash
-npm run serve
-```
-
-# vdiff
-```bash
-cd fetest
-npm i
-npx vdiff --target1 ddev --target2 live --sequence sitemap
-```
-
-test
-
-# Xd Link / Design
-https://xd.adobe.com/view/812fb0dd-0ec1-4909-90ef-49f9670baf76-d47c/
+https://jweiland.net/typo3/typo3-template-version-11.html
