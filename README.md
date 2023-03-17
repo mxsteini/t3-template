@@ -50,7 +50,17 @@ this should create a setup for a working project
 ```bash
 ddev start
 ddev composer install
+ddev import-db --src=db/prepare.sql.gz
+npm i
+npm run build
+ddev launch
 ```
+
+### login
+user: prepare
+password: prepare
+
+## login to backend and add the package-template
 
 ### downsync database and fileadmin
 GITLAB_ACCESS_TOKEN is needed in .env!
