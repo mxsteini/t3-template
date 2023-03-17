@@ -1,8 +1,8 @@
 {
-	"name": "t3-template",
+	"name": "PREPARE_projectname",
 	"version": "1",
-	"description": "t3 template",
-	"author": "Michael Stein",
+	"description": "PREPARE_sitename",
+	"author": "PREPARE_author",
 	"private": true,
 	"scripts": {
 		"start": "node ./bin/watch.js",
