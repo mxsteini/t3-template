@@ -52,7 +52,7 @@ ddev start
 ddev composer install
 ddev import-db --src=data/prepare.sql.gz
 ddev typo3cms install:fixfolderstructure
-cp db/Examples public/fileadmin/
+cp -r db/Examples public/fileadmin/
 npm i
 npm run build
 ddev launch
