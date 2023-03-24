@@ -50,10 +50,13 @@ this should create a setup for a working project
 ```bash
 ddev start
 ddev composer install
-ddev import-db --src=db/prepare.sql.gz
+ddev import-db --src=data/prepare.sql.gz
+ddev typo3cms install:fixfolderstructure
+cp db/Examples public/fileadmin/
 npm i
 npm run build
 ddev launch
+npm start
 ```
 
 ### login
