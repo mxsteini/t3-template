@@ -61,6 +61,8 @@ if [ "$command" == 'rollback' ]; then
     removeVariables package.json
     mv .env .env.dist
 
+    rm ./public/typo3conf/LocalConfiguration.php
+
 else
 
     insertVariables ./.gitlab-ci.yml
@@ -97,4 +99,8 @@ else
     insertVariables .env
     insertVariables composer.json
     insertVariables package.json
+
+    if [[ ! -x ./public/typo3conf/LocalConfiguration.php ]]; then
+        cp ./public/typo3conf/LocalConfiguration.php.dist ./public/typo3conf/LocalConfiguration.php
+    fi
 fi

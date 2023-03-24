@@ -49,7 +49,6 @@ this should create a setup for a working project
 
 ```bash
 ddev start
-cp ./public/typo3conf/LocalConfiguration.php.dist ./public/typo3conf/LocalConfiguration.php
 ddev composer install
 ddev import-db --src=db/prepare.sql.gz
 npm i

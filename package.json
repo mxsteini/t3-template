@@ -5,9 +5,8 @@
 	"author": "PREPARE_author",
 	"private": true,
 	"scripts": {
-		"start": "node ./bin/watch.js",
-		"build": "node ./bin/build.js",
-		"build:production": "node ./bin/build.js production"
+		"start": "npx t3-build watch",
+		"build": "npx t3-build build"
 	},
 	"devDependencies": {
 		"autoprefixer": "10.4.5",
@@ -18,16 +17,6 @@
 	"dependencies": {
 		"@alpinejs/collapse": "^3.11.1",
 		"alpinejs": "^3.11.1",
-		"dotenv": "^16.0.1",
-		"esbuild": "^0.17.5",
-		"fs-extra": "^11.1.0",
-		"node-watch": "^0.7.3",
-		"posthtml": "^0.16.6",
-		"posthtml-include": "^1.7.4",
-		"posthtml-modules": "^0.8.0",
-		"posthtml-scss-to-file": "file:lib/posthtml-scss-to-file",
-		"pristinejs": "^1.0.0",
-		"sass": "^1.56.1"
-	},
-	"type": "module"
+		"t3-build": "^0.0.2"
+	}
 }
