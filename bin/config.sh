@@ -5,25 +5,12 @@ PREPARE[author]="Michael Stein"
 # Vendor
 PREPARE[LOWERVENDOR]="mst"
 
-PREPARE[CAPITALVENDOR]=${PREPARE[LOWERVENDOR]^}
-PREPARE[UPPERVENDOR]=${PREPARE[LOWERVENDOR]^^}
-
 # baseurl for TYPO3, mostly live-url
 PREPARE[url]=""
 
 PREPARE[sitename]="t3 template"
 PREPARE[ddev_phpversion]="8.1"
 
-### gitlab-ci-setting
-
-### gitlab setup
-PREPARE[gitlaburl]=""
-# setting/ci_cd -> Pipeline triggers
-PREPARE[pipelinetoken]=""
-# setting/access_tokens
-PREPARE[accesstoken]=""
-# project ID
-PREPARE[projectid]=""
 
 
 ### server information
@@ -52,3 +39,18 @@ PREPARE[stageloginuser]=${PREPARE[liveloginuser]}
 PREPARE[stageuser]=${PREPARE[liveuser]}
 PREPARE[stagegroup]=${PREPARE[livegroup]}
 
+### gitlab-ci-setting
+
+### gitlab url
+PREPARE[gitlaburl]=""
+# setting/ci_cd -> Pipeline triggers
+PREPARE[pipelinetoken]=""
+# setting/access_tokens
+PREPARE[accesstoken]=""
+# project ID
+PREPARE[projectid]=""
+
+
+# Edit only, if you don't want defaults ...
+PREPARE[CAPITALVENDOR]=${PREPARE[LOWERVENDOR]^}
+PREPARE[UPPERVENDOR]=${PREPARE[LOWERVENDOR]^^}

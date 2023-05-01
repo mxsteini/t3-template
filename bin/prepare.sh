@@ -38,6 +38,7 @@ fi
 if [ "$command" == 'rollback' ]; then
     removeVariables ./.gitlab-ci.yml
     removeVariables ./bin/ci-deploy.sh
+    removeVariables ./bin/base.sh
     removeVariables ./bin/down_sync.sh
 
     removeVariables ./.ddev/config.yaml
@@ -67,6 +68,7 @@ else
 
     insertVariables ./.gitlab-ci.yml
     insertVariables ./bin/ci-deploy.sh
+    insertVariables ./bin/base.sh
     insertVariables ./bin/down_sync.sh
 
     if [ -x ./config/sites/PREPARE_projectname ]; then
