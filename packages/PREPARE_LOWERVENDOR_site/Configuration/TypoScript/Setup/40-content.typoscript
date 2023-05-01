@@ -1,0 +1,72 @@
+tt_content {
+    html >
+    html = FLUIDTEMPLATE
+    html {
+        layoutRootPaths.20 = EXT:PREPARE_LOWERVENDOR_site/Resources/Private/Layouts/
+        partialRootPaths.20 = EXT:PREPARE_LOWERVENDOR_site/Resources/Private/Partials/
+        templateRootPaths.20 = EXT:PREPARE_LOWERVENDOR_site/Resources/Private/Templates/
+        template = TEXT
+        template.field = bodytext
+    }
+
+    PREPARE_LOWERVENDOR_site_text =< lib.contentElement
+    PREPARE_LOWERVENDOR_site_text {
+        templateName = Text
+    }
+
+    PREPARE_LOWERVENDOR_site_image =< lib.contentElement
+    PREPARE_LOWERVENDOR_site_image {
+        templateName = Image
+    }
+
+    PREPARE_LOWERVENDOR_site_textpic =< lib.contentElement
+    PREPARE_LOWERVENDOR_site_textpic {
+        templateName = Textpic
+    }
+
+    PREPARE_LOWERVENDOR_site_hero =< lib.contentElement
+    PREPARE_LOWERVENDOR_site_hero {
+        templateName = Hero
+    }
+
+    PREPARE_LOWERVENDOR_site_banner =< lib.contentElement
+    PREPARE_LOWERVENDOR_site_banner {
+        templateName = Banner
+    }
+
+    PREPARE_LOWERVENDOR_site_card =< lib.contentElement
+    PREPARE_LOWERVENDOR_site_card {
+        templateName = Card
+    }
+
+    PREPARE_LOWERVENDOR_site_contact =< lib.contentElement
+    PREPARE_LOWERVENDOR_site_contact {
+        templateName = Contact
+    }
+
+    PREPARE_LOWERVENDOR_site_header =< lib.contentElement
+    PREPARE_LOWERVENDOR_site_header {
+        templateName = Header
+    }
+
+    PREPARE_LOWERVENDOR_site_link =< lib.contentElement
+    PREPARE_LOWERVENDOR_site_link {
+        templateName = Link
+    }
+
+    PREPARE_LOWERVENDOR_site_download =< lib.contentElement
+    PREPARE_LOWERVENDOR_site_download {
+        templateName = Download
+    }
+
+    PREPARE_LOWERVENDOR_site_map =< lib.contentElement
+    PREPARE_LOWERVENDOR_site_map {
+        templateName = Map
+    }
+
+    PREPARE_LOWERVENDOR_site_tab =< lib.contentElement
+    PREPARE_LOWERVENDOR_site_tab {
+        templateName = Tab
+    }
+
+}

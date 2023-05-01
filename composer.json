@@ -27,7 +27,7 @@
 		"helhum/dotenv-connector": "*",
 		"helhum/typo3-console": "*",
 		"ichhabrecht/content-defender": "*",
-		"PREPARE_LOWERVENDOR/PREPARE_LOWERVENDOR-site": "dev-main",
+		"prepare_lowervendor/prepare_lowervendor-site": "dev-main",
 		"typo3/cms-backend": "*",
 		"typo3/cms-belog": "*",
 		"typo3/cms-beuser": "*",

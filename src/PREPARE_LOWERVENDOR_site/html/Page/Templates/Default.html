@@ -1,0 +1,58 @@
+<html
+  xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+  data-namespace-typo3-fluid="true"
+>
+
+<f:layout name="Default"/>
+<f:section name="Content">
+
+    <div class="mstitb_section">
+      <div class="mstitb_container">
+        <div class="mstitb_row">
+          <div class="mstitb_col"></div>
+        </div>
+      </div>
+    </div>
+    <div class="mstitb_section  mstitb_bg--grey1">
+      <div class="mstitb_container">
+        <div class="mstitb_row">
+          <div class="mstitb_col mstitb_col--50 mstitb_bg--gren">
+            <include src="Text1.html" />
+          </div>
+          <div class="mstitb_col mstitb_col--50 mstitb_bg--blue">
+            <include src="List1.html" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mstitb_section mstitb_section--fullsize  mstitb_bg--grey2">
+      <div class="mstitb_container">
+        <div class="mstitb_row">
+          <div class="mstitb_col mstitb_col--50 mstitb_bg--gren">
+            <include src="Text1.html" />
+          </div>
+          <div class="mstitb_col mstitb_col--50 mstitb_bg--blue">
+            <include src="List1.html" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mstitb_section">
+      <div class="mstitb_container">
+        <div class="mstitb_row">
+          <div class="mstitb_col"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  {content->f:format.raw()}
+
+</f:section>
+
+<style type="text/scss">
+
+</style>
+
+</html>

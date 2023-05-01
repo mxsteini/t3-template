@@ -17,6 +17,6 @@
 	"dependencies": {
 		"@alpinejs/collapse": "^3.11.1",
 		"alpinejs": "^3.11.1",
-		"t3-build": "^0.0.2"
+		"t3-build": "^0.0.6"
 	}
 }

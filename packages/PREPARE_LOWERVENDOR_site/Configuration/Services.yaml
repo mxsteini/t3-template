@@ -1,25 +1,14 @@
 services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
 
-  dashboard.buttons.jwmp11:
-    class: 'TYPO3\CMS\Dashboard\Widgets\Provider\ButtonProvider'
-    arguments:
-      $title: 'LLL:EXT:PREPARE_LOWERVENDOR_site/Resources/Private/Language/locallang.xlf:PREPARE_LOWERVENDOR_site.widgets.mp11doc.button.label'
-      $link: 'https://jweiland.net/typo3/typo3-template-responsive.html'
-      $target: '_blank'
+  PREPARE_UPPERVENDOR\PREPARE_CAPITALVENDORSite\:
+    resource: '../Classes/*'
 
-  dashboard.widget.jwmp11:
-    class: 'TYPO3\CMS\Dashboard\Widgets\CtaWidget'
-    arguments:
-      $view: '@dashboard.views.widget'
-      $buttonProvider: '@dashboard.buttons.jwmp11'
-      $options:
-        text: 'LLL:EXT:PREPARE_LOWERVENDOR_site/Resources/Private/Language/locallang.xlf:PREPARE_LOWERVENDOR_site.widgets.mp11doc.longdesc'
+  PREPARE_UPPERVENDOR\PREPARE_CAPITALVENDORSite\Listener\PageTsConfig:
     tags:
-      - name: dashboard.widget
-        identifier: 'jwmp11'
-        groupNames: 'general'
-        title: 'LLL:EXT:PREPARE_LOWERVENDOR_site/Resources/Private/Language/locallang.xlf:PREPARE_LOWERVENDOR_site.widgets.mp11doc.title'
-        description: 'LLL:EXT:PREPARE_LOWERVENDOR_site/Resources/Private/Language/locallang.xlf:PREPARE_LOWERVENDOR_site.widgets.mp11doc.shortdesc'
-        iconIdentifier: 'content-widget-text'
-        height: 'small'
-        width: 'medium'
+      - name: event.listener
+        identifier: 'tx-PREPARE_LOWERVENDORsite-page-ts-config'
+        event: TYPO3\CMS\Core\Configuration\Event\ModifyLoadedPageTsConfigEvent

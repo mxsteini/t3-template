@@ -23,6 +23,9 @@
 node_modules/
 
 .env
+composer.lock
+package-lock.json
+config/sites/t3-template
 # for DB dumps
 /*.csv
 /*.sql
