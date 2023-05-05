@@ -1,9 +1,28 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
-<f:layout name="Default"/>
-<f:section name="Main">
+<fluid>
+  <f:layout name="Default"/>
+  <f:section name="Main">
     <f:comment>jw: added div for accordion,frame-custom-30,frame-custom-31</f:comment>
     <div>
-        <f:format.html>{data.bodytext}</f:format.html>
+      <f:format.html>{data.bodytext}</f:format.html>
     </div>
-</f:section>
+  </f:section>
+</fluid>
+
+<standalone>
+  <h1>Hallo Welt</h1>
+  <p>Lorem Ipsum</p>
+</standalone>
+
+<style type="text/scss" section="Main">
+    @import 'scss/Abstracts/abstract';
+    .foo {
+        background: blue;
+        &__bar {
+            width: map-get($breakpoints, 'medium');
+            color: green;
+        }
+    }
+</style>
+
 </html>

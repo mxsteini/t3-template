@@ -17,6 +17,7 @@
 	"dependencies": {
 		"@alpinejs/collapse": "^3.11.1",
 		"alpinejs": "^3.11.1",
-		"t3-build": "^0.0.6"
+		"posthtml-remove-tags": "^0.1.0",
+		"t3-build": "file:../t3-build"
 	}
 }
