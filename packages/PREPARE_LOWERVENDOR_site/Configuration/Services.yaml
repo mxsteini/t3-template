@@ -1,0 +1,14 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  PREPARE_UPPERVENDOR\PREPARE_CAPITALVENDORSite\:
+    resource: '../Classes/*'
+
+  PREPARE_UPPERVENDOR\PREPARE_CAPITALVENDORSite\Listener\PageTsConfig:
+    tags:
+      - name: event.listener
+        identifier: 'tx-PREPARE_LOWERVENDORsite-page-ts-config'
+        event: TYPO3\CMS\Core\TypoScript\IncludeTree\Event\ModifyLoadedPageTsConfigEvent

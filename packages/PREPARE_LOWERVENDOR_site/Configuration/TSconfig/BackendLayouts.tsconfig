@@ -1,0 +1,4 @@
+@import "EXT:PREPARE_LOWERVENDOR_site/Configuration/TSconfig/BackendLayouts/standard.tsconfig"
+@import "EXT:PREPARE_LOWERVENDOR_site/Configuration/TSconfig/BackendLayouts/1col.tsconfig"
+@import "EXT:PREPARE_LOWERVENDOR_site/Configuration/TSconfig/BackendLayouts/2col.tsconfig"
+@import "EXT:PREPARE_LOWERVENDOR_site/Configuration/TSconfig/BackendLayouts/3col.tsconfig"

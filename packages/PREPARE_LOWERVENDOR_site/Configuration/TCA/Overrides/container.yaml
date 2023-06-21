@@ -1,0 +1,56 @@
+PREPARE_LOWERVENDOR_site_col50-50:
+  label: '2 Spalten Container'
+  description: '2 Spalten gleiche Breite'
+  iconIdentifier: content-container-columns-2
+  config:
+    - [ { name: Links, colPos: 1000 }, { name: Rechts, colPos: 1001 } ]
+
+PREPARE_LOWERVENDOR_site_col33-33-33:
+  label: '3 Spalten Container 33 - 33 - 33'
+  description: '3 Spalten Container 33 - 33 - 33'
+  iconIdentifier: content-container-columns-3
+  config: [[{ name: Links, colPos: 1000 }, { name: Mitte, colPos: 1001 }, { name: Rechts, colPos: 1002 }]]
+
+PREPARE_LOWERVENDOR_site_col100:
+  label: '1-spaltiger Container - 100'
+  description: '1-spaltiger Container - 100'
+  iconIdentifier: content-container-columns-1
+  config: [[{ name: Mitte, colPos: 1000 }]]
+
+PREPARE_LOWERVENDOR_site_accordeon:
+  label: Accordeon
+  description: accordeon
+  iconIdentifier: content-accordion
+  config:
+    -
+      -
+        name: Links,
+        colPos: 1000
+        allowed:
+          CType: PREPARE_LOWERVENDOR_site_text, PREPARE_LOWERVENDOR_site_accordoenitem
+
+PREPARE_LOWERVENDOR_site_slider:
+  label: Slider
+  description: slider
+  iconIdentifier: content-container-columns-1
+  config: [[{ name: Mitte, colPos: 1000 }]]
+
+PREPARE_LOWERVENDOR_site_col70-30:
+  label: '4 Spalten Container'
+  description: '4 Spalten gleiche Breite'
+  iconIdentifier: content-container-columns-4
+  config:
+    -
+      -
+        name: Links,
+        colPos: 1000
+      -
+        name: Rechts
+        colPos: 1001
+    -
+      -
+        name: Links,
+        colPos: 1003
+      -
+        name: Rechts
+        colPos: 1004

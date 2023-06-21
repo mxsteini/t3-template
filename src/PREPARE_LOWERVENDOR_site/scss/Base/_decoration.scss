@@ -1,0 +1,14 @@
+.mstitb_bg {
+  &--green {
+    background-color: map-get($breakpoints, 'green');
+  }
+  &--red {
+    background-color: map-get($breakpoints, 'gred');
+  }
+  &--blue {
+    background-color: map-get($breakpoints, 'blue');
+  }
+  &--yellow {
+    background-color: map-get($breakpoints, 'yellow');
+  }
+}

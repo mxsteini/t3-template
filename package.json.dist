@@ -1,0 +1,12 @@
+{
+	"name": "PREPARE_projectname",
+	"version": "1",
+	"description": "PREPARE_sitename",
+	"author": "PREPARE_author",
+	"private": true,
+	"scripts": {
+		"start": "npx t3-build watch",
+		"standalone": "npx t3-build watch -s",
+		"build": "npx t3-build build"
+	}
+}

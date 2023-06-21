@@ -1,0 +1,6 @@
+# Static Extension Templates
+@import 'EXT:fluid_styled_content/Configuration/TypoScript/setup.typoscript'
+#@import 'EXT:form/Configuration/TypoScript/setup.typoscript'
+#@import 'EXT:picture/Configuration/TypoScript/setup.typoscript'
+
+#@import 'EXT:PREPARE_LOWERVENDOR_site/Configuration/TypoScript/Setup/Extensions/*.typoscript'

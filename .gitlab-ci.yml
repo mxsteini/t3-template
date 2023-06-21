@@ -1,0 +1,251 @@
+stages: # List of stages for jobs, and their order of execution test
+    - handjobs
+    - setup_build_environment
+    - get_npm_libraries
+    - deployment
+    - language_update
+    - release
+
+###################################
+# provide thins
+
+Provide Docker build container:
+    rules:
+        -   if: '($CI_COMMIT_REF_NAME == "production" || $CI_COMMIT_REF_NAME == "stage") && $ONLY_MANUELL != "1"'
+            when: always
+            changes:
+                - Dockerfile
+        -   when: never
+    stage: setup_build_environment
+    script:
+        - docker image build --tag node:$CI_PROJECT_NAME - < Dockerfile
+
+###################################
+# create caches
+.live-server-data:
+    variables:
+        basedir: "PREPARE_livepath/$CI_COMMIT_REF_NAME"
+        php_bin: "PREPARE_livephp"
+        loginuser: "PREPARE_liveloginuser"
+        user: "PREPARE_liveuser"
+        group: "PREPARE_livegroup"
+        host: "PREPARE_livehost"
+
+.stage-server-data:
+    variables:
+        basedir: "PREPARE_stagepath/$CI_COMMIT_REF_NAME"
+        php_bin: "PREPARE_stagephp"
+        loginuser: "PREPARE_stageloginuser"
+        user: "PREPARE_stageuser"
+        group: "PREPARE_stagegroup"
+        host: "PREPARE_stagehost"
+
+.build-html-cache:
+    variables:
+        GIT_STRATEGY: fetch
+        ARTIFACT_COMPRESSION_LEVEL: "fast"
+        CACHE_COMPRESSION_LEVEL: "fast"
+    script:
+        - mkdir -p /tmp/gitlab-runner-$CI_PROJECT_NAME/.npm
+        - export build_dir=$(pwd)
+        - docker run --rm --user $(id -u):$(id -g) --volume /tmp/gitlab-runner-$CI_PROJECT_NAME/.npm:/.npm --volume $build_dir:/app --workdir /app node:$CI_PROJECT_NAME npm i
+    cache:
+        -   key: "node-html-$CI_COMMIT_REF_SLUG"
+            untracked: true
+            paths:
+                - node_modules/
+
+Provide npm pakages for html:
+    extends: .build-html-cache
+    stage: get_npm_libraries
+    rules:
+        -   if: '($CI_COMMIT_REF_NAME == "production" || $CI_COMMIT_REF_NAME == "stage") && $ONLY_MANUELL != "1"'
+            when: always
+            changes:
+                - package.json
+                - package-lock.json
+
+###################################
+# bring things live
+.build-and-deploy:
+    stage: deployment
+    cache:
+        -   key: "node-html-$CI_COMMIT_REF_SLUG"
+            untracked: true
+            policy: pull
+        -   key: "node-css-js-$CI_COMMIT_REF_SLUG"
+            untracked: true
+            policy: pull
+        -   key: "composer-$CI_COMMIT_REF_SLUG"
+            untracked: true
+            policy: pull
+
+    script:
+        - mkdir -p /tmp/gitlab-runner-$CI_PROJECT_NAME/.npm
+        - export build_dir=$(pwd)
+        - docker run --rm --user $(id -u):$(id -g) --volume /tmp/gitlab-runner-$CI_PROJECT_NAME/:/tmp --volume $build_dir:/app --workdir /app composer install --ignore-platform-req=ext-intl --ignore-platform-req=ext-bz2 --ignore-platform-req=ext-sodium --ignore-platform-req=ext-zip
+        - docker run --rm --user $(id -u):$(id -g) --volume /tmp/gitlab-runner-$CI_PROJECT_NAME/.npm:/.npm --volume $build_dir:/app --workdir /app node:$CI_PROJECT_NAME npm run build
+        - bin/ci-deploy.sh
+
+
+
+###################################
+# Deploy on stage
+Deploy on stage:
+    extends:
+        - .build-and-deploy
+        - .stage-server-data
+    stage: deployment
+    rules: # whether to include the job in the pipeline
+        -   if: '$CI_COMMIT_REF_NAME == "stage" && $ONLY_MANUELL != "1"'
+            when: always
+        -   when: never
+    before_script:
+        - eval $(ssh-agent -s)
+        - ssh-add <(echo "$STAGE_SSH_KEY")
+    variables:
+        GIT_STRATEGY: fetch
+
+Language update on stage:
+    extends: .stage-server-data
+    rules:
+        -   if: '$CI_COMMIT_REF_NAME == "stage" && $ONLY_MANUELL != "1"'
+            when: always
+        -   when: never
+    allow_failure: true
+    stage: language_update
+    before_script:
+        - eval $(ssh-agent -s)
+        - ssh-add <(echo "$STAGE_SSH_KEY")
+    variables:
+        GIT_STRATEGY: none
+    script:
+        - bin/ci-language_update.sh
+
+release on stage:
+    extends: .stage-server-data
+    only:
+        - stage
+    stage: release
+    before_script:
+        - eval $(ssh-agent -s)
+        - ssh-add <(echo "$STAGE_SSH_KEY")
+    variables:
+        GIT_STRATEGY: none
+    script:
+        - bin/ci-release.sh
+
+
+###################################
+# Deploy on production
+Deploy on production:
+    extends:
+        - .live-server-data
+        - .build-and-deploy
+    rules:
+        -   if: '$CI_COMMIT_REF_NAME == "production" && $ONLY_MANUELL != "1"'
+            when: always
+        -   when: never
+    before_script:
+        - eval $(ssh-agent -s)
+        - ssh-add <(echo "$LIVE_SSH_KEY")
+    after_script:
+        - eval $(ssh-agent -k)
+    variables:
+        GIT_STRATEGY: fetch
+
+Language update on production:
+    extends: .live-server-data
+    rules:
+        -   if: '$CI_COMMIT_REF_NAME == "production" && $ONLY_MANUELL != "1"'
+            when: always
+        -   when: never
+    allow_failure: true
+    stage: language_update
+    before_script:
+        - eval $(ssh-agent -s)
+        - ssh-add <(echo "$LIVE_SSH_KEY")
+    variables:
+        GIT_STRATEGY: none
+    script:
+        - bin/ci-language_update.sh
+
+###################################
+# handjobs
+Provide Docker build container:
+    when: manual
+    stage: handjobs
+    script:
+        - docker image build --tag node:$CI_PROJECT_NAME - < Dockerfile
+
+
+Release on production:
+    extends: .live-server-data
+    stage: release
+    when: manual
+    before_script:
+        - eval $(ssh-agent -s)
+        - ssh-add <(echo "$LIVE_SSH_KEY")
+    variables:
+        GIT_STRATEGY: fetch
+        php_bin: "PREPARE_livephp"
+    script:
+        - bin/ci-release.sh
+    only:
+        refs:
+            - production
+
+dump-data:
+    extends: .live-server-data
+    stage: handjobs
+    before_script:
+        - eval $(ssh-agent -s)
+        - ssh-add <(echo "$LIVE_SSH_KEY")
+    variables:
+        GIT_STRATEGY: fetch
+    artifacts:
+        paths:
+            - dump/*.gz
+    script:
+        - bin/ci-dump.sh
+    when: manual
+    rules: # whether to include the job in the pipeline
+        -   if: '$CI_PIPELINE_SOURCE == "trigger" && $ONLY_MANUELL == "1"'
+            when: always
+        -   when: never
+
+Downsync file and database from live to stage:
+    stage: handjobs
+    before_script:
+        - eval $(ssh-agent -s)
+        - ssh-add <(echo "$LIVE_SSH_KEY")
+    variables:
+        GIT_STRATEGY: fetch
+        live_basedir: "PREPARE_livepath/production"
+        live_php_bin: "PREPARE_livephp"
+        live_loginuser: "PREPARE_liveloginuser"
+        live_user: "PREPARE_liveuser"
+        live_group: "PREPARE_livegroup"
+        live_host: "PREPARE_livehost"
+
+        stage_basedir: "PREPARE_stagepath/stage"
+        stage_php_bin: "PREPARE_stagephp"
+        stage_loginuser: "PREPARE_stageloginuser"
+        stage_user: "PREPARE_stageuser"
+        stage_group: "PREPARE_stagegroup"
+        stage_host: "PREPARE_stagehost"
+    script:
+        - bin/ci-down_sync.sh
+    when: manual
+
+
+###################################
+# create caches
+Create Cache for html:
+    extends: .build-html-cache
+    stage: handjobs
+    when: manual
+    only:
+        refs:
+            - stage
+            - production

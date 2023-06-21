@@ -1,0 +1,381 @@
+page = PAGE
+page {
+    5= TEXT
+    5.value = <h1>foo noch ein Header</h1>
+    10 = FLUIDTEMPLATE
+    10 {
+        # GTM
+        layoutRootPaths {
+            10 = EXT:PREPARE_LOWERVENDOR_site/Resources/Private/Page/Layouts/
+        }
+
+        partialRootPaths {
+            10 = EXT:PREPARE_LOWERVENDOR_site/Resources/Private/Page/Partials/
+        }
+
+        templateRootPaths {
+            10 = EXT:PREPARE_LOWERVENDOR_site/Resources/Private/Page/Templates/
+        }
+
+        templateName.stdWrap.cObject = CASE
+        templateName.stdWrap.cObject {
+            key.field = doktype
+
+            101 = TEXT
+            101.value = Content
+
+            default = TEXT
+            default.value = Default
+        }
+
+        dataProcessing {
+            1 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+            1 {
+                special.value = {$site.pidList.navigation.main}
+                levels = 1
+                as = navigationMain
+            }
+
+            8 = TYPO3\CMS\Frontend\DataProcessing\LanguageMenuProcessor
+            8 {
+                languages = {$site.languages}
+                as = languages
+            }
+        }
+
+        variables {
+            content < styles.content.get
+            content.select.where = colPos = 0
+
+
+        }
+
+        settings {
+
+            pid {
+                home = {$site.pid.home}
+                contact = {$site.pid.contact}
+                newsletter {
+                    form = {$site.pid.newsletter.form}
+                }
+
+                privacy = {$site.pid.privacy}
+            }
+
+            pidList {
+
+            }
+
+            dateFormat = {$site.dateFormat}
+
+            privacyParagraph = {$site.privacyParagraph}
+
+        }
+    }
+
+    headerData {
+        # Todo: cleanup
+        5 = noCOA
+        5 {
+            10 = TEXT
+            10.field = seo_title
+            10.noTrimWrap = |<title>|</title>|
+            10.required = 1
+
+            20 = TEXT
+            20.field = title
+            # 20.noTrimWrap = |<title>| &vert; VeloRoad by Possehl</title>|
+            20.noTrimWrap = |<title>|</title>|
+            20.if.isFalse.field = seo_title
+        }
+
+        10 = TEXT
+        10.value (
+        )
+
+        # cookie consent script
+        20 = TEXT
+        20.value (
+        )
+
+        2347 = COA
+        2347 {
+            # iPhone
+            10 = IMAGE
+            10 {
+                file = {$site.settings.favicon_default}
+                file.width = 60c
+                file.height = 60c
+                layoutKey = apple-touch-icon
+                layout {
+                    apple-touch-icon {
+                        element = <link rel="apple-touch-icon" href="###SRC###"/>
+                    }
+
+                    apple-touch-icon-with-sizes {
+                        element = <link rel="apple-touch-icon" sizes="###WIDTH###x###HEIGHT###" href="###SRC###"/>
+                    }
+
+                    icon {
+                        element = <link rel="icon" type="image/png" sizes="###WIDTH###x###HEIGHT###" href="###SRC###"/>
+                    }
+
+                    msapplication-TileImage {
+                        element = <meta name="msapplication-TileImage" content="###SRC###"/>
+                    }
+
+                    msapplication-square {
+                        element = <meta name="msapplication-square###WIDTH###x###HEIGHT###logo" content="###SRC###"/>
+                    }
+
+                    msapplication-wide {
+                        element = <meta name="msapplication-wide###WIDTH###x###HEIGHT###logo" content="###SRC###"/>
+                    }
+                }
+            }
+
+            # iPad
+            20 < .10
+            20.layoutKey = apple-touch-icon-with-sizes
+            20.file.width = 57c
+            20.file.height = 57c
+
+            21 < .10
+            21.layoutKey = apple-touch-icon-with-sizes
+            21.file.width = 60c
+            21.file.height = 60c
+
+            22 < .10
+            22.layoutKey = apple-touch-icon-with-sizes
+            22.file.width = 72c
+            22.file.height = 72c
+
+            22 < .10
+            22.layoutKey = apple-touch-icon-with-sizes
+            22.file.width = 76c
+            22.file.height = 76c
+
+            23 < .10
+            23.layoutKey = apple-touch-icon-with-sizes
+            23.file.width = 114c
+            23.file.height = 114c
+
+            # iPhone Retina
+            30 < .20
+            30.file.width = 120c
+            30.file.height = 120c
+
+            31 < .20
+            31.file.width = 144c
+            31.file.height = 144c
+
+            # iPad Retina
+            40 < .20
+            40.file.width = 152c
+            40.file.height = 152c
+
+            41 < .20
+            41.file.width = 180c
+            41.file.height = 180c
+
+            # android
+            70 < .10
+            70.layoutKey = icon
+            70.file.width = 16c
+            70.file.height = 16c
+
+            71 < .10
+            71.layoutKey = icon
+            71.file.width = 32c
+            71.file.height = 32c
+
+            72 < .10
+            72.layoutKey = icon
+            72.file.width = 96c
+            72.file.height = 96c
+
+            73 < .10
+            73.layoutKey = icon
+            73.file.width = 192c
+            73.file.height = 192c
+
+            # microsoft
+            110 < .10
+            110.layoutKey = msapplication-TileImage
+            110.file.width = 144c
+            110.file.height = 144c
+
+            120 < .10
+            120.layoutKey = msapplication-square
+            120.file.width = 70c
+            120.file.height = 70c
+
+            130 < .10
+            130.layoutKey = msapplication-square
+            130.file.width = 150c
+            130.file.height = 150c
+
+            140 < .10
+            140.layoutKey = msapplication-square
+            140.file.width = 310c
+            140.file.height = 310c
+
+            150 < .10
+            150.layoutKey = msapplication-wide
+            150.file = {$site.settings.favicon_wide}
+            150.file.width = 310c
+            150.file.height = 150c
+        }
+
+    }
+
+    includeCSS {
+        site = EXT:PREPARE_LOWERVENDOR_site/Resources/Public/Css/style.css
+    }
+
+    includeJSFooter {
+        site = EXT:PREPARE_LOWERVENDOR_site/Resources/Public/Js/Main.js
+        site.async = 1
+    }
+
+    meta {
+        charset = UTF-8
+
+        viewport = width=device-width, initial-scale=1.0
+
+        msapplication-TileColor = #00A3E0
+
+        msapplication-config = /t3assets/browserconfig.xml
+
+        google-site-verification =
+
+        og:title {
+            field = og_title // seo_title // title
+            attribute = property
+        }
+
+        og:description {
+            field = og_description // description // tx_monoarticles_teaser // abstract
+            attribute = property
+        }
+
+        og:type = website
+        og:type.attribute = property
+
+        og:url {
+            typolink.parameter.data = TSFE:id
+            typolink.forceAbsoluteUrl = 1
+            typolink.returnLast = url
+            attribute = property
+        }
+
+        og:image {
+            attribute = property
+            stdWrap.cObject = COA
+            stdWrap.cObject {
+                if.isFalse.field = og_image
+                10 = FILES
+                10 {
+                    references {
+                        table = pages
+                        uid.data = uid
+                        fieldName = tx_monosite_image
+                    }
+
+                    begin = 0
+                    maxItems = 1
+                    renderObj = TEXT
+                    renderObj {
+                        stdWrap.typolink {
+                            parameter.stdWrap {
+                                cObject = IMG_RESOURCE
+                                cObject {
+                                    file {
+                                        import.data = file:current:uid
+                                        treatIdAsReference = 1
+                                    }
+                                }
+                            }
+
+                            returnLast = url
+                            forceAbsoluteUrl = 1
+                        }
+
+                        required = 1
+                    }
+                }
+
+                20 = TEXT
+                20 {
+                    stdWrap.typolink {
+                        parameter.stdWrap.cObject = IMG_RESOURCE
+                        parameter.stdWrap.cObject.file = /t3assets/images/design/temp/logo.png
+                        returnLast = url
+                        forceAbsoluteUrl = 1
+                    }
+
+                    if.isFalse.cObject = COA
+                    if.isFalse.cObject {
+                        10 = TEXT
+                        10.value = 1
+                        10.if.isTrue.field = og_image
+                        20 = TEXT
+                        20.value = 1
+                        20.if.isTrue.field = tx_monosite_image
+                    }
+
+                    required = 1
+                }
+            }
+
+            stdWrap.required = 1
+        }
+
+        og:image:width {
+            attribute = property
+            stdWrap.cObject = TEXT
+            stdWrap.cObject {
+
+                data = TSFE:lastImgResourceInfo|0
+            }
+        }
+
+        og:image:height {
+            attribute = property
+            stdWrap.cObject = TEXT
+            stdWrap.cObject {
+                data = TSFE:lastImgResourceInfo|1
+            }
+        }
+
+        og:image:type {
+            attribute = property
+            stdWrap.cObject = TEXT
+            stdWrap.cObject {
+                if.isTrue.data = TSFE:lastImgResourceInfo
+                data = TSFE:lastImgResourceInfo|2
+                stdWrap.wrap = image/|
+                required = 1
+            }
+
+            stdWrap.if.isTrue.data = TSFE:lastImgResourceInfo|2
+        }
+
+        twitter:image < .og:image
+        twitter:image.stdWrap.cObject.if.isFalse.field = twitter_image
+        twitter:image.stdWrap.cObject.20.if.isFalse.cObject.10.if.isTrue.field = twitter_image
+
+        twitter:card = summary
+        twitter:card.attribute = name
+
+        twitter:title {
+            field = twitter_title // seo_title // title
+            attribute = name
+        }
+
+        twitter:description {
+            field = twitter_description // description // tx_monosite_teaser // abstract
+            attribute = name
+        }
+    }
+}
