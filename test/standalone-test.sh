@@ -65,6 +65,7 @@ if [ "$command" == 'cert' ] || [ "$command" == 'all' ]; then
     mkdir -p ./var/certs
     . ./.env && mkcert $T3BUILD_BRWOSERSYNC_STANDALONE_HOST && mv ./*.pem var/certs
 fi
+
 if [ "$command" == 'open' ] || [ "$command" == 'all' ]; then
     cd "$TEST_DIR"
     . ./.env
