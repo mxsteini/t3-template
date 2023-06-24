@@ -92,6 +92,12 @@ if [ "$command" == 'open' ] || [ "$command" == 'all' ]; then
     echo "" >&3
 fi
 
+if [ "$command" == 'cert' ] || [ "$command" == 'all' ]; then
+    cd "$TEST_DIR"
+    mkdir -p ./var/certs
+    . ./.env && mkcert $T3BUILD_BRWOSERSYNC_STANDALONE_HOST && mv ./*.pem var/certs
+fi
+
 if [ "$command" == 'start' ] || [ "$command" == 'all' ]; then
     cd "$TEST_DIR"
     echo "nearly done" >&3
@@ -101,12 +107,18 @@ if [ "$command" == 'start' ] || [ "$command" == 'all' ]; then
     ddev npm start  >&3
 fi
 
+if [ "$command" == 'standalone' ]; then
+    cd "$TEST_DIR"
+    npm run standalone  >&3
+fi
+
 if [ "$command" == 't3' ]; then
     cd "$TEST_DIR"
     rm -rf t3-build
     cp -ar ../../../t3-build .
     ddev npm i ./t3-build
 fi
+
 
 cd "$WORKING_DIR"
 trap - EXIT
