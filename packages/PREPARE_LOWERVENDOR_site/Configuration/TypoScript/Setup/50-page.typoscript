@@ -1,7 +1,5 @@
 page = PAGE
 page {
-    5= TEXT
-    5.value = <h1>foo noch ein Header</h1>
     10 = FLUIDTEMPLATE
     10 {
         # GTM
