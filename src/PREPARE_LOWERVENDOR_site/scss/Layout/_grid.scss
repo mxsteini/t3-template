@@ -17,7 +17,7 @@
   }
 }
 
-@media (min-width: map-get($breakpoints, 'wide')){
+@media (min-width: map-get($breakpoints, 'wide')) {
   :root {
     --grid_gap: #{map-get($gap, wide)};
     --section_padding: #{map-get($gap, medium)};
@@ -52,6 +52,7 @@
     @media (min-width: map-get($breakpoints, 'wide')) {
       max-width: map-get($containerWith, 'wide');
     }
+
     &--fullsize {
       display: flex;
       flex-direction: column;
