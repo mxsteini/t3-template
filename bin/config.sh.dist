@@ -1,16 +1,19 @@
 # short project key - lowercase
-PREPARE[projectname]="t3-template"
+PREPARE[projectname]="t3template"
 PREPARE[author]="Michael Stein"
 
 # Vendor
 PREPARE[LOWERVENDOR]="mst"
 
 # baseurl for TYPO3, mostly live-url without protocol
-PREPARE[url]="t3template.michaelstein-itb.de"
+PREPARE[url]="t3template.com"
 
 PREPARE[sitename]="t3 template"
 PREPARE[ddev_phpversion]="8.1"
 
+# normaly unchanged
+PREPARE[browsersync_http_port]="4001"
+PREPARE[browsersync_https_port]="4000"
 
 
 ### server information

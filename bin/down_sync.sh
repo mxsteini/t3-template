@@ -30,7 +30,7 @@ if [ "$command" == 'trigger' ] || [ "$command" == 'all' ]; then
 
     status="sleeping"
     sp="/-\|"
-    log.log "wating for job $jobid"
+    log.log "waiting for job $jobid"
     while true; do
         status=$(curl --silent --header "PRIVATE-TOKEN: $GITLAB_ACCESS_TOKEN" "$GITLAB_URL/api/v4/projects/$project_id/pipelines/$jobid" | jq '.["status"]' | tr -d '"')
         printf "\rjob: $status ${sp:i++%${#sp}:1}"

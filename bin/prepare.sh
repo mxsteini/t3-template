@@ -75,6 +75,7 @@ else
     if [ -x ./config/sites/PREPARE_projectname ]; then
         mv ./.ddev/config.yaml.dist ./.ddev/config.yaml
     fi
+    insertVariables ./.ddev/docker-compose.browsersync.yaml
     insertVariables ./.ddev/config.yaml
 
     if [ -d ./config/sites/PREPARE_projectname ]; then

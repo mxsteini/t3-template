@@ -4,7 +4,10 @@ base: 'https://www.PREPARE_url'
 baseVariants:
   -
     base: 'https://PREPARE_projectname.ddev.site/'
-    condition: 'applicationContext == "Development/Ddev"'
+    condition: 'getenv("HTTP_HOST") == "PREPARE_projectname.ddev.site"'
+  -
+    base: 'https://localhost/'
+    condition: 'getenv("HTTP_HOST") == "localhost"'
   -
     base: 'https://current.PREPARE_url/'
     condition: 'getenv("HTTP_HOST") == "current.PREPARE_url"'

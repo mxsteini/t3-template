@@ -7,7 +7,8 @@
 /packages/*/Resources/*
 
 test/*
-!test/test.sh
+!test/ddev-test.sh
+!test/standalone-test.sh
 
 /public/*
 !/public/.htaccess*
