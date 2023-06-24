@@ -5,7 +5,7 @@
 umask 2
 
 ME=${0##*/}
-exec 3>&2 >>test.log 2>&1
+exec 3>&2 >>ddev-test.log 2>&1
 set -xveu
 date
 hostname
@@ -16,7 +16,7 @@ TEST_DIR=$(pwd)/ddev-test
 end() {
     [[ $? = 0 ]] && return
     cd "$WORKING_DIR"
-    echo FAILED - tail ./test.log >&3
+    echo FAILED - tail ./ddev-test.log >&3
     echo "file an issue on https://github.com/mxsteini/t3-template/issues"
     exit 1
 }
