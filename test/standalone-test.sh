@@ -52,9 +52,9 @@ if [ "$command" == 'npm' ] || [ "$command" == 'all' ]; then
     cd "$TEST_DIR"
     echo run npm >&3
     rm -rf t3-build
-    cp -ar ../../../t3-build .
-    npm i ./t3-build
-#    npm i t3-build
+#    cp -ar ../../../t3-build .
+#    npm i ./t3-build
+    npm i t3-build
     npm i alpinejs
     npm i @alpinejs/collapse
     npm run build
