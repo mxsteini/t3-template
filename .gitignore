@@ -3,6 +3,7 @@
 .vscode
 .ddev/*
 !.ddev/config.yaml.dist
+!.ddev/docker-compose.browsersync.yaml
 
 /packages/*/Resources/*
 
