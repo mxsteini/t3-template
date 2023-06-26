@@ -42,22 +42,41 @@ brew install mkcert
 ## The easiest way to checkout the full magic without deep diving
 
 ### Install
+#### Requirement:
+- ddev
+- mkcert
+
 ```bash
 git clone https://github.com/mxsteini/t3-template.git
 cd test
-./test.sh
+./ddev-test.sh
 ```
-### Next
+
+open:
+
+visit typo3 frontend:
+https://t3template.ddev.site
+
+login typo3 backen (prepare/prepare):
+https://t3template.ddev.site/typo3
+
+watch any changes (file or backend changes) in browsersync:
+https://t3template.ddev.site:4000
+
+
+### change a template file
 - Than open test/temp/src/mst_site/html/Page/Templates/Default.html
 - change the color in scss-section
 - save!
 
-### Next
+### rename a page in the main navigation
 - login into the backend prepare/prepare
 - change the name of a page in the main navigation
 
 
 ## Diving deeper
+
+
 
 ### create the system
 
