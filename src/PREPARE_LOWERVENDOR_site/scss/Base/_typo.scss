@@ -33,6 +33,7 @@ html {
   font-weight: 500;
   line-height: 46px;
   letter-spacing: 0.8px;
+  color: var(--red);
   margin: 0;
   @media (min-width: map-get($breakpoints, 'large')) {
     font-size: 56px;
@@ -47,7 +48,7 @@ html {
   font-weight: 700;
   line-height: 24px;
   letter-spacing: 0.4px;
-  color: var(--green);
+  color: var(--red);
   margin: 0;
   margin-bottom: 10px;
 

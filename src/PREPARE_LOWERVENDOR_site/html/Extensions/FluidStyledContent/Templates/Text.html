@@ -2,8 +2,7 @@
 <fluid>
   <f:layout name="Default"/>
   <f:section name="Main">
-    <f:comment>jw: added div for accordion,frame-custom-30,frame-custom-31</f:comment>
-    <div>
+    <div class="mstitb_text">
       <f:format.html>{data.bodytext}</f:format.html>
     </div>
   </f:section>
@@ -16,14 +15,5 @@
 
 <style type="text/scss" section="Main">
   @import 'scss/Abstracts/abstract';
-
-  .foo {
-    background: blue;
-
-    &__bar {
-      width: map-get($breakpoints, 'medium');
-      color: green;
-    }
-  }
 </style>
 </html>

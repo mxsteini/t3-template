@@ -77,83 +77,13 @@
 <fluid>
   <f:layout name="Default"/>
   <f:section name="Content">
-    <h1>fluid foobar</h1>
-    {content->f:format.raw()}
-    <h1>Testcontent</h1>
-    <div class="mstitb_section">
-      <div class="mstitb_container">
-        <div class="mstitb_row">
-          <div class="mstitb_col"></div>
-        </div>
-      </div>
-    </div>
-    <div class="mstitb_section">
-      <div class="mstitb_container mstitb_bg--grey1">
-        <div class="mstitb_row">
-          <div class="mstitb_col">
-            <h1>Accordeon</h1>
-            <include src="html/Components/Templates/Accordeon.html"/>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="mstitb_section  mstitb_bg--grey1">
-      <div class="mstitb_container">
-        <div class="mstitb_row">
-          <div class="mstitb_col mstitb_col--50 mstitb_bg--gren">
-            <include src="includes/Text1.html"/>
-          </div>
-          <div class="mstitb_col mstitb_col--50 mstitb_bg--blue">
-            <include src="includes/List1.html"/>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="mstitb_section mstitb_section--fullsize  mstitb_bg--grey2">
-      <div class="mstitb_container">
-        <div class="mstitb_row">
-          <div class="mstitb_col mstitb_col--50 mstitb_bg--gren">
-            <include src="includes/Text1.html"/>
-          </div>
-          <div class="mstitb_col mstitb_col--50 mstitb_bg--blue">
-            <include src="includes/List1.html"/>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="mstitb_section">
-      <div class="mstitb_container">
-        <div class="mstitb_row">
-          <div class="mstitb_col"></div>
-        </div>
-      </div>
-    </div>
-    </div>
-
-
-    {content->f:format.raw()}
-
+    {content0->f:format.raw()}
   </f:section>
 </fluid>
 
 <style type="text/scss" section="Content">
 
-  .meine_componente {
-    .text_feld {
-      color: red;
-    }
-
-    .bild_feld {
-      width: auto;
-    }
-  }
-
   body {
-    background: blue;
-
-    h1 {
-      color: red;
-    }
   }
 </style>
 

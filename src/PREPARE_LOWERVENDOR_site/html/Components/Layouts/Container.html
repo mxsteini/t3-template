@@ -1,0 +1,34 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:gc="http://typo3.org/ns/Greiner/GreinerCore/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<f:variable name="useSection" value="yes"/>
+<f:if condition="{data.colPos} < 2">
+    <f:variable name="useSection" value="no"/>
+</f:if>
+
+<f:if condition="{data.colPos} < 2">
+    <f:variable name="useSection" value="no"/>
+</f:if>
+
+
+<f:spaceless>
+    <f:if condition="{useSection} == 'yes'">
+        <f:then>
+            <section class="component">
+                <div class="container">
+                    <div class="row">
+                        <f:render section="Main" optional="true"/>
+                    </div>
+                </div>
+            </section>
+        </f:then>
+        <f:else>
+            <div class="row">
+                <f:render section="Main" optional="true"/>
+            </div>
+        </f:else>
+    </f:if>
+</f:spaceless>
+
+</html>

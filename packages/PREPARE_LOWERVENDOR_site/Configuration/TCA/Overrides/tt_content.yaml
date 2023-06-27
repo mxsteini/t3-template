@@ -5,8 +5,8 @@ sections:
       PREPARE_LOWERVENDOR_site_text:
         title: Text
         icon: "content-text"
-        defaultValues:
-          header: "Peter"
+#        defaultValues:
+#          header: "Peter"
         config:
           columnsOverrides:
             bodytext:

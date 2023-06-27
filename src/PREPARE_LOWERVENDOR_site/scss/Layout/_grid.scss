@@ -26,6 +26,13 @@
 
 
 .mstitb {
+  &_header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
   &_page {
     display: flex;
     flex-direction: column;
@@ -61,6 +68,10 @@
       width: 100%;
       max-width: none;
     }
+  }
+
+  &_header &_container {
+    padding: 20px calc(var(--grid_gap) * 1px) 20px;
   }
 
   &_default + &_default > &_container {
@@ -115,6 +126,10 @@
 
     *:first-child {
       margin-top: 0 !important;
+    }
+
+    &--auto {
+      width: auto;
     }
 
     &--25 {
