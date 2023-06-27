@@ -52,21 +52,16 @@ cd test
 ./ddev-test.sh
 ```
 
-open:
+visit typo3 frontend: https://t3template.ddev.site
 
-visit typo3 frontend:
-https://t3template.ddev.site
+login typo3 backen (prepare/prepare): https://t3template.ddev.site/typo3
 
-login typo3 backen (prepare/prepare):
-https://t3template.ddev.site/typo3
-
-watch any changes (file or backend changes) in browsersync:
-https://t3template.ddev.site:4000
+watch any changes (file or backend changes) in browsersync: https://t3template.ddev.site:4000
 
 
 ### change a template file
 - Than open test/temp/src/mst_site/html/Page/Templates/Default.html
-- change the color in scss-section
+- change a color in scss-section
 - save!
 
 ### rename a page in the main navigation
@@ -74,28 +69,45 @@ https://t3template.ddev.site:4000
 - change the name of a page in the main navigation
 
 
-## Diving deeper
+# Diving deeper
 
+A normal project start begins with the base system being initialized.
 
+In the local development we assume that ddev is used.
 
-### create the system
+In addition, some settings are made in for gitlab-ci but are currently still in alpha stage and not further documented.
+
+## Configuration
+
+At the beginning of a project, a configuration is stored in the file ./bin/config.sh.dist, which all colleagues can use to initialize their local environment.
+
+Branding and setup
+Then ./bin/config.sh.dist is copied to ./bin/config.sh and ./bin/prepare.sh is started.
+This script configures the site-package according to the desired vendor and package settings.
+It initializes the ddev configuration and the .gitlab-ci.yaml. The latter is the currently not further documented.
+
+After ./bin/prepare.sh has run successfully, the TYPO3 system can be initialized.
 
 ```bash
 ddev start
+
+# npm
+ddev npm i t3-build
+ddev npm i alpinejs
+ddev npm i @alpinejs/collapse
+ddev npm run build
+
+# composer
 ddev composer install
-ddev typo3cms install:fixfolderstructure
-npm i
-ddev launch
-npm start
-```
 
-## login
-user: prepare
-pass: prepare
+# default databse
+ddev import-db --src=db/prepare.sql.gz
 
-### creating some certificates for smoother workflow
-```bash
-mkdir -p ./var/certs
-. ./.env && mkcert $T3BUILD_BRWOSERSYNC_TYPO3_HOST && mv ./*.pem var/certs
-. ./.env && mkcert $T3BUILD_BRWOSERSYNC_STANDALONE_HOST && mv ./*.pem var/certs
+# import systemplate and fix folderstructure
+ddev exec vendor/bin/typo3 database:import <db/sys_template.sql
+ddev exec vendor/bin/typo3 install:fixfolderstructure
 ```
+Now your TYPO3 should be running and accessible under the desired URL.
+
+To speed up the frontend development t3-build uses browsersync. This is accessible under the port specified in .env.
+
