@@ -60,7 +60,7 @@ mod.wizards.newContentElement.wizardItems.' . $group . '.header = ' . $groupConf
 mod.wizards.newContentElement.wizardItems.' . $group . '.show = *
 ';
         foreach ($groupConfigurations['elements'] as $cType => $elementConfiguration) {
-          if (is_array($elementConfiguration['defaultValues'])) {
+          if (isset($elementConfiguration['defaultValues']) && is_array($elementConfiguration['defaultValues'])) {
             array_walk($elementConfiguration['defaultValues'], static function (&$item, $key) {
               $item = $key . ' = ' . $item;
             });

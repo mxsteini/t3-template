@@ -25,8 +25,8 @@ SET time_zone = "+00:00";
 -- Daten für Tabelle `sys_template`
 --
 
-REPLACE INTO `sys_template` (`uid`, `pid`, `tstamp`, `crdate`, `cruser_id`, `deleted`, `hidden`, `starttime`, `endtime`, `sorting`, `description`, `t3_origuid`, `t3ver_oid`, `t3ver_wsid`, `t3ver_state`, `t3ver_stage`, `title`, `root`, `clear`, `include_static_file`, `constants`, `config`, `basedOn`, `includeStaticAfterBasedOn`, `static_file_mode`, `tx_impexp_origuid`) VALUES
-	(1, 1, 1687339479, 1585576660, 3, 0, 0, 0, 0, 256, NULL, 0, 0, 0, 0, 0, 'Root-Template', 1, 3, NULL, '@import \'EXT:PREPARE_LOWERVENDOR_site/Configuration/TypoScript/constants.typoscript\'\r\n', '@import \'EXT:PREPARE_LOWERVENDOR_site/Configuration/TypoScript/setup.typoscript\'\r\n', '', 0, 0, 0);
+REPLACE INTO `sys_template` VALUES (1,1,1687339479,1585576660,0,0,0,0,256,NULL,0,'Root-Template',1,3,NULL,'@import \'EXT:PREPARE_LOWERVENDOR_site/Configuration/TypoScript/constants.typoscript\'\r\n','@import \'EXT:PREPARE_LOWERVENDOR_site/Configuration/TypoScript/setup.typoscript\'\r\n','',0,0,0);
+
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

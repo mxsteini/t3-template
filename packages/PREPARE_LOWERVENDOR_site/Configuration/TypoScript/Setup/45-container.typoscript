@@ -1,31 +1,16 @@
 tt_content {
     PREPARE_LOWERVENDOR_site_col50-50 =< lib.containerElement
     PREPARE_LOWERVENDOR_site_col50-50 {
-        templateName = Col50-50
-    }
-
-    PREPARE_LOWERVENDOR_site_col40-40 =< lib.containerElement
-    PREPARE_LOWERVENDOR_site_col40-40 {
-        templateName = Col40-40
-    }
-
-    PREPARE_LOWERVENDOR_site_col40-60 =< lib.containerElement
-    PREPARE_LOWERVENDOR_site_col40-60 {
-        templateName = Col40-60
+        templateName = Container/Col50-50
     }
 
     PREPARE_LOWERVENDOR_site_col33-33-33 =< lib.containerElement
     PREPARE_LOWERVENDOR_site_col33-33-33 {
-        templateName = Col33-33-33
-    }
-
-    PREPARE_LOWERVENDOR_site_col80 =< lib.containerElement
-    PREPARE_LOWERVENDOR_site_col80 {
-        templateName = Col80
+        templateName = Container/Col33-33-33
     }
 
     PREPARE_LOWERVENDOR_site_accordeon =< lib.containerElement
     PREPARE_LOWERVENDOR_site_accordeon {
-        templateName = Accordeon
+        templateName = Container/Accordeon
     }
 }

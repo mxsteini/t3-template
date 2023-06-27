@@ -16,16 +16,19 @@
 </standalone>
 
 <fluid>
-  <f:layout name="Default"/>
+  <f:layout name="NoHeader"/>
   <f:section name="Main">
     <div class="accordeon">
       <div class="accordeon__header">
-        Accordeon Header test 4 d
+        {data.header}
       </div>
-      <div class="accordeon__body">
-        <f:for each="{col_0}" as="record">
-          {record.renderedContent->f:format.raw()}
-        </f:for>
+
+      <div class="accordeon">
+        <div class="accordeon__body">
+          <f:for each="{col_0}" as="record">
+            {record.renderedContent->f:format.raw()}
+          </f:for>
+        </div>
       </div>
     </div>
   </f:section>
@@ -34,7 +37,7 @@
 <style type="text/scss" section="Main">
   .accordeon {
     &__header {
-      background: blue;
+      background: cyan;
     }
 
     background: yellow;

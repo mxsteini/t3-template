@@ -102,7 +102,7 @@ if [ "$command" == 'start' ] || [ "$command" == 'all' ]; then
     cd "$TEST_DIR"
     echo "nearly done" >&3
     cp ./vendor/typo3/cms-install/Resources/Private/FolderStructureTemplateFiles/root-htaccess public/.htaccess
-    ddev exec vendor/bin/typo3 database:import <db/sys_template.sql
+    ddev exec vendor/bin/typo3 database:import < db/sys_template.sql
     ddev exec vendor/bin/typo3 install:fixfolderstructure
     ddev npm start  >&3
 fi
@@ -117,6 +117,11 @@ if [ "$command" == 't3' ]; then
     rm -rf t3-build
     cp -ar ../../../t3-build .
     ddev npm i ./t3-build
+fi
+
+if [ "$command" == 'export' ]; then
+    cd "$TEST_DIR"
+    ddev export-db --file=../../db/prepare.sql.gz
 fi
 
 
