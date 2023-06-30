@@ -55,5 +55,13 @@
         "typo3/cms-tstemplate": "*",
         "typo3/cms-viewpage": "*",
         "typo3/cms-webhooks": "*"
-	}
+	},
+  "scripts": {
+    "typo3-cms-scripts": [
+      "vendor/bin/typo3 install:fixfolderstructure"
+    ],
+    "post-autoload-dump": [
+      "@typo3-cms-scripts"
+    ]
+  }
 }
