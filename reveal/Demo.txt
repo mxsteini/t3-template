@@ -1,0 +1,31 @@
+t3-build ist eine entwicklungsumgebung die dafür gemacht ist, dass Frontentwickler, Integratoren und Backendentwickler aus der TYPO3 Welt in der gleichen Umgebung arbeiten können.
+
+In diesem Video möchte ich zeigen, wie der Frontendentwickler ein eigenständiges Frontend entwickeln kann.
+
+Im nächsten Video wird es darum gehen, wie der Integrator das bestehende Frontend in typo3 integrieren kann.
+
+
+Die einfachte Methode um t3-build zu testen ist, das Demo bei github auszuchecken und lokal zu installieren.
+Das Demo kann als Standalone Version laufen oder als innerhalb von ddev mit TYPO3
+
+
+Doch zunächst zeige ich euch den standalone modus
+
+
+Nachdem die Installation durchgelaufen sollte eine Demo-Seite im Browser erscheinen. Wenn dem nicht so ist, klicke einfach auf den Link in der Dokumentation.
+
+Das demo kommt mit einem Beispiel daher. Aber um es besser zu erklären lösche ich die Dateien schnell und baue sie hier im Video Schritt für Schritt auf.
+
+
+t3-build ermöglichst es den Entwicklern Frontend und TYPO3 parallel in einem Projekt zu entwickeln
+
+Da beide Entwickler auf die gleichen Resourcen zugreifen, liegen diese außerhalb der üblichen typo3-struktur.
+
+Alle Entwicklung findet im src-Ordner
+
+Um die Resourcen von mehreren Packages verwalten zu können, befinden sich im src-Ornder für jedes Package in gleichnamiger Ordner.
+
+
+
+
+Der Startpunkt für die FE-Entwickler ist src/
