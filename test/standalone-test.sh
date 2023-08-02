@@ -16,7 +16,7 @@ TEST_DIR=$(pwd)/standalone-test
 end() {
     [[ $? = 0 ]] && return
     cd "$WORKING_DIR"
-    echo FAILED - tail ./standalone-test.log >&3
+    echo FAILED - tail -50 ./standalone-test.log >&3
     echo "file an issue on https://github.com/mxsteini/t3-template/issues"
     exit 1
 }

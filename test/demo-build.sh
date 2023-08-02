@@ -5,18 +5,18 @@
 umask 2
 
 ME=${0##*/}
-exec 3>&2 >>ddev-test.log 2>&1
+exec 3>&2 >>demo-build.log 2>&1
 set -xveu
 date
 hostname
 
 WORKING_DIR=$(pwd)
-TEST_DIR=$(pwd)/ddev-test
+TEST_DIR=$(pwd)/demo-build
 
 end() {
     [[ $? = 0 ]] && return
     cd "$WORKING_DIR"
-    echo FAILED - tail -50 ./ddev-test.log >&3
+    echo FAILED - tail -50 ./demo-build.log >&3
     echo "file an issue on https://github.com/mxsteini/t3-template/issues"
     exit 1
 }
@@ -32,10 +32,8 @@ if [ "$command" == 'cleanup' ] || [ "$command" == 'all' ]; then
     if [ -d "$TEST_DIR" ]; then
         echo cleaning up old test >&3
         pushd "$TEST_DIR"
-        if [ -f ".ddev/config.yaml" ]; then
-          echo delete ddev >&3
-          ddev delete -Oy
-        fi
+        echo delete ddev >&3
+        ddev delete -Oy
         popd
         rm -rf "$TEST_DIR"
     fi
@@ -50,7 +48,9 @@ fi
 if [ "$command" == 'prepare' ] || [ "$command" == 'all' ]; then
     cd "$TEST_DIR"
     echo prepare >&3
-    cp bin/config.sh.dist bin/config.sh
+    cp bin/config.sh.demo.dist bin/config.sh
+    mv -f README.demo.md README.md
+    mv -f .env.demo.dist .env.dist
     bin/prepare.sh
 fi
 if [ "$command" == 'ddev' ] || [ "$command" == 'all' ]; then
@@ -66,14 +66,11 @@ fi
 if [ "$command" == 'npm' ] || [ "$command" == 'all' ]; then
     cd "$TEST_DIR"
     echo run npm >&3
-    rm -rf t3-build
-#    cp -ar ../../../t3-build .
-#    ddev npm i ./t3-build
-    ddev npm i t3-build@latest
+    ddev npm i t3-build
     ddev npm i alpinejs
     ddev npm i @alpinejs/collapse
-    ddev npm run build
 fi
+
 if [ "$command" == 'composer' ] || [ "$command" == 'all' ]; then
     cd "$TEST_DIR"
     echo run composer >&3
@@ -94,36 +91,31 @@ if [ "$command" == 'open' ] || [ "$command" == 'all' ]; then
     echo "" >&3
 fi
 
-if [ "$command" == 'cert' ] || [ "$command" == 'all' ]; then
-    cd "$TEST_DIR"
-    mkdir -p ./var/certs
-    . ./.env && mkcert $T3BUILD_BRWOSERSYNC_STANDALONE_HOST && mv ./*.pem var/certs
-fi
-
 if [ "$command" == 'start' ] || [ "$command" == 'all' ]; then
     cd "$TEST_DIR"
     echo "nearly done" >&3
     cp ./vendor/typo3/cms-install/Resources/Private/FolderStructureTemplateFiles/root-htaccess public/.htaccess
     ddev exec vendor/bin/typo3 database:import < db/sys_template.sql
-    ddev exec vendor/bin/typo3 install:fixfolderstructure
-    ddev npm start  >&3
 fi
 
-if [ "$command" == 'standalone' ]; then
+if [ "$command" == 'snapshot' ] || [ "$command" == 'all' ]; then
     cd "$TEST_DIR"
-    npm run standalone  >&3
+    echo "create snapshot" >&3
+    ddev snapshot
+    ddev poweroff
 fi
 
-if [ "$command" == 't3' ]; then
+if [ "$command" == 'cert' ] || [ "$command" == 'all' ]; then
     cd "$TEST_DIR"
-    rm -rf t3-build
-    cp -ar ../../../t3-build .
-    ddev npm i ./t3-build
+    mkdir -p ./var/certs
+    . ./.env && mkcert $T3BUILD_BRWOSERSYNC_STANDALONE_HOST
 fi
 
-if [ "$command" == 'export' ]; then
-    cd "$TEST_DIR"
-    ddev export-db --file=../../db/prepare.sql.gz
+if [ "$command" == 'export' ] || [ "$command" == 'all' ]; then
+    echo "rsync demo" >&3
+    params='--delete --recursive --links --perms --times --group --owner --devices --verbose --itemize-changes'
+    exclude='--exclude=.gitlab-ci.yml --exclude=.git --exclude=node_modules --exclude=vendor --exclude=*.dist --exclude=bin --exclude=var --exclude=db --exclude=reveal --exclude=.gitignore'
+    rsync ${params} ${exclude} "$TEST_DIR"/ /home/mst/Projekte/itb/t3-build-demo/
 fi
 
 
