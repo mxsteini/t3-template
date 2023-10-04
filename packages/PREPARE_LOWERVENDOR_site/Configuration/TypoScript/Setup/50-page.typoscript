@@ -4,15 +4,15 @@ page {
     10 {
         # GTM
         layoutRootPaths {
-            10 = EXT:mst_site/Resources/Private/Page/Layouts/
+            10 = EXT:PREPARE_LOWERVENDOR_site/Resources/Private/Page/Layouts/
         }
 
         partialRootPaths {
-            10 = EXT:mst_site/Resources/Private/Page/Partials/
+            10 = EXT:PREPARE_LOWERVENDOR_site/Resources/Private/Page/Partials/
         }
 
         templateRootPaths {
-            10 = EXT:mst_site/Resources/Private/Page/Templates/
+            10 = EXT:PREPARE_LOWERVENDOR_site/Resources/Private/Page/Templates/
         }
 
         templateName.stdWrap.cObject = CASE

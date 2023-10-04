@@ -106,6 +106,7 @@ ddev import-db --src=db/prepare.sql.gz
 # import systemplate and fix folderstructure
 ddev exec vendor/bin/typo3 database:import <db/sys_template.sql
 ddev exec vendor/bin/typo3 install:fixfolderstructure
+cp vendor/typo3/cms-install/Resources/Private/FolderStructureTemplateFiles/root-htaccess public/.htaccess
 ```
 Now your TYPO3 should be running and accessible under the desired URL.
 

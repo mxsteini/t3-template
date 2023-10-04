@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+export PATH="$HOMEBREW_PREFIX/opt/gnu-sed/libexec/gnubin:$PATH"
+
 function insertVariables() {
     echo working on $1
     for key in "${!PREPARE[@]}"; do
